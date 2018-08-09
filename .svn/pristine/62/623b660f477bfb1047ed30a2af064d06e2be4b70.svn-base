@@ -1,0 +1,22 @@
+<!--pages/profitPage/profitPage.wxml-->
+<!-- 用户自己 -->
+<view>
+
+</view>
+<!-- 其他用户 -->
+<view class='userBox' wx:for="{{profitInfo}}" data-uid='{{item.user_id}}' catchtap='toMasterPage'>
+  <view class='user'>
+    <view class='userNo fl clearfix'>{{index+1}}</view>
+    <view class='userPortrait fl clearfix'>
+       <image class='userPortrait' src='{{item.avatar}}'></image> 
+    </view>
+    <view class='userNameBox fl clearfix'>
+      <view class='userName'>{{item.nickname}}</view>
+      <view class='time'>{{item.created_at}}</view>
+    </view>
+    <view class='money fr clearfix'>
+      <!-- <image></image> -->
+      {{item.price}}
+    </view>
+  </view>
+</view>

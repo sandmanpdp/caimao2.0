@@ -1,0 +1,6 @@
+<input class='phone' type='number' placeholder='{{phoneText}}' maxlength='11' bindinput='phoneFun' value='{{phone}}'></input>
+<view class='clearfix code'>
+  <input type='number' class='fl' maxlength='6' value='{{code}}' bindinput='codeFun'></input>
+  <view class='fr' catchtap='setCodeFun'>{{text}}</view>
+</view>
+<view class="btn {{btnState&&codeState?'bk2772ff':'bkddd'}}" catchtap="{{btnState?'setBindFun':''}}">更换</view>

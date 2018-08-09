@@ -1,0 +1,4 @@
+<!--pages/readUserPage/readUserPage.wxml-->
+<view class='portraitBox'>
+  <image wx:for='{{readUsers}}' class='portrait' id='{{item.user_id}}'  src='{{item.avatar}}' catchtap='linkUserFun'></image>
+</view>

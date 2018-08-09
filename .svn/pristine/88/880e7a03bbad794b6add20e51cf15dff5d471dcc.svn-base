@@ -1,0 +1,7 @@
+.phone{padding: 0 30rpx;height: 280rpx;text-align: center;font-size: 36rpx;color: #333333}
+.code{padding: 0 150rpx}
+.code input{padding: 0 30rpx;width: 140rpx;height: 80rpx;border:1px solid #aaa;font-size: 30rpx;color: #333333}
+.code view{width: 200rpx;line-height: 84rpx;font-size: 30rpx;background-color: #2772ff;color: #fff;text-align: center}
+.btn{margin-top: 100rpx;height: 100rpx;line-height: 100rpx;color: #fff;font-size: 34rpx;text-align: center}
+.bk2772ff{background-color: #2772ff}
+.bkddd{background-color: #ddd}

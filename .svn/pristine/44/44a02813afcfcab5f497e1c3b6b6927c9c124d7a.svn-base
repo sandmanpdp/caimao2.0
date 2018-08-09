@@ -1,0 +1,181 @@
+/**app.wxss**/
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  background-color: #eee;
+}
+
+.content {
+  width: 90%;
+  margin: 1rem auto;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+  display: none;
+}
+
+.authBox {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0 auto;
+  width: 100%;
+  z-index: 999;
+}
+
+/* 背景颜色 */
+
+page {
+  background-color: #f5f5f9;
+}
+
+/* 底部 */
+
+.footer {
+  height: 50rpx;
+}
+
+/* 图标：右箭头 */
+
+.icon_right_arrow {
+  position: relative;
+  top: 6rpx;
+  margin: 0 30rpx 0 17rpx;
+  width: 19rpx;
+  height: 34rpx;
+}
+
+/* 清除浮动 */
+
+.clearfix {
+  zoom: 1;
+}
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  clear: both;
+  content: "";
+}
+
+/* 定位 */
+
+.pr {
+  position: relative;
+}
+
+/* 浮动 */
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+/* 字符截断 */
+
+.tw1 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tw2 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.tw3 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+.tw4 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+}
+
+.tw7 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 7;
+}
+
+/* 字符对齐方式 */
+
+.tc {
+  text-align: center;
+}
+
+.tr {
+  text-align: right;
+}
+
+/* 字体大小 */
+
+.fs30 {
+  font-size: 30rpx !important;
+}
+
+/* 修改默认的navigator点击态 */
+
+.navigator-hover {
+  background-color: rgba(0, 0, 0, 0);
+  opacity: 0.5;
+}
+
+/* 下拉提示 */
+
+.drop {
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 26rpx;
+  color: #b9b9b9;
+  text-align: center;
+}
+
+/* 禁止滚动 */
+
+.ban {
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* 遮罩层 */
+
+.mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999999999;
+}
+
+.null {
+  line-height: 200rpx;
+  font-size: 28rpx;
+  color: #808080;
+  text-align: center;
+}

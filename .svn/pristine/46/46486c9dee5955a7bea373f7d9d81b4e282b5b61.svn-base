@@ -1,0 +1,51 @@
+
+/* 导航 */
+.nav{padding: 28rpx 0;background-color: #fff}
+.nav view{width: 50%;font-size: 34rpx;line-height: 34rpx;color: #b9b9b9;text-align: center;font-weight: 400}
+.co3f86ff{color: #3f86ff!important}
+.co93b8ff{color: #93b8ff!important}
+/* 列表 */
+.list{}
+.list .box{margin-top: 10rpx;padding: 26rpx 30rpx 30rpx;background-color: #fff;font-size: 0}
+.list .box:first-child{margin: 0}
+.list .box .one{margin-bottom: 50rpx}
+.list .box .one .left text{font-weight: 400}
+.list .box .one .left text:nth-child(1){margin-right: 30rpx;font-size: 36rpx;color: #3e3e3e;line-height: 0}
+.list .box .one .left text:nth-child(2){font-size: 32rpx;color: #fc7946;line-height: 36rpx}
+.list .box .one .right{font-size: 26rpx;color: #b9b9b9;height: 36rpx;line-height: 36rpx}
+.list .box .two{margin-bottom: 40rpx}
+.list .box .two>view{width: 49.8%;text-align: center}
+.list .box .two>view:first-child{border-right: 1px solid #dddddd}
+.list .box .two>view>view:nth-child(1){margin-bottom: 20rpx;font-size: 40rpx;color: #e32f37;line-height: 40rpx;font-weight: 600}
+.list .box .two>view>view:nth-child(2){font-size: 24rpx;color: #b9b9b9;line-height: 24rpx}
+.list .box .three{font-size: 26rpx;line-height: 26rpx}
+.list .box .three>view:nth-child(1){color: #b9b9b9}
+.list .box .three>view:nth-child(2){color: #808080}
+.list .box .three>view:nth-child(2) .icon{margin-right: 20rpx;width: 27rpx;height: 22rpx;vertical-align: middle}
+.list .box .three>view:nth-child(2) text{vertical-align: middle}
+ /* by pdp */
+.rateIsMinus {
+  color: #42c110 !important;
+}
+.rateIsPositive {
+  color: #e32f37 !important;
+}
+.needPriceYuanbao {
+  display: inline-block;
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  top: 47%;
+  transform: translateY(-50%);
+}
+.needPriceText {
+  font-size:32rpx;
+  color:#fc7946;
+  line-height:36rpx;
+  padding-left: 50rpx;
+}
+.freePriceText {
+  font-size:32rpx;
+  color:#fc7946;
+  line-height:36rpx;
+}

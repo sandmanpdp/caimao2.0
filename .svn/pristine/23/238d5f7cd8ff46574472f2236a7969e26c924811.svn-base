@@ -1,0 +1,12 @@
+.section{padding: 30rpx;background-color: #fff}
+.section .box{padding: 40rpx 0 55rpx;border-bottom: 1px solid #eeeeee}
+.section .box:first-child{padding-top: 10rpx}
+.section .box:last-child{padding-bottom: 20rpx;border: 0}
+.section .box .title{font-size: 36rpx;color: #2e2e2e;font-weight: 600}
+.section .box .text{margin: 25rpx 0 38rpx;line-height: 50rpx;font-size: 28rpx;color: #808080}
+.section .box .info{height:49rpx}
+.section .box .info .headimg{margin:0 20rpx 0 0;width:49rpx;height:49rpx;border-radius:6rpx;vertical-align: middle}
+.section .box .info .name{display: inline-block;font-size: 26rpx;color: #808080}
+.section .box .info .data .icon{margin-right: 20rpx;width: 40rpx;height: 35rpx;vertical-align: middle}
+.section .box .info .data .number{font-size: 24rpx;color: #808080}
+.section .box .info .data .number:nth-child(2){margin-right: 49rpx}
