@@ -83,19 +83,19 @@
       </view>
     </navigator>
   </view>
-  <swiper autoplay='true' interval='4000' duration='800' circular='true' previous-margin='35rpx' next-margin='35rpx' class='hot_scroll' scroll-x="true" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}">
+  <!-- <swiper autoplay='true' interval='4000' duration='800' circular='true' previous-margin='35rpx' next-margin='35rpx' class='hot_scroll' scroll-x="true" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}"> -->
     <!-- 列表渲染 -->
-    <swiper-item class='scroll-view-item' wx:for="{{hot}}">
+    <!-- <swiper-item class='scroll-view-item' wx:for="{{hot}}"> -->
       <!-- 内容 -->
-      <view class='hot_section'>
+      <!-- <view class='hot_section'> -->
         <!-- 涂鸦 one -->
         <!-- <view class='hot_section_daub_one'></view> -->
         <!-- 涂鸦 two -->
         <!-- <view class='hot_section_daub_two'></view> -->
         <!-- 内容 -->
-        <view class='hot_section_box' catch:tap="{{item.is_look==-1?'buyFun':'noteReadFun'}}" id='{{item.id}}' data-uid='{{item.user_id}}'>
+        <!-- <view class='hot_section_box' catch:tap="{{item.is_look==-1?'buyFun':'noteReadFun'}}" id='{{item.id}}' data-uid='{{item.user_id}}'> -->
           <!-- 上半部分 -->
-          <view class='hot_section_box_modular_one clearfix'>
+          <!-- <view class='hot_section_box_modular_one clearfix'>
             <view class='hot_section_box_modular_one_left'>
               <view class='inde_swiper_shareInfo_box'>
                 <view class='index_swiper_shareName'>{{item.share}}</view>
@@ -113,18 +113,19 @@
               </view>
               <view class='hot_section_box_modular_one_right_two'>笔记价格</view>
             </view>
-          </view>
+          </view> -->
           <!-- 下半部分  -->
-          <view class='hot_section_box_modular_two clearfix'>
+          <!-- <view class='hot_section_box_modular_two clearfix'>
             <image class='hot_section_box_modular_two_userHead' src='{{item.avatar}}' lazy-load='true'></image>
-            <view class='hot_section_box_modular_two_userName tw1'>{{item.name}}</view>
+            <view class='hot_section_box_modular_two_userName tw1'>{{item.name}}</view> -->
             <!-- <view class='hot_section_box_modular_two_depict tw1'>累计涨幅{{item.sum_increase}}%</view> -->
-            <view class='hot_section_box_modular_two_btn' catch:tap="{{item.is_look==-1?'buyFun':'noteReadFun'}}" id='{{item.id}}' data-uid='{{item.user_id}}'>阅 读</view>
+            <!-- <view class='hot_section_box_modular_two_btn' catch:tap="{{item.is_look==-1?'buyFun':'noteReadFun'}}" id='{{item.id}}' data-uid='{{item.user_id}}'>阅 读</view>
           </view>
         </view>
       </view>
     </swiper-item>
-  </swiper>
+  </swiper> -->
+  
 </view>
 <!-- 热门观点 -->
 <view class='view'>
