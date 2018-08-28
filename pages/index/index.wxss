@@ -1,9 +1,23 @@
 /**index.wxss**/
 /* 导航 */
-.nav{padding: 56rpx 30rpx 0;height: 180rpx;background-color: #2772ff}
-.nav_icon{width: 81rpx;height: 94rpx; display: inline-block;}
+.nav{padding: 30rpx 0;background-color: #fff}
+.nav_icon{width: 100rpx;height: 100rpx; display: inline-block;}
 .nav_icon image{width: 100%;height: 100%}
 .nav navigator{ width: 25%;float:left;text-align: center;}
+.nav-btm-text {
+  font-size: 26rpx;
+  color: #666;
+  margin-top: 10rpx;
+}
+.nav-swiper-box {
+  width: 690rpx;
+  height: 180rpx;
+  padding: 25rpx 30rpx 0;
+}
+.nav-swiper-item image{
+  width: 690rpx;
+  height: 180rpx;
+}
 /* 头部 */
 .head{box-sizing: border-box;position: relative;margin: -45rpx auto 0;padding: 36rpx 50rpx 0;width: 690rpx;height:160rpx;border-radius:10rpx;background-color: #fff}
 .head_icon{position: absolute;top: 50%;left: 50%;margin-top: -36rpx;margin-left: -1rpx;width: 2rpx;height: 72rpx;background-color: #dddddd}

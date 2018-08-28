@@ -1,52 +1,72 @@
 <!--index.wxml-->
 <view class='nav'>
-  <!-- 热门 -->
-  <navigator url="/pages/notelist/notelist?type=hot" open-type='navigate' hover-class="navigator-hover">
-    <view class='nav_icon nav_hot'>
-      <image src='../images/icon_hot.png'></image>
-    </view>
-  </navigator>
-  <!-- 免费 -->
-  <navigator url="/pages/notelist/notelist?type=0" open-type='navigate' hover-class="navigator-hover">
-    <view class='nav_icon nav_free'>
-      <image src='../images/icon_free.png'></image>
-    </view>
-  </navigator>
-  <!-- 日均高 -->
-  <navigator url="/pages/notelist/notelist?type=max" open-type='navigate' hover-class="navigator-hover">
-    <view class='nav_icon nav_goal'>
-      <image src='../images/icon_goal.png'></image>
-    </view>
-  </navigator>
-  <!-- 目标高 -->
-  <navigator url="/pages/notelist/notelist?type=new" open-type='navigate' hover-class="navigator-hover">
-    <view class='nav_icon nav_day'>
-      <image src='../images/icon_day.png'></image>
-    </view>
-  </navigator>
+<!-- 导航栏四个按钮 -->
+  <view class='clearfix'>
+    <!-- 热门 -->
+    <navigator url="/pages/notelist/notelist?type=hot" open-type='navigate' hover-class="navigator-hover">
+      <view class='nav_icon nav_hot'>
+        <image src='../images/hot.png'></image>
+      </view>
+      <view class='nav-btm-text'>热门</view>
+    </navigator>
+    <!-- 免费 -->
+    <navigator url="/pages/notelist/notelist?type=0" open-type='navigate' hover-class="navigator-hover">
+      <view class='nav_icon nav_free'>
+        <image src='../images/free.png'></image>
+      </view>
+      <view class='nav-btm-text'>免费</view>
+    </navigator>
+    <!-- 目标高 -->
+    <navigator url="/pages/notelist/notelist?type=new" open-type='navigate' hover-class="navigator-hover">
+      <view class='nav_icon nav_day'>
+        <image src='../images/new.png'></image>
+      </view>
+      <view class='nav-btm-text'>最新</view>
+    </navigator>
+    <!-- 日均高 -->
+    <navigator url="/pages/notelist/notelist?type=max" open-type='navigate' hover-class="navigator-hover">
+      <view class='nav_icon nav_goal'>
+        <image src='../images/high.png'></image>
+      </view>
+      <view class='nav-btm-text'>收益高</view>
+    </navigator>
+  </view>
+  <view class='nav-swiper-box'>
+    <swiper>
+      <swiper-item class='nav-swiper-item'>
+        <image src='../images/banner.png'></image>
+      </swiper-item>
+      <swiper-item class='nav-swiper-item'>
+        <image src='../images/banner.png'></image>
+      </swiper-item>
+      <swiper-item class='nav-swiper-item'>
+        <image src='../images/banner.png'></image>
+      </swiper-item>
+    </swiper>
+  </view>
 </view>
 
 <!-- 头部 -->
 <!-- <view class='head'> -->
-  <!-- <icon class='head_icon'></icon> -->
-  <!-- 排行榜 -->
-  <!-- <navigator url="/pages/optional/optional" open-type='navigate' hover-class="navigator-hover"> -->
+<!-- <icon class='head_icon'></icon> -->
+<!-- 排行榜 -->
+<!-- <navigator url="/pages/optional/optional" open-type='navigate' hover-class="navigator-hover"> -->
 
-  <!-- <view class='head_left'>
+<!-- <view class='head_left'>
     <navigator url="/pages/masterlist/masterlist" open-type='navigate'>
       <image class='head_left_icon' src='../images/icon_rankingList.png'></image>
       <view class='head_left_title'>排行榜</view>
     </navigator>
   </view> -->
-  <!-- </navigator> -->
-  <!-- 问股诊股 -->
-  <!-- <navigator url="/pages/askStock/askStock" open-type='navigate' hover-class="navigator-hover">  -->
-  <!-- <view class='head_right' catchtap='unopenedFun'> -->
-    <!-- <view class='head_right'> -->
-    <!-- <image class='head_left_icon' src='../images/icon_ask.png'></image>
+<!-- </navigator> -->
+<!-- 问股诊股 -->
+<!-- <navigator url="/pages/askStock/askStock" open-type='navigate' hover-class="navigator-hover">  -->
+<!-- <view class='head_right' catchtap='unopenedFun'> -->
+<!-- <view class='head_right'> -->
+<!-- <image class='head_left_icon' src='../images/icon_ask.png'></image>
     <view class='head_left_title'>问股诊股</view>
   </view> -->
-  <!-- </navigator>  -->
+<!-- </navigator>  -->
 <!-- </view> -->
 
 <!-- 热门笔记 -->
