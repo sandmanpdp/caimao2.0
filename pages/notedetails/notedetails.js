@@ -451,11 +451,22 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log('options' + options)
+    console.log('####option')
+    console.log(options)
     this.setData({
       option: options
     })
-    this.getData()
+    this.getData();
+    //未授权跳页
+    wx.getSetting({
+      success(res) {
+        if (!res.authSetting['scope.userInfo']) {
+          wx.navigateTo({
+            url: '/pages/authPage/authPage',
+          })
+        }
+      }
+    })
   },
 
   getSharePricesFun: function (a) {  //获取股票现价

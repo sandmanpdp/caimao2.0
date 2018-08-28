@@ -24,7 +24,7 @@
 .box_value {
   position: relative;
   height: 100%;
-  width: 70%;
+  width: 68%;
 }
 
 .box_input {

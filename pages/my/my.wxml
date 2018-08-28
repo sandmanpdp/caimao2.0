@@ -56,14 +56,14 @@
   </view>
 </navigator>
 <!-- 我的问股 -->
-<!-- <view class='list_box' catchtap='unopenedFun'>
+<view class='list_box' catchtap='unopenedFun'>
   <view class='list_box_border clearfix'>
     <image class='list_box_icon' src='../images/icon_myStock.png'></image>
     <view class='list_box_title'>我的问股</view>
     <image class='list_box_arrow' src='../images/icon_right_arrow.png'></image>
      <view class='list_box_number'>999</view> 
   </view>
-</view> -->
+</view>
 <!-- 我的观点 -->
 <navigator url="/pages/view/view?id={{userInfo.id}}" open-type='navigate' hover-class="navigator-hover">
   <view class='list_box'>
