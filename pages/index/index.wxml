@@ -27,27 +27,27 @@
 </view>
 
 <!-- 头部 -->
-<view class='head'>
+<!-- <view class='head'> -->
   <!-- <icon class='head_icon'></icon> -->
   <!-- 排行榜 -->
   <!-- <navigator url="/pages/optional/optional" open-type='navigate' hover-class="navigator-hover"> -->
 
-  <view class='head_left'>
+  <!-- <view class='head_left'>
     <navigator url="/pages/masterlist/masterlist" open-type='navigate'>
       <image class='head_left_icon' src='../images/icon_rankingList.png'></image>
       <view class='head_left_title'>排行榜</view>
     </navigator>
-  </view>
+  </view> -->
   <!-- </navigator> -->
   <!-- 问股诊股 -->
   <!-- <navigator url="/pages/askStock/askStock" open-type='navigate' hover-class="navigator-hover">  -->
-  <view class='head_right' catchtap='unopenedFun'>
+  <!-- <view class='head_right' catchtap='unopenedFun'> -->
     <!-- <view class='head_right'> -->
-    <image class='head_left_icon' src='../images/icon_ask.png'></image>
+    <!-- <image class='head_left_icon' src='../images/icon_ask.png'></image>
     <view class='head_left_title'>问股诊股</view>
-  </view>
+  </view> -->
   <!-- </navigator>  -->
-</view>
+<!-- </view> -->
 
 <!-- 热门笔记 -->
 <view class='hot'>
