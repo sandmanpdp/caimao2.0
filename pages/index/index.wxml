@@ -178,10 +178,34 @@
     </view>
   </view>
 </view>
+<!-- 高手推荐 -->
+<view class='recommend'>
+  <!-- 标题 -->
+  <view class='hot_title'>
+    <icon class='hot_title_icon'></icon>
+    <text class='hot_title_text'>热门达人</text>
+    <!-- 更多 -->
+    <navigator url="/pages/masterlist/masterlist" open-type='navigate' hover-class="navigator-hover" class='fr'>
+      <view class='hot_title_more'>
+        <text>更多</text>
+        <image class='icon_right_arrow' src='../images/icon_right_arrow.png'></image>
+      </view>
+    </navigator>
+  </view>
+  <!-- 内容 -->
+  <view class='recommend_scroll clearfix'>
+    <view class='recommend_scroll_box' wx:for="{{recommend}}" catch:tap='recommendJumpFun' id='{{item.id}}'>
+      <image class='recommend_scroll_box_userHaed' src='{{item.avatar}}'></image>
+      <view class='recommend_scroll_box_userName tw1'>{{item.nickname}}</view>
+      <view class='recommend_scroll_box_depict tw1'>{{item.sum_increase}}%</view>
+      <!-- <view class='btn'>关注</view> -->
+    </view>
+  </view>
+</view>
 <!-- 热门观点 -->
 <view class='view'>
   <!-- 标题 -->
-  <view class='hot_title' style='height:80rpx'>
+  <view class='hot_title'>
     <icon class='hot_title_icon'></icon>
     <text class='hot_title_text'>热门观点</text>
     <!-- 更多 -->
@@ -212,29 +236,6 @@
     </view>
   </view>
 </view>
-<!-- 高手推荐 -->
-<view class='recommend'>
-  <!-- 标题 -->
-  <view class='hot_title'>
-    <icon class='hot_title_icon'></icon>
-    <text class='hot_title_text'>达人推荐</text>
-    <!-- 更多 -->
-    <navigator url="/pages/masterlist/masterlist" open-type='navigate' hover-class="navigator-hover" class='fr'>
-      <view class='hot_title_more'>
-        <text>更多</text>
-        <image class='icon_right_arrow' src='../images/icon_right_arrow.png'></image>
-      </view>
-    </navigator>
-  </view>
-  <!-- 内容 -->
-  <view class='recommend_scroll clearfix'>
-    <view class='recommend_scroll_box' wx:for="{{recommend}}" catch:tap='recommendJumpFun' id='{{item.id}}'>
-      <image class='recommend_scroll_box_userHaed' src='{{item.avatar}}'></image>
-      <view class='recommend_scroll_box_userName tw1'>{{item.nickname}}</view>
-      <view class='recommend_scroll_box_depict tw1'>{{item.sum_increase}}%</view>
-      <!-- <view class='btn'>关注</view> -->
-    </view>
-  </view>
-</view>
+
 <!-- 底部 -->
 <view class='footer' style='height:20rpx;'></view>

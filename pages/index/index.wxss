@@ -126,13 +126,13 @@
 .killer_section_box_right_two_right_title{color: #ffad2b;text-align: center}
 .killer_section_box_right_two_right_depict{font-size: 26rpx;line-height: 26rpx;margin-top: 16rpx;color: #999}
 /* 高手推荐 */
-.recommend{padding: 0 0 35rpx;background-color: #fff;margin-top:20rpx;}
+.recommend{padding: 0 0 35rpx;background-color: #fff;margin-top:20rpx;margin-bottom: 20rpx;}
 .recommend_scroll{padding: 0 30rpx}
-.recommend_scroll_box{float: left;margin: 0 20rpx 0 0;padding: 30rpx 0;width: 213rpx;border: 2rpx solid #dddddd;border-radius: 20rpx}
- .recommend_scroll_box:last-child{margin-right: 0} 
+.recommend_scroll_box{float: left;width: 25%;}
+.recommend_scroll_box:last-child{margin-right: 0} 
 .recommend_scroll_box_userHaed{display: block;margin: 0 auto;width: 84rpx;height: 84rpx;border-radius: 50%;}
-.recommend_scroll_box_userName{margin: 20rpx auto;width: 70%;font-size: 26rpx;color: #333333;text-align: center}
-.recommend_scroll_box_depict{width: 100%;font-size: 26rpx;line-height:26rpx;color: #666;text-align: center}
+.recommend_scroll_box_userName{margin: 20rpx auto;width: 70%;font-size: 26rpx;line-height: 26rpx;color: #333333;text-align: center}
+.recommend_scroll_box_depict{width: 100%;font-size: 24rpx;line-height:24rpx;color: #FF9B74;text-align: center;font-weight: 500}
 .recommend_scroll .btn{margin: 30rpx auto 0;width: 88rpx;height: 38rpx;font-size: 22rpx;color: #e32f37;border: 1px solid #e32f37;border-radius: 20rpx;text-align: center;line-height: 37rpx}
 .index_swiper_shareName {
   color: #141414;

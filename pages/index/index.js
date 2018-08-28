@@ -212,10 +212,10 @@ Page({
           var a = [];
           var b = res.data.data
           if(b!=''){
-            for (var i = 0; i < 3 && i < b.length; i++) {
+            for (var i = 0; i < 4 && i < b.length; i++) {
               if (b[i].id == app.localUserData.user_id) {
-                if (b[3]) {
-                  a.push(b[3])
+                if (b[4]) {
+                  a.push(b[4])
                 }
               } else {
                 a.push(b[i])
