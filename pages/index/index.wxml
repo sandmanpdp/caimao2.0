@@ -1,43 +1,5 @@
 <!--index.wxml-->
-<!-- 导航 -->
-<!-- <view class='readMask' wx:if="{{authStatus}}">
-  <view class='authBox'> -->
-    <!-- <auth-component></auth-component> -->
-    <!-- <view class="wrapper">
-  <view class='alertBox'>
-    <view class='alertTitle'>
-      登陆授权
-    </view>
-    <view class='content'>
-      <view class='logo'>
-        <image class='logoImg' src='../images/integral_nav4.png'></image>
-      </view>
-      <view class='contentTitle'>
-        股先森申请获得以下权限:
-      </view>
-      <view class='contentDetail'>
-        获取你的公开信息（昵称、头像等）
-        如果拒绝，则功能不能正常使用和页面展示不全。
-      </view>
-    </view>
-    <view class='btnBox'>
-      <view class='denyBtn' catchtap='denyAuth'>
-        拒绝
-        <button class='btn'></button>
-      </view>
-      <view class='commitBtn'>
-        接受
-        <button class='btn' open-type='getUserInfo' bindgetuserinfo="onGotUserInfo"></button>
-      </view>
-    </view>
-  </view>
-</view>
-
-  </view>
-</view> -->
-
 <view class='nav'>
-
   <!-- 热门 -->
   <navigator url="/pages/notelist/notelist?type=hot" open-type='navigate' hover-class="navigator-hover">
     <view class='nav_icon nav_hot'>
