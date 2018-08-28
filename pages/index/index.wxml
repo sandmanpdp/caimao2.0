@@ -1,6 +1,6 @@
 <!--index.wxml-->
 <view class='nav'>
-<!-- 导航栏四个按钮 -->
+  <!-- 导航栏四个按钮 -->
   <view class='clearfix'>
     <!-- 热门 -->
     <navigator url="/pages/notelist/notelist?type=hot" open-type='navigate' hover-class="navigator-hover">
@@ -83,19 +83,20 @@
       </view>
     </navigator>
   </view>
+  <!-- 原先1.0版本热门笔记代码 -->
   <!-- <swiper autoplay='true' interval='4000' duration='800' circular='true' previous-margin='35rpx' next-margin='35rpx' class='hot_scroll' scroll-x="true" bindscrolltoupper="upper" bindscrolltolower="lower" bindscroll="scroll" scroll-into-view="{{toView}}"> -->
-    <!-- 列表渲染 -->
-    <!-- <swiper-item class='scroll-view-item' wx:for="{{hot}}"> -->
-      <!-- 内容 -->
-      <!-- <view class='hot_section'> -->
-        <!-- 涂鸦 one -->
-        <!-- <view class='hot_section_daub_one'></view> -->
-        <!-- 涂鸦 two -->
-        <!-- <view class='hot_section_daub_two'></view> -->
-        <!-- 内容 -->
-        <!-- <view class='hot_section_box' catch:tap="{{item.is_look==-1?'buyFun':'noteReadFun'}}" id='{{item.id}}' data-uid='{{item.user_id}}'> -->
-          <!-- 上半部分 -->
-          <!-- <view class='hot_section_box_modular_one clearfix'>
+  <!-- 列表渲染 -->
+  <!-- <swiper-item class='scroll-view-item' wx:for="{{hot}}"> -->
+  <!-- 内容 -->
+  <!-- <view class='hot_section'> -->
+  <!-- 涂鸦 one -->
+  <!-- <view class='hot_section_daub_one'></view> -->
+  <!-- 涂鸦 two -->
+  <!-- <view class='hot_section_daub_two'></view> -->
+  <!-- 内容 -->
+  <!-- <view class='hot_section_box' catch:tap="{{item.is_look==-1?'buyFun':'noteReadFun'}}" id='{{item.id}}' data-uid='{{item.user_id}}'> -->
+  <!-- 上半部分 -->
+  <!-- <view class='hot_section_box_modular_one clearfix'>
             <view class='hot_section_box_modular_one_left'>
               <view class='inde_swiper_shareInfo_box'>
                 <view class='index_swiper_shareName'>{{item.share}}</view>
@@ -114,18 +115,68 @@
               <view class='hot_section_box_modular_one_right_two'>笔记价格</view>
             </view>
           </view> -->
-          <!-- 下半部分  -->
-          <!-- <view class='hot_section_box_modular_two clearfix'>
+  <!-- 下半部分  -->
+  <!-- <view class='hot_section_box_modular_two clearfix'>
             <image class='hot_section_box_modular_two_userHead' src='{{item.avatar}}' lazy-load='true'></image>
             <view class='hot_section_box_modular_two_userName tw1'>{{item.name}}</view> -->
-            <!-- <view class='hot_section_box_modular_two_depict tw1'>累计涨幅{{item.sum_increase}}%</view> -->
-            <!-- <view class='hot_section_box_modular_two_btn' catch:tap="{{item.is_look==-1?'buyFun':'noteReadFun'}}" id='{{item.id}}' data-uid='{{item.user_id}}'>阅 读</view>
+  <!-- <view class='hot_section_box_modular_two_depict tw1'>累计涨幅{{item.sum_increase}}%</view> -->
+  <!-- <view class='hot_section_box_modular_two_btn' catch:tap="{{item.is_look==-1?'buyFun':'noteReadFun'}}" id='{{item.id}}' data-uid='{{item.user_id}}'>阅 读</view>
           </view>
         </view>
       </view>
     </swiper-item>
   </swiper> -->
-  
+  <view class='hot-noteList-box'>
+    <view class='killer_section_box' catchtap="{{item.readOrbuyFun}}" id="{{'box_'+item.id}}" data-uid='{{item.user_id}}' wx:for="{{hot}}">
+      <!-- 图标 -->
+      <view class='killer_section_icon_line'></view>
+      <!-- 购买按钮样式状态：true/false -->
+      <!-- 付费 -->
+      <view>
+        <!-- <view class="killer_section_icon_buy buy_true}}" catchtap="{{item.is_look == -1 && item.price != 0?'buyFun':'readFun'}}" id="{{'readBtn_'+item.id}}" data-uid='{{item.user_id}}'>{{item.is_look == -1 && item.price != 0?'付费阅读':'阅 读'}}</view> -->
+        <view class="killer_section_icon_buy buy_true}}" catchtap="{{item.readOrbuyFun}}" id="{{'readBtn_'+item.id}}" data-uid='{{item.user_id}}'>{{item.readOrbuyFun == 'buyFun' ?'付费阅读':'阅 读'}}</view>
+        <view class="killer_section_icon_trigon trigon_true}}"></view>
+      </view>
+      <!-- 左侧内容 -->
+      <view class='killer_section_box_left'>
+        <image class='killer_section_box_left_userHead' src='{{item.avatar}}'></image>
+        <view class='killer_section_box_left_userName tw1'>{{item.name}}</view>
+        <view class='killer_section_box_left_depict tw1'>累计10篇涨幅{{item.sum}}%</view>
+      </view>
+      <!-- 右侧内容 -->
+      <view class='killer_section_box_right pstRelative'>
+        <view class='seal' wx:if="{{item.is_reach==0}}">
+          <image src='../images/sealUnreach.png'></image>
+        </view>
+        <view class='seal' wx:if="{{item.is_reach==1}}">
+          <image src='../images/sealReach.png'></image>
+        </view>
+        <view class='killer_section_box_right_one'>
+          <view class='killer_sectsion_box_right_one_title tw1'>{{item.code}}</view>
+          <view class='clearfix'>
+            <view class='killer_section_box_right_one_depict'>#{{item.tag}}</view>
+          </view>
+        </view>
+        <view class='killer_section_box_right_two clearfix'>
+          <view class='killer_section_box_right_two_left'>
+            <view class='killer_section_box_right_two_left_title tw1'>{{item.day}}日{{item.rise}}%</view>
+            <view class='killer_section_box_right_two_left_depict'>目标涨幅</view>
+          </view>
+          <view class='killer_section_box_right_two_right'>
+            <view class='killer_section_box_right_two_right_title' style='position:relative;'>
+              <image src='../images/yuanbaoO.png' class='needPriceYuanbao' wx:if="{{item.readOrbuyFun == 'buyFun' }}"></image>
+
+              <text class="{{item.readOrbuyFun == 'buyFun' ?'needPriceText':'freePriceText'}}">
+                {{item.readOrbuyFun == 'buyFun' ? item.price : '免费'}}
+              </text>
+
+            </view>
+            <view class='killer_section_box_right_two_right_depict'>笔记价格</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
 </view>
 <!-- 热门观点 -->
 <view class='view'>

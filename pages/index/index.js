@@ -89,6 +89,56 @@ Page({
       authStatus : false
     })
   },
+  //购买方法
+  buyFun: function (e) {
+    console.log("buyFun");
+    // var that = this
+    // wx.request({
+    //   url: "https://zhitouapi.romawaysz.com/note/createRead",
+    //   data: {
+    //     sId: e.currentTarget.id.split("_")[1],
+    //     type: 2,
+    //     token: app.union_id
+    //   },
+    //   success: function (res) {
+    //     if (res.data.error == 0) {
+    //       wx.navigateTo({
+    //         url: '/pages/notedetails/notedetails?id=' + e.currentTarget.id.split("_")[1] + '&uid=' + e.currentTarget.dataset.uid
+    //       })
+    //     } else {
+    //       wx.navigateTo({
+    //         url: '/pages/notebuy/notebuy?id=' + e.currentTarget.id.split("_")[1] + '&uid=' + e.currentTarget.dataset.uid
+    //       })
+    //     }
+    //   }
+    // })
+    wx.navigateTo({
+      url: '/pages/notebuy/notebuy?id=' + e.currentTarget.id.split("_")[1] + '&uid=' + e.currentTarget.dataset.uid
+    })
+  },
+
+  // 阅读方法
+  readFun: function (e) {
+    console.log("readFun");
+    var that = this;
+    if (that.data.user_id != e.currentTarget.dataset.uid) {
+
+      wx.request({
+        url: "https://zhitouapi.romawaysz.com/note/createRead",
+        data: {
+          sId: e.currentTarget.id.split("_")[1],
+          type: 2,
+          token: app.union_id
+        },
+        success: function (res) {
+
+        }
+      })
+    }
+    wx.navigateTo({
+      url: '/pages/notedetails/notedetails?id=' + e.currentTarget.id.split("_")[1] + '&uid=' + e.currentTarget.dataset.uid
+    })
+  },
 
   getUserData:function(){
     var that = this
@@ -111,6 +161,11 @@ Page({
             for (var i = 0; i < 3 && i < b.length; i++) {
               a.push(b[i])
               a[i]['day'] = app.getThisDay(b[i].created_at, b[i].work_date)
+              if (b[i].is_look == -1 && b[i].price != 0 && b[i].is_reach == -1) { //没看过 付费 进行中
+                a[a.length - 1]['readOrbuyFun'] = 'buyFun'
+              } else {
+                a[a.length - 1]['readOrbuyFun'] = 'readFun'
+              }
             }
             that.setData({
               hot: a
