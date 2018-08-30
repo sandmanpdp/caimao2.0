@@ -2,7 +2,7 @@
   <!-- 输入框 -->
   <view class='input'>
     <input bindinput='problemDateChange' class='' placeholder='提问不得少于10个字' placeholder-class='cob9b9b9'></input>
-    <view>悬赏{{sumValue}}元</view>
+    <view>悬赏{{sumValue}}元宝</view>
   </view>
   <!-- 关联股票 -->
   <view class='shares pr'>
@@ -10,11 +10,11 @@
       <text class='fl'>关联股票</text>
       <input bindinput='bindKeyInput' value='{{shareValue}}' class='fl' placeholder='输入股票名称/代码' placeholder-class='cob9b9b9' bindblur="shareMaskEnd" bindconfirm='confirmShare'></input>
       <!-- 修改 matchingState 状态 -->
-    <view wx:if="{{matchingState}}" class='codeMask codeMaskTop'>
-      <view wx:for="{{showStockCodeArray}}" id="{{item.code}}" data-text='{{item.name}}' catchtap='setCodeFun'>{{item.name}}</view>
+      <view wx:if="{{matchingState}}" class='codeMask codeMaskTop'>
+        <view wx:for="{{showStockCodeArray}}" id="{{item.code}}" data-text='{{item.name}}' catchtap='setCodeFun'>{{item.name}}</view>
+      </view>
     </view>
-    </view>
-    
+
     <view class='clearfix'>
       <text class='fl'>指定牛人</text>
       <input class='fl' placeholder='最多可选3人或不选' placeholder-class='cob9b9b9'></input>
@@ -30,10 +30,25 @@
   <view class='sum'>
     <view>选择悬赏金额</view>
     <view class='clearfix'>
-      <view id='s0' class="fl {{sumIndex==0?'bgfc7946':''}}" catchtap='setSumIndexFun'>10元鸡腿</view>
-      <view id='s1' class="fl {{sumIndex==1?'bgfc7946':''}}" catchtap='setSumIndexFun'>30元便当</view>
-      <view id='s2' class="fl {{sumIndex==2?'bgfc7946':''}}" catchtap='setSumIndexFun'>50元全家桶</view>
-      <view id='m2' class="fl {{sumIndex==3?'bgfc7946':''}}" catchtap='setMaskIndexFun'>{{sumOther}}</view>
+      <view id='s0' class="moneyBox fl {{sumIndex==0?'bgfc7946':''}}" catchtap='setSumIndexFun'>
+        <view class='yuanbao'>
+          <image src="{{sumIndex==0?'../images/yuanbaoW.png':'../images/yuanbaoN.png'}}"></image>
+        </view>
+        20
+      </view>
+      <view id='s1' class="moneyBox fl {{sumIndex==1?'bgfc7946':''}}" catchtap='setSumIndexFun'>
+        <view class='yuanbao'>
+          <image src="{{sumIndex==1?'../images/yuanbaoW.png':'../images/yuanbaoN.png'}}"></image>
+        </view>
+        50
+      </view>
+      <view id='s2' class="moneyBox fl {{sumIndex==2?'bgfc7946':''}}" catchtap='setSumIndexFun'>
+        <view class='yuanbao'>
+          <image src="{{sumIndex==2?'../images/yuanbaoW.png':'../images/yuanbaoN.png'}}"></image>
+        </view>
+        88
+      </view>
+      <view id='m2' class="moneyBox fl {{sumIndex==3?'bgfc7946':''}}" catchtap='setMaskIndexFun'>{{sumOther}}</view>
     </view>
     <view class='depict'>赏金越高，越能吸引高手回答哦</view>
   </view>
@@ -56,7 +71,7 @@
   <view class='mask' wx:if="{{maskIndex==2?true:false}}">
     <view class='two'>
       <view>输入其他金额</view>
-      <input type='number' placeholder='输入10的倍数金额' placeholder-class='cob9b9b9' bindinput='sumOtherDateChange'></input>
+      <input type='number' placeholder='输入20的倍数金额' placeholder-class='cob9b9b9' bindinput='sumOtherDateChange'></input>
       <view catchtap='setOtherSumFun'>确定</view>
       <view id='m0' catch:tap='setMaskIndexFun'>取消</view>
     </view>
