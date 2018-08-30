@@ -1,0 +1,39 @@
+/* pages/component/write/write.wxss */
+/* view {
+  box-sizing: border-box;
+} */
+.write-pen {
+  position: fixed;
+  bottom: 30rpx;
+  right: 50rpx;
+}
+.write-pen image {
+  width: 118rpx;
+  height: 118rpx;
+}
+.mask-box {
+  box-sizing: border-box;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 30rpx 50rpx;
+  background: #fff;
+}
+.mask-box image {
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.write-item {
+  display: inline-block;
+  width: 33%;
+  height: 100rpx;
+  text-align: center;
+}
+.close {
+  width: 100%;
+  background: #fff;
+  color: #999;
+  text-align: center;
+  line-height: 40rpx;
+}

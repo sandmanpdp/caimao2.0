@@ -1,0 +1,63 @@
+<!--pages/newsList/newsList.wxml-->
+<view class='news-slice-box'>
+  <view class='news-slice' catchtap='getNews' data-type='2'>
+    <view class='clearfix'>
+      <image class='left-image fl' src='../images/hot.png'></image>
+      <view class='fl text-box'>
+        <view class='title'>笔记</view>
+        <view class='detail'>笔记-是发动机可是还是看合适的发山东矿机发灰色空间</view>
+      </view>
+      <view class='list_box_number fl'>
+        99
+      </view>
+      <view class='arrow fr'>
+        <image src='../images/icon_right_arrow.png'></image>
+      </view>
+    </view>
+  </view>
+  <view class='news-slice' catchtap='getNews' data-type='1'>
+    <view class='clearfix'>
+      <image class='left-image fl' src='../images/hot.png'></image>
+      <view class='fl text-box'>
+        <view class='title'>观点</view>
+        <view class='detail'>观点-是发动机可是还是看合适的发山东矿机发灰色空间</view>
+      </view>
+      <view class='list_box_number fl'>
+        99
+      </view>
+      <view class='arrow fr'>
+        <image src='../images/icon_right_arrow.png'></image>
+      </view>
+    </view>
+  </view>
+  <view class='news-slice' catchtap='getNews' data-type='6'>
+    <view class='clearfix'>
+      <image class='left-image fl' src='../images/hot.png'></image>
+      <view class='fl text-box'>
+        <view class='title'>问股诊股</view>
+        <view class='detail'>问股诊股-是发动机可是还是看合适的发山东矿机发灰色空间</view>
+      </view>
+      <view class='list_box_number fl'>
+        99
+      </view>
+      <view class='arrow fr'>
+        <image src='../images/icon_right_arrow.png'></image>
+      </view>
+    </view>
+  </view>
+  <view class='news-slice' catchtap='getNews' data-type='3'>
+    <view class='clearfix'>
+      <image class='left-image fl' src='../images/hot.png'></image>
+      <view class='fl text-box'>
+        <view class='title'>系统消息</view>
+        <view class='detail'>系统消息-是发动机可是还是看合适的发山东矿机发灰色空间</view>
+      </view>
+      <view class='list_box_number fl'>
+        99
+      </view>
+      <view class='arrow fr'>
+        <image src='../images/icon_right_arrow.png'></image>
+      </view>
+    </view>
+  </view>
+</view>

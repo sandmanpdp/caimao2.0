@@ -7,7 +7,8 @@ Page({
     hot: [], //热门笔记
     view: [], //热门观点
     recommend: [] ,//高手推荐
-    authStatus: app.authStatus
+    authStatus: app.authStatus,
+    isShow : false
   },
   //监听页面加载
   onLoad: function () {
@@ -41,7 +42,9 @@ Page({
     }, 100)
     
   },
-
+  openMsk : function (e) {
+    console.log('#####')
+  },
   onGotUserInfo : function (e) {
     var that = this;
     if (app.globalData.userInfo == null) {
@@ -53,7 +56,6 @@ Page({
       wx.getSetting({
         success(res) {
           if (!res.authSetting['scope.userInfo']) {
-            
           } else {
             //调用应用实例的方法获取全局数据
             app.getUserInfo(function (userInfo) {
@@ -140,6 +142,11 @@ Page({
     })
   },
 
+  detailsAskFun : function () {
+    wx.navigateTo({
+      url: '/pages/askdetails/askdetails',
+    })
+  },
   getUserData:function(){
     var that = this
     // 热门笔记请求

@@ -57,5 +57,5 @@
   <!-- 下拉提示 -->
   <view class='drop'>下拉刷新   加载更多内容</view>
   <!-- 写问股 -->
-  <image class='write' src='../images/icon_write.png' catchtap='writeAskFun'></image>
+  <image style='display:none' class='write' src='../images/icon_write.png' catchtap='writeAskFun'></image>
 </view>

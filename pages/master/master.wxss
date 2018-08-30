@@ -21,7 +21,7 @@
 /* 主体 */
 /* .section{margin-top: 20rpx} */
 .section_nav{height: 98rpx;background-color: #fff;border-bottom: 2rpx solid #dddddd}
-.section_nav_box{width: 50%;line-height: 98rpx;text-align: center;font-size: 34rpx;color: #b9b9b9}
+.section_nav_box{width: 33.33%;line-height: 98rpx;text-align: center;font-size: 34rpx;color: #b9b9b9}
 .section_nav_true{color: #2772ff}
 .section_show_box{margin-top: 20rpx;padding-bottom: 26rpx;background-color: #fff}
 .section_show_box:first-child{margin-top: 0}

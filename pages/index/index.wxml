@@ -30,7 +30,9 @@
       </view>
       <view class='nav-btm-text'>收益高</view>
     </navigator>
+    <!-- 测试问股页面 -->
   </view>
+  <!-- 测试问股 -->
   <view class='nav-swiper-box'>
     <swiper>
       <swiper-item class='nav-swiper-item'>
@@ -207,9 +209,9 @@
   <!-- 标题 -->
   <view class='hot_title'>
     <icon class='hot_title_icon'></icon>
-    <text class='hot_title_text'>热门观点</text>
+    <text class='hot_title_text'>问股诊股</text>
     <!-- 更多 -->
-    <navigator url="/pages/view/view" open-type='navigate' hover-class="navigator-hover" class='fr'>
+    <navigator url="/pages/ask/ask" open-type='navigate' hover-class="navigator-hover" class='fr'>
       <view class='hot_title_more'>
         <text>更多</text>
         <image class='icon_right_arrow' src='../images/icon_right_arrow.png'></image>
@@ -218,7 +220,8 @@
   </view>
   <!-- 内容 -->
   <view class='section'>
-    <view class='box' wx:for="{{view}}" id='{{item.id}}' catchtap='viewReadFun'>
+    <!-- 热门观点列表2.0版本不展示 -->
+    <!-- <view class='box' wx:for="{{view}}" id='{{item.id}}' catchtap='viewReadFun'>
       <view class='title'>{{item.title}}</view>
       <view class='text tw3'>{{item.price > 0 ? '精彩内容，付费即可阅读':item.intro}}</view>
       <view class='info clearfix'>
@@ -233,9 +236,56 @@
           <text class='number'>{{item.comment}}</text>
         </view>
       </view>
+    </view> -->
+    <view class='ask-box'>
+      <view class='box' style='padding-top:0' catchtap='detailsAskFun'>
+        <view class='title clearfix'>
+          <image class='fl' src='../images/ta.jpg'></image>
+          <text class='fl'>股友tony</text>
+          <text class='fr'>50</text>
+        </view>
+        <view class='text tw4'>我是菜鸟，想买5只左右股票长期1-2年持有等大涨，请高手大师指教。现在手里有京东方A，丰原药业，中天科技，中远海控，厦门国贸，浙商证券，(前期割了中国平安，招商银行，TCL集团，中兴通...</view>
+        <view class='fun clearfix'>
+          <view class='fl'>还剩
+            <text class='cofc7946'>30</text>小时结束</view>
+          <view class='fr co3f86ff'>我来回答</view>
+        </view>
+      </view>
+      <view class='box' catchtap='detailsAskFun'>
+        <view class='title clearfix'>
+          <image class='fl' src='../images/ta.jpg'></image>
+          <text class='fl'>股友tony</text>
+          <text class='fr'>50</text>
+        </view>
+        <view class='text tw4'>我是菜鸟，想买5只左右股票长期1-2年持有等大涨，请高手大师指教。现在手里有京东方A，丰原药业，中天科技，中远海控，厦门国贸，浙商证券，(前期割了中国平安，招商银行，TCL集团，中兴通...</view>
+        <view class='fun clearfix'>
+          <view class='fl'>还剩
+            <text class='cofc7946'>30</text>小时结束</view>
+          <view class='fr co3f86ff'>我来回答</view>
+        </view>
+      </view>
+      <view class='box' catchtap='detailsAskFun'>
+        <view class='title clearfix'>
+          <image class='fl' src='../images/ta.jpg'></image>
+          <text class='fl'>股友tony</text>
+          <text class='fr'>50</text>
+        </view>
+        <view class='text tw4'>我是菜鸟，想买5只左右股票长期1-2年持有等大涨，请高手大师指教。现在手里有京东方A，丰原药业，中天科技，中远海控，厦门国贸，浙商证券，(前期割了中国平安，招商银行，TCL集团，中兴通...</view>
+        <view class='fun clearfix'>
+          <view class='fl'>还剩
+            <text class='cofc7946'>30</text>小时结束</view>
+          <view class='fr co3f86ff'>我来回答</view>
+        </view>
+      </view>
     </view>
   </view>
+  <!-- <view class=''>
+    <write-pen bind:openMsk='openMsk'></write-pen>
+  </view> -->
 </view>
-
+<view>
+  
+  <write-pen></write-pen>
+</view>
 <!-- 底部 -->
 <view class='footer' style='height:20rpx;'></view>

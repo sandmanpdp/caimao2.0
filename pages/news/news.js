@@ -60,23 +60,23 @@ Page({
 
   },
   
-  bindChange : function (e) {
-    var that = this;
-    var type;
-    var index = e.detail.value;
-    if (index == 0) {
-      type = -1;
-    }else {
-      type = index;
-    }
-    that.setData({
-      type : type,
-      optionText: that.data.optionOne[index].text,
-      otherPage : 1
-    })
-    //that.getNoteListNewsFun();
-    that.onPullDownRefresh();
-  },
+  // bindChange : function (e) {
+  //   var that = this;
+  //   var type;
+  //   var index = e.detail.value;
+  //   if (index == 0) {
+  //     type = -1;
+  //   }else {
+  //     type = index;
+  //   }
+  //   that.setData({
+  //     type : type,
+  //     optionText: that.data.optionOne[index].text,
+  //     otherPage : 1
+  //   })
+  //   //that.getNoteListNewsFun();
+  //   that.onPullDownRefresh();
+  // },
 
   getNoteListNewsFun:function(e){  //获取其他消息
     var that=this;
@@ -168,7 +168,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    this.setData({
+      type : options.type
+    })
   },
 
   /**

@@ -1,12 +1,12 @@
 <!-- 头部 -->
-<view class='head clearfix'>
-  <picker bindchange="bindChange" range='{{optionOne}}' range-key='text'>
+<!-- <view class='head clearfix'> -->
+  <!-- <picker bindchange="bindChange" range='{{optionOne}}' range-key='text'>
     <view class='picker'> 
       <image class='box_picker_icon' src='../images/icon_bottom_arrow.png'></image>
       {{optionText}}
       <view class='spot' wx:if="{{otherNew>0 && optionText == '所有' ?true:false}}">{{otherNew}}</view>
     </view>
-  </picker>
+  </picker> -->
   <!-- 选项一 -->
   <!-- <view class='fl head_condition_noe clearfix' catch:tap='defaultOptFun' id='headOne'> -->
     <!-- 默认选项 -->
@@ -24,7 +24,7 @@
       <icon hidden="{{item.state ? false : true}}" class='fl success_no_circle' type='success_no_circle' size='18' color='#b9b9b9'></icon>
     </view>
   </view> -->
-</view>
+<!-- </view> -->
 <!-- 导航 -->
 <!-- <view class='nav clearfix'>
   <view id='0' class="fl {{navIndex==0?'co3f86ff':''}}" catch:tap='setNavIndexFun'>笔记<view class='spot' wx:if="{{false}}"></view>

@@ -1,0 +1,68 @@
+/* pages/newsList/newsList.wxss */
+
+view {
+  box-sizing: border-box;
+}
+.news-slice-box {
+  background: #fff;
+}
+.news-slice-box .news-slice:last-child {
+  border-bottom: none;
+}
+
+.news-slice {
+  padding: 20rpx 0;
+  margin: 0 30rpx;
+  border-bottom: 2rpx solid #ddd;
+}
+
+.left-image {
+  width: 100rpx;
+  height: 100rpx;
+  padding-right: 30rpx;
+}
+
+.text-box {
+  width: 68%;
+}
+
+.title {
+  width: 70%;
+  font-size: 30rpx;
+  line-height: 30rpx;
+  color: #666;
+  margin-top: 15rpx;
+}
+
+.detail {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 85%;
+  font-size: 26rpx;
+  line-height: 26rpx;
+  color: #b9b9b9;
+  margin-top: 15rpx;
+}
+
+.arrow {
+  margin-top: 28rpx;
+}
+
+.arrow, .arrow image {
+  width: 19rpx;
+  height: 34rpx;
+}
+
+.list_box_number {
+  margin-right: 20rpx;
+  padding: 7rpx 11rpx 8rpx;
+  background-color: #e32f37;
+  color: #fff;
+  font-size: 22rpx;
+  line-height: 25rpx;
+  border-radius: 22rpx;
+  min-width: 25rpx;
+  margin-top: 30rpx;
+  text-align: center;
+}

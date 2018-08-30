@@ -51,7 +51,7 @@
   <view class='section_nav clearfix'>
     <view class="fl section_nav_box {{order == 0 ? 'section_nav_true' : ''}}" catch:tap='navCutFun' id="0">笔记( {{master.note_num}} )</view>
     <view class="fl section_nav_box {{order == 1 ? 'section_nav_true' : ''}}" catch:tap='navCutFun' id="1">观点( {{master.view_num}} )</view>
-    <!-- <view class="fl section_nav_box {{order == 2 ? 'section_nav_true' : ''}}" catch:tap='navCutFun' id="2">问股( {{askTheStockNav}} )</view> -->
+    <view class="fl section_nav_box {{order == 2 ? 'section_nav_true' : ''}}" catch:tap='navCutFun' id="2">问股( {{askTheStockNav}} )</view>
   </view>
   <!-- 显示区 -->
   <view class='section_show'>

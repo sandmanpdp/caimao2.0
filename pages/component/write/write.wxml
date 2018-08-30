@@ -1,0 +1,10 @@
+<!--pages/component/write/write.wxml-->
+<view class='write-pen' catchtap='writeFun'>
+  <image src='../../images/write.png'></image>
+</view>
+<view class='mask-box' wx:if="{{isShow}}">
+  <view catchtap='toNote' class='write-item'><image src='../../images/write.png'></image></view>
+  <view catchtap='toNote' class='write-item'><image src='../../images/write.png'></image></view>
+  <view catchtap='toAsk' class='write-item'><image src='../../images/write.png'></image></view>
+  <view class='close' catchtap='closeMask'>x</view>
+</view>

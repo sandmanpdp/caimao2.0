@@ -69,7 +69,9 @@ Page({
     })
   },
 
-
+  submit:function(){
+    console.log(this.data.problemValue)
+  },
 
   /**
    * 生命周期

@@ -37,6 +37,7 @@
 .killer_section_box_right{float: right;width: 376rpx;}
 .killer_section_box_right_one_title{margin-bottom: 6rpx;font-size: 38rpx;color: #141414;line-height: 38rpx;width: 200rpx}
 .killer_section_box_right_one_depict{float: left;margin: 5rpx 20rpx 8rpx 0;font-size: 24rpx;color: #2772ff}
+.killer_sectsion_box_right_one_title {font-size: 36rpx;line-height: 36rpx;}
 .killer_section_box_right_two_left{float: left}
 .killer_section_box_right_two_left_title{width: 225rpx;font-size: 36rpx;color: #e32f37}
 .killer_section_box_right_two_left_depict{font-size: 26rpx;color: #b9b9b9}
