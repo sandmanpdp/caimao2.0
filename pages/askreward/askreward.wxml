@@ -5,11 +5,16 @@
     <view>悬赏{{sumValue}}元</view>
   </view>
   <!-- 关联股票 -->
-  <view class='shares'>
+  <view class='shares pr'>
     <view class='clearfix'>
       <text class='fl'>关联股票</text>
-      <input class='fl' placeholder='输入股票名称/代码' placeholder-class='cob9b9b9'></input>
+      <input bindinput='bindKeyInput' value='{{shareValue}}' class='fl' placeholder='输入股票名称/代码' placeholder-class='cob9b9b9' bindblur="shareMaskEnd" bindconfirm='confirmShare'></input>
+      <!-- 修改 matchingState 状态 -->
+    <view wx:if="{{matchingState}}" class='codeMask codeMaskTop'>
+      <view wx:for="{{showStockCodeArray}}" id="{{item.code}}" data-text='{{item.name}}' catchtap='setCodeFun'>{{item.name}}</view>
     </view>
+    </view>
+    
     <view class='clearfix'>
       <text class='fl'>指定牛人</text>
       <input class='fl' placeholder='最多可选3人或不选' placeholder-class='cob9b9b9'></input>

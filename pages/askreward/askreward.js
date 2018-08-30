@@ -13,6 +13,11 @@ Page({
     problemValue: null, //提问值
     sharesValue: null, //股票值
     oxValue: [], //指定牛人值
+    matchingState:false, //股票提示
+    showStockCodeArray : [], //股票代码
+    matchingStockCodeArray:[],
+    shareValue : '',
+    shareCode : ''
   },
   setMaskIndexFun: function (e) { //遮罩选择
     this.setData({
@@ -69,8 +74,117 @@ Page({
     })
   },
 
+  // 股票获取方法
+  bindKeyInput: function (e) {
+    var a = e.detail.value;
+    var b = this.data.matchingStockCodeArray;
+    var c = [];
+    var d = false;
+    this.setData({
+      shareValue: a
+    })
+    if (e.detail.cursor != 0) {
+      for (var i = 0; i < b.length; i++) {
+        if (c.length < 10) {
+
+          if (b[i].searchName.indexOf(a) == 0 || b[i].searchName.indexOf(a.toUpperCase()) >= 7) {
+            c.push(b[i])
+            d = true
+          }
+        }
+      }
+    }
+    this.setData({
+      matchingState: d,
+      showStockCodeArray: c,
+      // shareValue: e
+    })
+  },
+
+  //获取股票数据
+  getStock : function  () {
+    var that = this;
+    wx.request({
+      url: 'https://share.romawaysz.com/static/upload/code.js',
+      success: function (res) {
+        var a = res.data
+        var b = []
+        for (var i = 0; i < a.length; i++) {
+          var c = {
+            name: a[i][3] + '(' + a[i][2] + ')',
+            searchName: a[i][3] + '(' + a[i][2] + ')' + a[i][4],
+            code: a[i][1]
+          }
+          b.push(c)
+        }
+        that.data.matchingStockCodeArray = b
+      }
+    })
+  },
+
+  // 选择匹配股票代码的方法
+  setCodeFun: function (e) {
+    console.log(e.currentTarget)
+    var a = e.currentTarget.dataset.text
+    var b = e.currentTarget.id
+    this.setData({
+      shareValue: a,
+      shareCode: b
+    })
+  },
+  shareMaskEnd: function () {  //关闭股票代码遮罩
+    var that = this
+    if (that.data.shareValue != '') {
+      setTimeout(function () {
+        var a = that.data.showStockCodeArray
+        var b = /[0-9]{6}\([0-9a-zA-Z\u2E80-\u9FFF]+\)/
+        var c = that.data.shareValue
+        var d = a[0].code
+        if (c.match(b) != null) {
+          if (a.length == 1) {
+            that.data.shareCode = d
+          }
+      
+          that.setData({
+            matchingState: false
+          })
+        } else if (that.data.showStockCodeArray.length == 1) {
+          that.setData({
+            shareValue: that.data.showStockCodeArray[0].name,
+            shareCode: that.data.showStockCodeArray[0].code,
+            matchingState: false
+          })
+        
+        }
+        else {
+          wx.showToast({
+            title: '请输入正确的股票代码或名称',
+            icon: 'none',
+            duration: 2000,
+            mask: true
+          })
+          that.setData({
+            shareValue: '',
+            matchingState: false
+          })
+        }
+      }, 500)
+    }
+  },
+  //选择唯一的股票代码
+  confirmShare: function () {
+    if (this.data.showStockCodeArray.length == 1) {
+      this.setData({
+        shareValue: this.data.showStockCodeArray[0].name,
+        shareCode: this.data.showStockCodeArray[0].code
+      })
+    }
+  },
+
   submit:function(){
+    
     console.log(this.data.problemValue)
+    console.log(this.data.shareValue)
   },
 
   /**
@@ -78,7 +192,7 @@ Page({
    * 函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    this.getStock();
   },
   
   /**

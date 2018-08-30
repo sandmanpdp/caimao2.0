@@ -36,3 +36,9 @@
 .mask .two input{box-sizing: border-box;margin: 15rpx auto 40rpx;padding: 0 30rpx;width: 420rpx;height: 76rpx;border: 1px solid #fc7946;border-radius: 38rpx;font-size: 26rpx;color: #fc7946}
 .mask .two view:nth-child(3){margin: 0 auto 30rpx;width: 260rpx;height: 70rpx;text-align: center;background-color: #fc7946;color: #fff;font-size: 30rpx;line-height: 70rpx;border-radius: 35rpx;}
 .mask .two view:nth-child(4){margin: 0 auto;width: 260rpx;text-align: center;font-size: 26rpx;color: #b9b9b9;line-height: 26rpx}
+/* 股票代码遮罩 */
+.codeMask{box-sizing: border-box;position: absolute;left: 0;padding: 50rpx 10% 20rpx;width: 100%;background: #f0f0f0;z-index: 99}
+.codeMask>view{float: left;padding: 0 0 30rpx 0;width: 42%;font-size: 24rpx;line-height: 24rpx;color: #666}
+.codeMask>view:nth-child(even){float: right}
+.codeMaskTop{top: 49%}
+.codeMaskBottom{bottom:100%}
