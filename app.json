@@ -57,7 +57,8 @@
     "pages/profitPage/profitPage",
     "pages/identityAuth/identityAuth",
     "pages/authSuccess/authSuccess",
-    "pages/authPage/authPage"
+    "pages/authPage/authPage",
+    "pages/newsList/newsList"
   ],
   "window": {
     "navigationBarBackgroundColor": "#2772ff",
@@ -92,7 +93,7 @@
         "selectedIconPath": "pages/images/icon_new_write_true.png"
       },
       {
-        "pagePath": "pages/news/news",
+        "pagePath": "pages/newsList/newsList",
         "text": "消息",
         "iconPath": "pages/images/icon_new_follow_false.png",
         "selectedIconPath": "pages/images/icon_new_follow_true.png"
