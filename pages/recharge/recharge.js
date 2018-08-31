@@ -95,7 +95,7 @@ Page({
   getMoney:function(){  //获取充值金额
     this.setData({
       array:[
-        {"top":"充6元","bottom":"得20积分","money":"6","isSelected":false},
+        {"top":"充6元","bottom":"得120积分","money":"6","isSelected":false},
         { "top": "充30元", "bottom": "得600积分", "money": "30", "isSelected": false},
         { "top": "充98元", "bottom": "得1960积分", "money": "98", "isSelected": false },
         { "top": "充298元", "bottom": "得5960积分", "money": "298", "isSelected": false },

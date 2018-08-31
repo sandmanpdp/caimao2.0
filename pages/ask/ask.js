@@ -1,4 +1,5 @@
 // pages/ask/ask.js
+var app = getApp();
 Page({
 
   /**
@@ -6,7 +7,9 @@ Page({
    */
   data: {
     navIndex: 0,  //导航下标
-    maskState: false  //是否显示遮罩
+    maskState: false,  //是否显示遮罩,
+    quizList :[],
+    page : 1,
   },
   setNavIndexFun:function (e) { //导航选择
     this.setData({
@@ -28,25 +31,43 @@ Page({
       url: '/pages/askreward/askreward'
     })
   },
-  detailsAskFun: function () {  //问股详情
+  detailsAskFun: function (e) {  //问股详情
+  var id = e.currentTarget.dataset.id;
     wx.navigateTo({
-      url: '/pages/askdetails/askdetails'
+      url: '/pages/askdetails/askdetails?id='+id
     })
   },
 
-
+  getQuizList: function () {
+    var that = this;
+    var page = that.data.page;
+    wx.request({
+      url: 'https://zhitouapi.romawaysz.com/quiz/list',
+      data: {
+        page: page,
+        size: 10,
+        token: app.union_id
+      },
+      success: function (res) {
+        console.log(res.data.data);
+        that.setData({
+          quizList: res.data.data
+        })
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    this.getQuizList();
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+    
   },
 
   /**

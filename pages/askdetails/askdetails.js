@@ -1,23 +1,49 @@
 // pages/askdetails/askdetails.js
+var app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    navIndex: 0
+    navIndex: 0,
+    id : '',
+    askdetail:''
   },
   setNavIndexFun:function(e){
     this.setData({
       navIndex: (e.currentTarget.id.split('n'))[1]
     })
   },
-  
+  getAskDetail : function () {
+    var that = this;
+    var id = that.data.id;
+    wx.request({
+      url: 'https://zhitouapi.romawaysz.com/quiz/QuizDetails?token='+app.union_id,
+      data :{
+        id : id
+      },
+      success (res) {
+        var resData = res.data.data;
+        var error = res.data.error;
+        if(error == 0){
+          that.setData({
+            askdetail: resData[0]
+          })
+        }
+        console.log(that.data.askdetail)
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    var id = options.id;
+    this.setData({
+      id : id
+    });
+    this.getAskDetail();
   },
 
   /**

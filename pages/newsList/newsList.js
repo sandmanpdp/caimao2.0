@@ -6,7 +6,11 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    otherNew :'',
+    unReadView:'',
+    unReadNote :'',
+    unReadSys:'',
+    unReadAsk :'',
   },
   getNews: function(e) {
     var type = e.currentTarget.dataset.type;
@@ -23,9 +27,13 @@ Page({
         type : 0
       },
       success: function (res) {
-        console.log(res.data.total)
+        console.log(res.data[1].total)
         that.setData({
-          otherNew: parseInt(res.data.total)
+          otherNew: res.data,
+          unReadView: res.data[1].total,
+          unReadNote: res.data[2].total,
+          unReadSys: res.data[3].total,
+          unReadAsk: res.data[6].total,
         })
       }
     })
@@ -41,14 +49,14 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function() {
-
+    
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-
+    this.getUnreadFun()
   },
 
   /**

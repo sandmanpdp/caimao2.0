@@ -8,7 +8,7 @@
         <view class='detail'>笔记-是发动机可是还是看合适的发山东矿机发灰色空间</view>
       </view>
       <view class='list_box_number fl'>
-        99
+        {{unReadNote}}
       </view>
       <view class='arrow fr'>
         <image src='../images/icon_right_arrow.png'></image>
@@ -23,7 +23,7 @@
         <view class='detail'>观点-是发动机可是还是看合适的发山东矿机发灰色空间</view>
       </view>
       <view class='list_box_number fl'>
-        99
+         {{unReadView}}
       </view>
       <view class='arrow fr'>
         <image src='../images/icon_right_arrow.png'></image>
@@ -38,7 +38,7 @@
         <view class='detail'>问股诊股-是发动机可是还是看合适的发山东矿机发灰色空间</view>
       </view>
       <view class='list_box_number fl'>
-        99
+         {{unReadAsk}}
       </view>
       <view class='arrow fr'>
         <image src='../images/icon_right_arrow.png'></image>
@@ -53,7 +53,7 @@
         <view class='detail'>系统消息-是发动机可是还是看合适的发山东矿机发灰色空间</view>
       </view>
       <view class='list_box_number fl'>
-        99
+         {{unReadSys}}
       </view>
       <view class='arrow fr'>
         <image src='../images/icon_right_arrow.png'></image>

@@ -8,40 +8,10 @@ Page({
     view: [], //热门观点
     recommend: [] ,//高手推荐
     authStatus: app.authStatus,
-    isShow : false
+    isShow : false,
+    quizList : ''
   },
-  //监听页面加载
-  onLoad: function () {
-    var that = this
-
-    // app.getUserToken()
-    
-    //调用应用实例的方法获取全局数据
-    app.getUserInfo(function(userInfo){
-      //更新数据
-      that.setData({
-        userInfo:userInfo
-      })
-      app.serverUserData = userInfo
-      var time2=setInterval(function(){
-        if (app.globalData.startState) {
-          app.getserverUserData()
-          clearInterval(time2)
-        }
-      },100)
-      
-    })
-    
-    var time = setInterval(function () {
-      if (app.requestState == true) {
-        setTimeout(function(){
-          that.getUserData()
-        },500)
-        clearInterval(time)
-      }
-    }, 100)
-    
-  },
+  
   openMsk : function (e) {
     console.log('#####')
   },
@@ -142,9 +112,10 @@ Page({
     })
   },
 
-  detailsAskFun : function () {
+  detailsAskFun : function (e) {
+    var id = e.currentTarget.dataset.id;
     wx.navigateTo({
-      url: '/pages/askdetails/askdetails',
+      url: '/pages/askdetails/askdetails?id='+id,
     })
   },
   getUserData:function(){
@@ -305,6 +276,57 @@ Page({
       duration: 2000,
       mask: true
     })
+  },
+
+  getQuizList : function () {
+    var that = this;
+    wx.request({
+      url: 'https://zhitouapi.romawaysz.com/quiz/list',
+      data : {
+        page : 1,
+        size : 3,
+        token: app.union_id
+      },
+      success : function (res) {
+        console.log(res.data.data);
+        that.setData({
+          quizList: res.data.data
+        })
+      }
+    })
+  },
+
+  //监听页面加载
+  onLoad: function () {
+    var that = this
+    // app.getUserToken()
+
+    //调用应用实例的方法获取全局数据
+    app.getUserInfo(function (userInfo) {
+      //更新数据
+      that.setData({
+        userInfo: userInfo
+      })
+      app.serverUserData = userInfo
+      var time2 = setInterval(function () {
+        if (app.globalData.startState) {
+          app.getserverUserData()
+          clearInterval(time2)
+        }
+      }, 100)
+
+    })
+
+    var time = setInterval(function () {
+      if (app.requestState == true) {
+        setTimeout(function () {
+          that.getUserData();
+          that.getQuizList();
+        }, 500)
+        clearInterval(time)
+      }
+    }, 100)
+    
   },
   // 生命周期函数--监听页面显示
   onShow: function () {
