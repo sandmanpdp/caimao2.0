@@ -11,9 +11,12 @@
       <view class='title clearfix'>
         <image class='fl' src='{{item.avatar}}'></image>
         <text class='fl'>{{item.nickname}}</text>
-        <text class='fr'>￥50</text>
+        <text class='fr'>{{item.hook_price}}</text>
       </view>
-      <view class='text tw4'>{{item.content}}</view>
+      <view class='text tw4'>
+        <view>{{item.share}} {{item.code}}</view>
+        <view class='tw3'>{{item.content}}</view>
+      </view>
       <view class='fun clearfix'>
         <view class='fl'>还剩<text class='cofc7946'>30</text>小时结束</view>
         <view class='fr co3f86ff'>我来回答</view>
@@ -22,15 +25,15 @@
   </view>
   <!-- 已解答 -->
   <view wx:if="{{navIndex==1?true:false}}">
-    <view class='box' catchtap='detailsAskFun'>
+    <view class='box' catchtap='detailsAskFun' wx:for="{{finishQuizList}}">
       <view class='title clearfix'>
-        <image class='fl' src='../images/ta.jpg'></image>
-        <text class='fl'>股友tony</text>
+        <image class='fl' src='{{item.avatar}}'></image>
+        <text class='fl'>{{item.nickname}}</text>
         <view class='fr'>已结束</view>
       </view>
       <view class='text tw4'>
-        <view>紫光股份 000398</view>
-        <view class='tw3'>老师您好，我今天买了两成仓位紫光股份，成本15.02，下午想加仓，大盘不好就忍住了，这只股能长期持有吗？谢谢</view>
+        <view>{{item.share}} {{item.code}}</view>
+        <view class='tw3'>{{item.content}}</view>
       </view>
       <view class='answer'>特邀<text class='co3f86ff'>@GS阳光</text>回答</view>
       <view class='end clearfix'>
@@ -55,7 +58,8 @@
     </view>
   </view>
   <!-- 下拉提示 -->
-  <view class='drop'>下拉刷新   加载更多内容</view>
+  <view class='drop' wx:if="{{!finishNull}}">下拉刷新   加载更多内容</view>
+  <view wx:if="{{finishNull}}" class='drop'>暂无笔记数据</view>
   <!-- 写问股 -->
   <image style='display:none' class='write' src='../images/icon_write.png' catchtap='writeAskFun'></image>
 </view>

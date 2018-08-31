@@ -1,7 +1,7 @@
-<view class='ban'>
+<view>
   <!-- 输入框 -->
   <view class='input'>
-    <input bindinput='problemDateChange' class='' placeholder='提问不得少于10个字' placeholder-class='cob9b9b9'></input>
+    <textarea auto-height="true" bindinput='problemDateChange' class='' placeholder='提问不得少于10个字' placeholder-class='cob9b9b9' maxlength='300'></textarea>
     <view>悬赏{{sumValue}}元宝</view>
   </view>
   <!-- 关联股票 -->
@@ -53,7 +53,7 @@
     <view class='depict'>赏金越高，越能吸引高手回答哦</view>
   </view>
   <!-- 发布 -->
-  <view class='reading' bindtap='submit'>发布</view>
+  <view class='reading' style='margin-bottom:80rpx;' bindtap='submit'>发布</view>
   <!-- 提问须知 -->
   <view class='mask' wx:if="{{maskIndex==1?true:false}}">
     <view class='one'>

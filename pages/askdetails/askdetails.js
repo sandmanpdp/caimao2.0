@@ -8,7 +8,10 @@ Page({
   data: {
     navIndex: 0,
     id : '',
-    askdetail:''
+    askdetail:'',
+    comment:'',
+    commentNext : '-1',
+    commentList:''
   },
   setNavIndexFun:function(e){
     this.setData({
@@ -35,6 +38,62 @@ Page({
       }
     })
   },
+
+  getComment : function (e) {
+    var comment = e.detail.value;
+    console.log(comment)
+    this.setData({
+      comment: comment
+    })
+  },
+
+  addComment:function () {
+    var that = this;
+    if(that.data.comment != ''){
+      wx.request({
+        url: 'https://zhitouapi.romawaysz.com/comment/create',
+        data: {
+          token: app.union_id,
+          type: 3,
+          id: that.data.id,
+          content: that.data.comment,
+        },
+        success : function (res) {
+          if(res.data.error == 0) {
+            wx.showToast({
+              title: '回答成功',
+            })
+            that.getCommetList();
+          }
+        }
+      }) 
+    }else{
+      wx.showToast({
+        title: '回答内容不能为空',
+        icon : 'none'
+      })
+    }
+  },
+
+  getCommetList: function () {
+    var that = this;
+    wx.request({
+      url: 'https://zhitouapi.romawaysz.com/comment/list',
+      data : {
+        token : app.union_id,
+        type : 3,
+        id : that.data.id,
+        next : that.data.commentNext,
+        size: 10,
+      },
+      success : function(res) {
+        that.setData({
+          commentList : res.data.data
+        })
+      }
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
@@ -44,6 +103,7 @@ Page({
       id : id
     });
     this.getAskDetail();
+    this.getCommetList();
   },
 
   /**

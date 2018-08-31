@@ -9,7 +9,11 @@ Page({
     navIndex: 0,  //导航下标
     maskState: false,  //是否显示遮罩,
     quizList :[],
-    page : 1,
+    page : 1,//最新的
+    finishPage:1,
+    finishQuizList:[],
+    finishNull : false,
+    newNull : false
   },
   setNavIndexFun:function (e) { //导航选择
     this.setData({
@@ -38,7 +42,37 @@ Page({
     })
   },
 
-  getQuizList: function () {
+  getFinishQuiz : function () {
+    var that = this;
+    var finishPage = that.data.finishPage;
+    wx.request({
+      url: 'https://zhitouapi.romawaysz.com/quiz/list',
+      data: {
+        page: finishPage,
+        size: 10,
+        token: app.union_id,
+        state: 1
+      },
+      success: function (res) {
+        console.log(res.data.data);
+        if (res.data.data == '') {
+          var finishNull = true;
+          that.setData({
+            finishNull: finishNull
+          })
+        }
+        if (res.data.page) {
+          var page = res.data.page || '1'
+        }
+        that.setData({
+          finishQuizList: res.data.data,
+          finishPage: page
+        })
+      }
+    })
+  },
+
+  getQuizList: function (state) {
     var that = this;
     var page = that.data.page;
     wx.request({
@@ -46,21 +80,28 @@ Page({
       data: {
         page: page,
         size: 10,
-        token: app.union_id
+        token: app.union_id,
+        state: state
       },
       success: function (res) {
         console.log(res.data.data);
+        if (res.data.page) {
+          var page = res.data.page || '1'
+        }
         that.setData({
-          quizList: res.data.data
+          quizList: res.data.data,
+          page: page  
         })
       }
     })
   },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getQuizList();
+    this.getQuizList('-1');
+    this.getFinishQuiz();
   },
 
   /**
@@ -74,21 +115,21 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-  
+    
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-  
+    
   },
 
   /**

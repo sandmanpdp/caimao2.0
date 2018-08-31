@@ -20,18 +20,18 @@
       <view id='n1' class="fl {{navIndex==1?'bb':''}}" catch:tap='setNavIndexFun'>满意回答</view>
     </view>
     <view wx:if="{{navIndex==0?true:false}}">
-      <view class='box'>
+      <view class='box' wx:for = "{{commentList}}">
         <view class='title clearfix'>
-          <image class='fl' src='../images/ta.jpg'></image>
-          <text class='fl'>gusui</text>
+          <image class='fl' src='{{item.avatar}}'></image>
+          <text class='fl'>{{item.nickname}}</text>
           <view class='fr'>满意答案</view>
         </view>
-        <view class='text'>这个问题，起码价值3万。这个问题，起码价值3万。这个问题，起码价值3万。这个问题，起码价值3万。</view>
+        <view class='text'>{{item.content}}</view>
         <view class='fun clearfix'>
           <text class='fl'>10-27  12:42</text>
           <view class='fr'>
             <image src='../images/icon_laud2.png'></image>
-            <text>99</text>
+            <text>{{item.praise}}</text>
           </view>
         </view>
       </view>
@@ -58,7 +58,7 @@
   <view class='drop'>没有更多回答</view>
   <!-- 评论 -->
   <view class='pf comment clearfix'>
-    <input class='fl input' placeholder='说点什么...'></input>
-    <view class='fr submit'>发表</view>
+    <input bindinput='getComment' value='{{comment}}' class='fl input' placeholder='说点什么...'></input>
+    <view catchtap='addComment' class='fr submit'>发表</view>
   </view>
 </view>

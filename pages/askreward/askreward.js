@@ -222,6 +222,9 @@ Page({
           wx.showToast({
             title: '提问成功',
           })
+          wx.navigateTo({
+            url: '/pages/askdetail/askdetail?id='+res.data.data.id,
+          })
         } else {
           wx.showToast({
             title: res.data.error + '错误',
