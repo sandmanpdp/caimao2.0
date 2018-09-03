@@ -1,14 +1,27 @@
 <!-- 渲染列表 -->
-<view>
+<!-- 2.0版本导航 -->
+<view class='nav clearfix'>
+  <view id='0' class="fl blue pstRel {{navIndex?'co3f86ff':''}}" catch:tap='setNavIndexFun'>
+    累计收益
+    <view wx:if='{{navIndex==1}}' class='selectedBar'></view>
+  </view>
+  <view id='1' class="fl pstRel {{!navIndex?'co3f86ff':''}}" catch:tap='setNavIndexFun'>
+    近10篇达标率
+    <view wx:if='{{navIndex==0}}' class='selectedBar selectedBarL'></view>
+  </view>
+</view>
+
+<view style='padding-top:94rpx;'>
   <!-- 选项 默认 达标率 累计收益 -->
-  <view class='section selecteBox'>
+  <!-- <view class='section selecteBox'>
     <picker bindchange='sortFun' value='{{index}}' range='{{sortArray}}' class='sortPicker'>
       <view>
         {{sortArray[sortBy]}}
         <image src='../images/icon_bottom_arrow_gray.png' class='icon_bottom_arrow'></image>
       </view>
     </picker> 
-  </view>
+  </view> -->
+
   <!-- 标题 -->
   <!-- <view class='title'>热推名人</view> -->
   <!-- 关注列表 -->
@@ -34,7 +47,7 @@
         <view wx:if="{{item.is_concern==1}}">
           <text>已关注</text>
         </view>
-         <view wx:if="{{item.is_concern==2}}">
+        <view wx:if="{{item.is_concern==2}}">
           <text>互相关注</text>
         </view>
       </view>

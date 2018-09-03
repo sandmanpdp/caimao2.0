@@ -9,7 +9,31 @@ Page({
     masterArray: [],
     sortArray: ['累计收益', '近10篇达标率'],
     sortBy: 0,
+    navIndex : true
   },
+
+  setNavIndexFun: function (e) { //导航下标设置
+    var a;
+    if (e.currentTarget.id == '0') {
+      a = true
+      this.setData({
+        sortBy: 0
+      })
+    } else {
+      a = false;
+      this.setData({
+        sortBy: 1
+      })
+    }
+    this.onPullDownRefresh();
+    this.setData({
+      navIndex: a,
+      bottomState: true,
+      notesNull: false
+    })
+  },
+
+
   //添加关注方法
   followFun: function(e){
     var that=this
