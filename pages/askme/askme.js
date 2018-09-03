@@ -1,4 +1,5 @@
 // pages/askme/askme.js
+var app = getApp();
 Page({
 
   /**
@@ -6,6 +7,8 @@ Page({
    */
   data: {
     navIndex: true, //导航下标
+    page : 1,
+    quizList:''
   },
   setNavIndexFun: function (e) { //导航下标设置
     var a;
@@ -18,11 +21,43 @@ Page({
       navIndex:a
     })
   },
+  
+  detailsAskFun: function (e) {  //问股详情
+    var id = e.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: '/pages/askdetails/askdetails?id=' + id
+    })
+  },
+
+  getMyQuizList: function () {
+    var that = this;
+    var page = that.data.page;
+    wx.request({
+      url: 'https://zhitouapi.romawaysz.com/quiz/list',
+      data: {
+        page: page,
+        size: 10,
+        token: app.union_id,
+        user_id: app.localUserData.user_id
+      },
+      success: function (res) {
+        console.log(res.data.data);
+        if (res.data.page) {
+          var page = res.data.page || '1'
+        }
+        that.setData({
+          quizList: res.data.data,
+          page: page
+        })
+      }
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    this.getMyQuizList()
   },
 
   /**

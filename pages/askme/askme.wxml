@@ -9,18 +9,21 @@
     <view wx:if='{{navIndex==0}}' class='selectedBar'></view>
   </view>
 </view>
-<view>
-  <!-- 最新 -->
-  <view wx:if="{{navIndex==0?true:false}}">
+<view class='section'>
+  <!-- 我的提问 -->
+  <view wx:if="{{navIndex==1?true:false}}">
+    <view wx:for="{{quizList}}">
     <view class='box' data-id='{{item.id}}' catchtap='detailsAskFun'>
       <view class='title clearfix'>
-        <image class='fl' src='{{item.avatar}}'></image>
-        <text class='fl'>item.nickname</text>
-        <text class='fr'>item.hook_price</text>
+        <image class='fl' src='../images/ask.png'></image>
+        <!-- <text class='fl'>sandman</text> -->
+        <text class='fr money'>{{item.hook_price}}</text>
       </view>
-      <view class='text tw4'>
-        <view>item.shareitem.code</view>
-        <view class='tw3'>item.content</view>
+      <view class='text'>
+        <view></view>
+        <view class='ask-text'>
+          {{item.content}}
+        </view>
       </view>
       <view class='fun clearfix'>
         <view class='fl'>还剩
@@ -29,25 +32,23 @@
       </view>
     </view>
   </view>
-  <!-- 已解答 -->
-  <view wx:if="{{navIndex==1?true:false}}">
-    <view class='box' catchtap='detailsAskFun' wx:for="{{finishQuizList}}">
+  </view>
+  <!-- 我的回答 -->
+  <view wx:if="{{navIndex==0?true:false}}">
+    <view class='box' data-id='{{item.id}}' catchtap='detailsAskFun'>
       <view class='title clearfix'>
-        <image class='fl' src='{{item.avatar}}'></image>
-        <text class='fl'>{{item.nickname}}</text>
-        <view class='fr'>已结束</view>
+        <image class='fl' src='../images/ask.png'></image>
+        <!-- <text class='fl'>sandman</text> -->
+        <text class='fr money'>100</text>
       </view>
-      <view class='text tw4'>
-        <view>{{item.share}} {{item.code}}</view>
-        <view class='tw3'>{{item.content}}</view>
+      <view class='text'>
+        <view class='ask-text'>很发达撒黄金卡首付款静安寺复活卡技术发卡机返回时间单红发卡继父回家爱是开发商尽快发货金卡水电费框架是否看举案说法数据库发哈刷卡机佛塑科技打卡就是接口</view>
+        <view class='answer'>很发达撒黄金卡首付款静安寺复活卡技术发卡机返回时间单红发卡继父回家爱是开发商尽快发货金卡水电费框架是否看举案说法数据库发哈刷卡机佛塑科技打卡就是接口</view>
       </view>
-      <view class='answer'>特邀
-        <text class='co3f86ff'>@GS阳光</text>回答</view>
-      <view class='end clearfix'>
-        <view class='fl'>已结束</view>
-        <view class='fl'>
-          <text class='cofc7946'>30</text>人已抢答</view>
-        <view class='fr co3f86ff'>1元偷看</view>
+      <view class='fun clearfix'>
+        <view class='fl'>还剩
+          <text class='cofc7946'>30</text>小时结束</view>
+        <view class='fr co3f86ff'>我来回答</view>
       </view>
     </view>
   </view>

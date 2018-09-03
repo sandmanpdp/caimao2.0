@@ -31,9 +31,32 @@
   width: 70rpx !important;
   border-bottom: 12rpx solid #3f86ff;
   position: absolute;
-  bottom: 0;
+  bottom: -30rpx;
   left: 152rpx;
 }
 .pstRel {
   position: relative;
+}
+.section {
+  background: #fff;
+  padding: 92rpx 30rpx 0;
+}
+/* 列表 */
+.box{margin-top: 20rpx;padding: 30rpx 0;background-color: #fff;border-bottom: 1rpx solid #eeeeee}
+.box:first-child{margin: 0}
+.box .title image{margin-right: 20rpx;width: 48rpx;height: 48rpx;border-radius: 6rpx}
+/* .box .title text:nth-child(2){font-size: 28rpx;color: #808080;line-height: 48rpx} */
+.money{font-size: 36rpx;color: #fc7946;line-height: 48rpx}
+.box .text{margin: 15rpx 0 20rpx;font-size: 30rpx;color: #2e2e2e}
+.box .fun view:nth-child(1){font-size: 24rpx;color: #808080;line-height: 26rpx}
+.box .fun view:nth-child(2){font-size: 26rpx;line-height: 26rpx}
+.ask-text {
+  line-height: 55rpx;
+  margin-bottom: 5px;
+  font-size: 32rpx;
+}
+.answer {
+  color: #808080 !important;
+  font-size: 26rpx;
+  line-height: 45rpx
 }
