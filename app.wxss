@@ -288,18 +288,23 @@ page {
   position: fixed;
   bottom: 0;
   width: 100%;
-  padding: 30rpx 50rpx;
+  padding: 40rpx 50rpx 0;
   background: #fff;
+  z-index: 999999999;
+}
+.image-box {
+  width: 120rpx;
+  height: 120rpx;
+  margin: 0 auto;
 }
 .mask-box image {
-  width: 100rpx;
-  height: 100rpx;
+  width: 100%;
+  height: 100%;
 }
 
 .write-item {
   display: inline-block;
   width: 33%;
-  height: 100rpx;
   text-align: center;
 }
 .close {
@@ -307,5 +312,14 @@ page {
   background: #fff;
   color: #999;
   text-align: center;
-  line-height: 40rpx;
+  line-height: 70rpx;
+  height: 80rpx;
+  border-top: 1rpx solid #eee;
 }
+.write-item-text {
+  color: #333;
+  margin: 20rpx 0 40rpx;
+  font-size: 26rpx;
+  line-height: 26rpx;
+}
+.askMask{position:fixed;top:0;left:0;width:100%;height:100vh;background-color:rgba(0,0,0,.5);z-index:9999999}
