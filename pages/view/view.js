@@ -19,7 +19,32 @@ Page({
     sortBy : 0,
     isShow: false,
     readMaskState: false,
+    navIndex :true
   },
+
+  setNavIndexFun: function (e) { //导航下标设置
+    var a;
+    if (e.currentTarget.id == '0') {
+      a = true
+      // this.getReadFun()；
+      this.setData({
+        sortBy : 0
+      })
+    } else {
+      a = false
+      // this.getNoteFun();
+      this.setData({
+        sortBy: 1
+      })
+    }
+    this.onPullDownRefresh();
+    this.setData({
+      navIndex: a,
+      bottomState: true,
+      notesNull: false
+    })
+  },
+
   viewReadFun: function (e) {// 观点阅读方法
     wx.navigateTo({
       url: '/pages/viewdetails/viewdetails?id=' + e.currentTarget.id
@@ -31,18 +56,8 @@ Page({
     })
     this.onPullDownRefresh()
   },
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-    this.getListFun(options.id)
-    if (options.id){
-      this.setData({
-        id: options.id
-      })
-    }
-  },
-
+  
+  //获取观点列表
   getListFun:function(q){
     var that = this;
     var order;
@@ -139,6 +154,19 @@ Page({
       isShow: false
     })
   },
+
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    this.getListFun(options.id)
+    if (options.id) {
+      this.setData({
+        id: options.id
+      })
+    }
+  },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

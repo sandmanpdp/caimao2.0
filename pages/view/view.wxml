@@ -1,10 +1,21 @@
-<view class='selecteBox'>
+<!-- <view class='selecteBox'>
   <picker bindchange='sortFun' value='{{index}}' range='{{sortArray}}' class='sortPicker'>
     <view>
       {{sortArray[sortBy]}}
       <image src='../images/icon_bottom_arrow_gray.png' class='icon_bottom_arrow'></image>
     </view>
   </picker>
+</view> -->
+
+<!-- 2.0版本导航 -->
+<view class='nav clearfix'>
+  <view id='0' class="fl blue pstRel {{navIndex?'co3f86ff':''}}" catch:tap='setNavIndexFun'>
+  热门
+  <view wx:if='{{navIndex==1}}' class='selectedBar'></view>
+  </view>
+  <view id='1' class="fl pstRel {{!navIndex?'co3f86ff':''}}" catch:tap='setNavIndexFun'>最新
+    <view wx:if='{{navIndex==0}}' class='selectedBar'></view>
+  </view>
 </view>
 
 <view class='section'>

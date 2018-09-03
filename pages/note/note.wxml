@@ -8,7 +8,6 @@
   <view id='1' class="fr pstRel {{!navIndex?'co3f86ff':''}}" catch:tap='setNavIndexFun'>我的笔记
     <view wx:if='{{navIndex==0}}' class='selectedBar'></view>
   </view>
-
 </view>
 <!-- 列表 -->
 <!-- 我的阅读 -->

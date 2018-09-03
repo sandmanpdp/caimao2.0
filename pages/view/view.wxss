@@ -5,6 +5,7 @@ page {
 .section {
   padding: 0 30rpx 30rpx;
   background-color: #fff;
+  padding-top: 100rpx;
 }
 
 .section .box {
@@ -89,4 +90,20 @@ page {
   background: #fff;
   text-align: center;
   border-bottom:1rpx solid #eee;
+}
+
+/* 导航 */
+.nav{padding: 30rpx;background-color: #fff;border-bottom: 2rpx solid #dcdcdc;position: fixed;width: 100%;}
+.nav view{width: 20%;font-size: 34rpx;line-height: 34rpx;color: #b9b9b9;font-weight: 500}
+.co3f86ff{color: #3f86ff!important}
+.co93b8ff{color: #93b8ff!important}
+.selectedBar {
+  width: 50rpx !important;
+  border-bottom: 6rpx solid #3f86ff;
+  position: absolute;
+  bottom: -30rpx;
+  left: 10rpx;
+}
+.pstRel {
+  position: relative;
 }
