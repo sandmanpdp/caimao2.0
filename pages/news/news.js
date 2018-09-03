@@ -161,6 +161,10 @@ Page({
       wx.navigateTo({
         url: '/pages/master/master?id=' + b
       })
+    } else if (linkType == 6) { // 问股详情
+      wx.navigateTo({
+        url: '/pages/askdetails/askdetails?id='+b,
+      })
     }
   },
 

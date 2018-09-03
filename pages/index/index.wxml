@@ -257,8 +257,21 @@
     <write-pen bind:openMsk='openMsk'></write-pen>
   </view> -->
 </view>
-<view class='reaMask'>
+<!-- <view class='reaMask'>
   <write-pen></write-pen>
+</view> -->
+<!-- 悬浮按钮 -->
+<view class='askMask' wx:if="{{isShow}}"></view>
+<view class='write-pen' catchtap='writeFun'>
+  <image src='../images/write.png'></image>
+</view>
+<view class='mask-box' wx:if="{{isShow}}">
+  <view catchtap='toNote' class='write-item'><image src='../images/write.png'></image></view>
+  <view catchtap='toNote' class='write-item'><image src='../images/write.png'></image></view>
+  <view catchtap='toAsk' class='write-item'><image src='../images/write.png'></image></view>
+  <view class='close' catchtap='closeMask'>x</view>
 </view>
 <!-- 底部 -->
-<view class='footer' style='height:20rpx;'></view>
+<view class='bottom-info'>
+  我是有底线的
+</view>
