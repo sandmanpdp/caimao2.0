@@ -58,7 +58,8 @@
     "pages/identityAuth/identityAuth",
     "pages/authSuccess/authSuccess",
     "pages/authPage/authPage",
-    "pages/newsList/newsList"
+    "pages/newsList/newsList",
+    "pages/askme/askme"
   ],
   "window": {
     "navigationBarBackgroundColor": "#2772ff",
@@ -81,16 +82,16 @@
         "selectedIconPath": "pages/images/icon_new_home_true.png"
       },
       {
+        "pagePath": "pages/view/view",
+        "text": "观点",
+        "iconPath": "pages/images/view-gray.png",
+        "selectedIconPath": "pages/images/view-selected.png"
+      },
+      {
         "pagePath": "pages/note/note",
         "text": "笔记",
         "iconPath": "pages/images/icon_new_note_false.png",
         "selectedIconPath": "pages/images/icon_new_note_true.png"
-      },
-      {
-        "pagePath": "pages/write/write",
-        "text": "撰写",
-        "iconPath": "pages/images/icon_new_write_false.png",
-        "selectedIconPath": "pages/images/icon_new_write_true.png"
       },
       {
         "pagePath": "pages/newsList/newsList",
