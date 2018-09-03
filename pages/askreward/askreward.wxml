@@ -15,7 +15,7 @@
       </view>
     </view>
 
-    <view class='clearfix'>
+    <view class='clearfix' wx:if="{{atniuren}}">
       <text class='fl'>指定牛人</text>
       <input class='fl' placeholder='最多可选3人或不选' placeholder-class='cob9b9b9'></input>
       <text class='fr'>@</text>

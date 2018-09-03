@@ -18,7 +18,8 @@ Page({
     showStockCodeArray: [], //股票代码
     matchingStockCodeArray: [],
     shareValue: '',
-    shareCode: ''
+    shareCode: '',
+    atniuren:false
   },
   setMaskIndexFun: function(e) { //遮罩选择
     this.setData({
