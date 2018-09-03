@@ -73,7 +73,8 @@ Page({
     id: null,//笔记发布成功返回的笔记id
     note_index: 0,
     time: '',
-    xPrice: ''
+    xPrice: '',
+    pageId : 0
   },
   //导航选择方法
   navOptFun: function (e) {
@@ -87,6 +88,20 @@ Page({
       nav: a
     })
   },
+
+  // 导航方法
+  navFun: function () {
+    var nav;
+    if(this.data.pageId == 0){
+      nav = true;
+    }else {
+      nav = false;
+    }
+    this.setData({
+      nav: nav
+    })
+  },
+
   //标题获取方法
   bindTitleInput: function (e) {
     this.setData({
@@ -795,8 +810,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log("options", options)
     var that = this;
+    that.setData({
+      pageId : options.pageId
+    });
+    that.navFun()
     //判断用户等级，是否有权限发布现金产品
     if (app.localUserData.rids != 4) {
       that.setData({
@@ -901,7 +919,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.setData({ nav: true });
+    //this.setData({ nav: true });
     this.getNodeFun();
     //this.noteFesetDataFun()
     //this.viewFesetDataFun()    

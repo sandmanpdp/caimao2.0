@@ -1,9 +1,9 @@
 <view class="{{maskState?'ban':''}}">
   <!-- 导航 -->
-  <view class='nav claerfix'>
+  <!-- <view class='nav claerfix'>
     <view class="fl nav_box {{nav ? 'co_write' : ''}}" catch:tap='navOptFun' id='0'>写笔记</view>
     <view class="fl nav_box {{nav ? '' : 'co_write'}}" catch:tap='navOptFun' id='1'>写观点</view>
-  </view>
+  </view> -->
   <!-- 推票 -->
   <view wx:if="{{nav}}">
     <!-- 标题 -->

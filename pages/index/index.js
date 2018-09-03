@@ -306,9 +306,15 @@ Page({
   },
   toNote: function() {
     wx.navigateTo({
-      url: '/pages/write/write',
+      url: '/pages/write/write?pageId=0',
     })
   },
+  toView: function () {
+    wx.navigateTo({
+      url: '/pages/write/write?pageId=1',
+    })
+  },
+
   toAsk: function() {
     wx.navigateTo({
       url: '/pages/askreward/askreward',

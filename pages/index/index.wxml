@@ -272,7 +272,7 @@
     </view>
     <view class='write-item-text'>写笔记</view>
   </view>
-  <view catchtap='toNote' class='write-item'>
+  <view catchtap='toView' class='write-item'>
     <view class='image-box'>
       <image src='../images/write-view.png'></image>
     </view>
