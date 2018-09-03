@@ -16,7 +16,9 @@ Page({
     viewPage: 1 , //页码
     comments:[],
     sortArray :['热度','最新'],
-    sortBy : 0
+    sortBy : 0,
+    isShow: false,
+    readMaskState: false,
   },
   viewReadFun: function (e) {// 观点阅读方法
     wx.navigateTo({
@@ -116,6 +118,27 @@ Page({
     })
   },
 
+  //悬浮按钮
+  writeFun: function () {
+    this.setData({
+      isShow: true
+    })
+  },
+  toNote: function () {
+    wx.navigateTo({
+      url: '/pages/write/write',
+    })
+  },
+  toAsk: function () {
+    wx.navigateTo({
+      url: '/pages/askreward/askreward',
+    })
+  },
+  closeMask: function () {
+    this.setData({
+      isShow: false
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -127,14 +150,18 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.setData({
+      isShow: false
+    })
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-
+    this.setData({
+      isShow: false
+    })
   },
 
   /**

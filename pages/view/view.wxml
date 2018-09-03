@@ -1,11 +1,12 @@
 <view class='selecteBox'>
-    <picker bindchange='sortFun' value='{{index}}' range='{{sortArray}}' class='sortPicker'>
-      <view>
-        {{sortArray[sortBy]}}
-        <image src='../images/icon_bottom_arrow_gray.png' class='icon_bottom_arrow'></image>
-      </view>
-    </picker> 
-  </view>
+  <picker bindchange='sortFun' value='{{index}}' range='{{sortArray}}' class='sortPicker'>
+    <view>
+      {{sortArray[sortBy]}}
+      <image src='../images/icon_bottom_arrow_gray.png' class='icon_bottom_arrow'></image>
+    </view>
+  </picker>
+</view>
+
 <view class='section'>
   <view class='box' wx:for="{{viewArray}}" id='{{item.id}}' catchtap='viewReadFun'>
     <view class='title'>{{item.title}}</view>
@@ -16,15 +17,41 @@
         <view class='name'>{{item.nickname}}</view>
       </view>
       <view class='data fr'>
-          <image src='../images/icon_look.png' class='icon'></image>
-          <text class='number'>{{item.look}}</text>
-          <image src='../images/icon_view.png' class='icon'></image>
-          <text class='number'>{{item.comment}}</text>
+        <image src='../images/icon_look.png' class='icon'></image>
+        <text class='number'>{{item.look}}</text>
+        <image src='../images/icon_view.png' class='icon'></image>
+        <text class='number'>{{item.comment}}</text>
       </view>
     </view>
   </view>
 </view>
+<!-- 悬浮按钮 -->
+<view class='askMask' wx:if="{{isShow}}"></view>
+<view class='write-pen' catchtap='writeFun'>
+  <image src='../images/write.png'></image>
+</view>
+<view class='mask-box' wx:if="{{isShow}}">
+  <view catchtap='toNote' class='write-item'>
+    <view class='image-box'>
+      <image src='../images/write.png'></image>
+    </view>
+    <view class='write-item-text'>写笔记</view>
+  </view>
+  <view catchtap='toNote' class='write-item'>
+    <view class='image-box'>
+      <image src='../images/write.png'></image>
+    </view>
+    <view class='write-item-text'>写观点</view>
+  </view>
+  <view catchtap='toAsk' class='write-item'>
+    <view class='image-box'>
+      <image src='../images/write.png'></image>
+    </view>
+    <view class='write-item-text'>问股</view>
+  </view>
+  <view class='close' catchtap='closeMask'>x</view>
+</view>
 <!-- 暂无提示 -->
 <view wx:if="{{notesNull}}" class='drop'>暂无更多观点数据</view>
 <!-- 下拉提示 -->
-<view class='drop' wx:if="{{bottomState}}">下拉刷新   加载更多内容</view>
+<view class='drop' wx:if="{{bottomState}}">下拉刷新 加载更多内容</view>

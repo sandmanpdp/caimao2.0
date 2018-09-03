@@ -8,7 +8,6 @@ Page({
     view: [], //热门观点
     recommend: [], //高手推荐
     authStatus: app.authStatus,
-    isShow: false,
     quizList: '',
     isShow: false,
     readMaskState: false,
@@ -306,7 +305,7 @@ Page({
     })
   },
   toNote: function() {
-    wx.switchTab({
+    wx.navigateTo({
       url: '/pages/write/write',
     })
   },
@@ -388,6 +387,9 @@ Page({
   // 生命周期函数--监听页面隐藏
   onHide: function() {
     app.globalData.scene -= 1;
+    this.setData({
+      isShow:false
+    })
   },
   //  转发
   onShareAppMessage: function(res) {

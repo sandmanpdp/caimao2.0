@@ -12,7 +12,9 @@ Page({
     readPage: -1,  //阅读页码
     noteArray: [],  //阅读数组
     notePage: -1,  //阅读页码 
-    size: 10
+    size: 10,
+    isShow: false,
+    readMaskState: false,
   },
   setNavIndexFun: function (e) { //导航下标设置
     var a
@@ -194,7 +196,28 @@ Page({
       url: '/pages/notedetails/notedetails?id=' + e.currentTarget.id + '&uid=' + e.currentTarget.dataset.uid
     })
   },
-
+  
+  //悬浮按钮
+  writeFun: function () {
+    this.setData({
+      isShow: true
+    })
+  },
+  toNote: function () {
+    wx.navigateTo({
+      url: '/pages/write/write',
+    })
+  },
+  toAsk: function () {
+    wx.navigateTo({
+      url: '/pages/askreward/askreward',
+    })
+  },
+  closeMask: function () {
+    this.setData({
+      isShow: false
+    })
+  },
 
   /**
    * 生命周期函数--监听页面加载
@@ -225,6 +248,9 @@ Page({
     })
     this.getNoteFun();
     this.getReadFun();
+    this.setData({
+      isShow:false
+    })
   },
 
   /**
@@ -233,7 +259,8 @@ Page({
   onHide: function () {
     this.setData({
       readArray: [],  //阅读数组
-      noteArray: []
+      noteArray: [],
+      isShow:false
     })
     
   },

@@ -83,6 +83,32 @@
     </view>
   </view>
 </view>
+<!-- 悬浮按钮 -->
+<view class='askMask' wx:if="{{isShow}}"></view>
+<view class='write-pen' catchtap='writeFun'>
+  <image src='../images/write.png'></image>
+</view>
+<view class='mask-box' wx:if="{{isShow}}">
+  <view catchtap='toNote' class='write-item'>
+    <view class='image-box'>
+      <image src='../images/write.png'></image>
+    </view>
+    <view class='write-item-text'>写笔记</view>
+  </view>
+  <view catchtap='toNote' class='write-item'>
+    <view class='image-box'>
+      <image src='../images/write.png'></image>
+    </view>
+    <view class='write-item-text'>写观点</view>
+  </view>
+  <view catchtap='toAsk' class='write-item'>
+    <view class='image-box'>
+      <image src='../images/write.png'></image>
+    </view>
+    <view class='write-item-text'>问股</view>
+  </view>
+  <view class='close' catchtap='closeMask'>x</view>
+</view>
 <!-- 暂无提示 -->
 <view wx:if="{{notesNull}}" class='drop'>暂无笔记数据</view>
 <!-- 下拉提示 -->
