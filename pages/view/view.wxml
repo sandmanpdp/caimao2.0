@@ -44,23 +44,25 @@
 <view class='mask-box' wx:if="{{isShow}}">
   <view catchtap='toNote' class='write-item'>
     <view class='image-box'>
-      <image src='../images/write.png'></image>
+      <image src='../images/write-note.png'></image>
     </view>
     <view class='write-item-text'>写笔记</view>
   </view>
   <view catchtap='toNote' class='write-item'>
     <view class='image-box'>
-      <image src='../images/write.png'></image>
+      <image src='../images/write-view.png'></image>
     </view>
     <view class='write-item-text'>写观点</view>
   </view>
   <view catchtap='toAsk' class='write-item'>
     <view class='image-box'>
-      <image src='../images/write.png'></image>
+      <image src='../images/write-ask.png'></image>
     </view>
     <view class='write-item-text'>问股</view>
   </view>
-  <view class='close' catchtap='closeMask'>x</view>
+  <view class='close' catchtap='closeMask'>
+    <image class='write-close' src='../images/close-pen.png'></image>
+  </view>
 </view>
 <!-- 暂无提示 -->
 <view wx:if="{{notesNull}}" class='drop'>暂无更多观点数据</view>

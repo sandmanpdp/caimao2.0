@@ -5,9 +5,19 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    navIndex: true, //导航下标
   },
-
+  setNavIndexFun: function (e) { //导航下标设置
+    var a;
+    if (e.currentTarget.id == '0') {
+      a = true
+    } else {
+      a = false
+    }
+    this.setData({
+      navIndex:a
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

@@ -11,12 +11,12 @@
     <!-- 用户姓名 -->
     <view class='fl head_top_userName'>
       <view class='head_top_userName_name tw1'>{{userInfo.nickname}}</view>
-       <view class='head_top_userName_depict' catchtap='changeSign'> 
+      <view class='head_top_userName_depict' catchtap='changeSign'>
         <view class='tw1 signTextBox'>
           {{sign}}
         </view>
         <!-- <image src='../images/modifyPen.png' class='modifyPen'></image> -->
-       </view> 
+      </view>
     </view>
     <!-- 用户关注 -->
     <view class='fr head_top_userFollow tc' id='{{userInfo.id}}' data-num='{{userInfo.concern}}' catchtap='followsLinkFun'>
@@ -56,21 +56,23 @@
   </view>
 </navigator>
 <!-- 我的问股 -->
-<view class='list_box' catchtap='unopenedFun'>
-  <view class='list_box_border clearfix'>
-    <image class='list_box_icon' src='../images/icon_myStock.png'></image>
-    <view class='list_box_title'>我的问股</view>
-    <image class='list_box_arrow' src='../images/icon_right_arrow.png'></image>
-     <view class='list_box_number'>999</view> 
+<navigator class='clearfix' url='/pages/askme/askme' open-type='navigate' hover-class="navigator-hover">
+  <view class='list_box'>
+    <view class='list_box_border clearfix'>
+      <image class='list_box_icon' src='../images/icon_myStock.png'></image>
+      <view class='list_box_title'>我的问股</view>
+      <image class='list_box_arrow' src='../images/icon_right_arrow.png'></image>
+      <view class='list_box_number'>999</view>
+    </view>
   </view>
-</view>
+</navigator>
 <!-- 我的观点 -->
 <navigator url="/pages/view/view?id={{userInfo.id}}" open-type='navigate' hover-class="navigator-hover">
   <view class='list_box'>
     <view class='list_box_border clearfix'>
       <image class='list_box_icon' src='../images/icon_myViewpoint.png'></image>
       <view class='list_box_title'>我的观点{{userInfo.view_num == "0" ? "" : "(" + userInfo.view_num + ")" }}</view>
-       <image class='list_box_arrow' src='../images/icon_right_arrow.png'></image>
+      <image class='list_box_arrow' src='../images/icon_right_arrow.png'></image>
       <!--<view wx:if="{{userInfo.view_num!='0'}}" class='list_box_number'>{{userInfo.view_num}}  </view> -->
     </view>
   </view>
