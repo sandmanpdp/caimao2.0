@@ -11,12 +11,12 @@
     <!-- 用户姓名 -->
     <view class='fl head_top_userName'>
       <view class='head_top_userName_name tw1'>{{master.nickname}}</view>
-       <view class='head_top_userName_depict tw1'>{{sign}}</view> 
+      <view class='head_top_userName_depict tw1'>{{sign}}</view>
     </view>
     <!-- 关注  -->
     <view wx:if="{{!own}}">
-     <view class='fr head_top_follow tc' wx:if="{{master.is_concern == 0}}" catch:tap="masterFollowFun" id='{{master.user_id}}'>关注</view> 
-     <view class='fr head_top_follow tc' wx:if="{{master.is_concern == 1}}" catch:tap="followClearFun" id='{{master.user_id}}'>取关</view> 
+      <view class='fr head_top_follow tc' wx:if="{{master.is_concern == 0}}" catch:tap="masterFollowFun" id='{{master.user_id}}'>关注</view>
+      <view class='fr head_top_follow tc' wx:if="{{master.is_concern == 1}}" catch:tap="followClearFun" id='{{master.user_id}}'>取关</view>
     </view>
   </view>
   <!-- 下半部分 -->
@@ -51,14 +51,14 @@
   <view class='section_nav clearfix'>
     <view class="fl section_nav_box {{order == 0 ? 'section_nav_true' : ''}}" catch:tap='navCutFun' id="0">笔记( {{master.note_num}} )</view>
     <view class="fl section_nav_box {{order == 1 ? 'section_nav_true' : ''}}" catch:tap='navCutFun' id="1">观点( {{master.view_num}} )</view>
-    <view class="fl section_nav_box {{order == 2 ? 'section_nav_true' : ''}}" catch:tap='navCutFun' id="2">问股( {{askTheStockNav}} )</view>
+    <view class="fl section_nav_box {{order == 2 ? 'section_nav_true' : ''}}" catch:tap='navCutFun' id="2">问股( {{master.quiz_num}} )</view>
   </view>
   <!-- 显示区 -->
   <view class='section_show'>
     <!-- 笔记 -->
     <view wx:if="{{order ==0 ? true :false}}">
       <view>
-        <view class='section_show_box'  wx:for="{{masterNote}}" id='{{item.id}}' data-uid='{{item.user_id}}' catchtap='{{item.readOrbuyFun}}'>
+        <view class='section_show_box' wx:for="{{masterNote}}" id='{{item.id}}' data-uid='{{item.user_id}}' catchtap='{{item.readOrbuyFun}}'>
           <view class='section_show_notes_title clearfix'>
             <view class='fl section_show_notes_title_text'>{{item.share}}</view>
             <view class='fl section_show_notes_title_text'>{{item.code}}</view>
@@ -71,7 +71,7 @@
           <view class='section_show_bottom'>
             <view class='clearfix'>
               <view class='fl section_show_bottom_top'>
-              
+
                 <view class='section_show_bottom_top_title'>{{item.rise}}%</view>
                 <view class='section_show_bottom_top_depict'>目标涨幅({{item.targetDay}}日)</view>
               </view>
@@ -121,10 +121,10 @@
               <text>{{item.created_at}}</text>
             </view>
             <view class='data fr'>
-                <image src='../images/icon_look.png' class='icon'></image>
-                <text class='number'>{{item.look}}</text>
-                <image src='../images/icon_view.png' class='icon'></image>
-                <text class='number'>{{item.comment}}</text>
+              <image src='../images/icon_look.png' class='icon'></image>
+              <text class='number'>{{item.look}}</text>
+              <image src='../images/icon_view.png' class='icon'></image>
+              <text class='number'>{{item.comment}}</text>
             </view>
           </view>
         </view>
@@ -132,29 +132,33 @@
       <view wx:if="{{viewNull}}" class='drop'>暂无更多观点信息</view>
     </view>
     <!-- 问股 -->
-    <view class='section_show_box' wx:if="{{order ==2 ? true :false}}" wx:for="{{askArray}}" id='{{item.id}}' catchtap='askDetailFun'>
-      <view class='section_show_view_title bc_yellow clearfix' >
-        <view class="fl section_show_askTheStock_title_icon {{item.state ? '' : 'fc_gray'}}">问</view>
-        <view class='fl section_show_view_title_text'>{{item.share}}</view>
-        <view class='fl section_show_view_title_number'>({{item.code}})</view>
-        <view class="'fr section_show_view_title_price {{item.state ? '' : 'fs30'}} {{item.state ? '' : 'fc_gray'}}">{{item.state ? '￥'+item.hook_price : '已过期'}}</view>
-      </view>
-      <view>
-        <view class='section_show_view_bottom_depict tw2'>{{item.content}}</view>
-        <view class='clearfix'>
-          <view class='fl section_show_view_bottom_time'>{{item.day}}</view>
-          <view class='fl section_show_view_bottom_time'>{{item.time}}</view>
-          <view class='data fr'>
+
+    <view wx:if="{{order ==2 ? true :false}}">
+      <view class='section_show_box'  wx:for="{{askArray}}" id='{{item.id}}' catchtap='askDetailFun'>
+        <view class='section_show_view_title bc_yellow clearfix'>
+          <view class="fl section_show_askTheStock_title_icon {{item.state ? '' : 'fc_gray'}}">问</view>
+          <view class='fl section_show_view_title_text'>{{item.share}}</view>
+          <view class='fl section_show_view_title_number'>({{item.code}})</view>
+          <view class="'fr section_show_view_title_price {{item.state ? '' : 'fs30'}} {{item.state ? '' : 'fc_gray'}}">{{item.state ? '￥'+item.hook_price : '已过期'}}</view>
+        </view>
+        <view>
+          <view class='section_show_view_bottom_depict tw2'>{{item.content}}</view>
+          <view class='clearfix'>
+            <view class='fl section_show_view_bottom_time'>{{item.day}}</view>
+            <view class='fl section_show_view_bottom_time'>{{item.time}}</view>
+            <view class='data fr'>
               <image src='../images/icon_look.png' class='icon'></image>
               <text class='number'>2</text>
               <image src='../images/icon_view.png' class='icon'></image>
               <text class='number'>{{item.comment}}</text>
+            </view>
           </view>
         </view>
+        
       </view>
       <view wx:if="{{askNull}}" class='drop'>暂无更多问股信息</view>
     </view>
-    
+
     <view class='issue' wx:if="{{false}}">
       <image src='../images/icon_issue.png'></image>
     </view>
