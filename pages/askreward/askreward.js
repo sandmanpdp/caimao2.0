@@ -19,7 +19,18 @@ Page({
     matchingStockCodeArray: [],
     shareValue: '',
     shareCode: '',
-    atniuren:false
+    atniuren:false,
+    endDate : "1",
+    dateArray : [],
+  },
+  setDateArray : function () {
+    var dateArray = [];
+    for (let i = 1 ;i<=30;i++) {
+      dateArray.push(i+'后天结束');
+    }
+    this.setData({
+      dateArray: dateArray
+    })
   },
   setMaskIndexFun: function(e) { //遮罩选择
     this.setData({
@@ -183,10 +194,19 @@ Page({
     }
   },
 
+  //选择日期
+  bindDateChange : function (e) {
+    var endDate = parseInt(e.detail.value)+1;
+    this.setData({
+      endDate: endDate
+    })
+  },
+
   submit: function() {
     var sumValue = this.data.sumValue;
-    var problemValue = this.data.problemValue
-    var shareCode = this.data.shareCode
+    var problemValue = this.data.problemValue;
+    var shareCode = this.data.shareCode;
+    var endDate = this.data.endDate
     if (sumValue == '') {
       wx.showToast({
         title: '悬赏金额不能为空',
@@ -216,7 +236,8 @@ Page({
         price: sumValue,
         type: 1,
         content: problemValue,
-        code: shareCode
+        code: shareCode,
+        end_date:endDate
       },
       success: function(res) {
         if (res.data.error == '0') {
@@ -242,6 +263,7 @@ Page({
    */
   onLoad: function(options) {
     this.getStock();
+    this.setDateArray();
   },
 
   /**

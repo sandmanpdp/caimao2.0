@@ -15,6 +15,13 @@
 .notice{padding: 0 30rpx;background-color: #fff;line-height: 100rpx}
 .notice text{font-size: 36rpx;color: #2e2e2e}
 .notice image{margin-top: 33rpx;width: 19rpx;height: 34rpx}
+
+/* 结束时间 */
+.endDatePicker text {
+  color: #b9b9b9 !important;
+  font-size:30rpx !important;
+}
+.endDatePicker image{margin-top: 33rpx;width: 19rpx;height: 34rpx}
 /* 金额 */
 .sum{padding: 0 30rpx}
 .sum>view:nth-child(1){line-height: 100rpx;font-size: 30rpx;color: #2e2e2e}

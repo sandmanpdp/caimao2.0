@@ -22,6 +22,8 @@
         <view class='fr co3f86ff'>我来回答</view>
       </view>
     </view>
+    <view class='drop' wx:if="{{!newNull}}">下拉刷新   加载更多内容</view>
+  <view wx:if="{{finishNull}}" class='drop'>暂无最新问股数据</view>
   </view>
   <!-- 已解答 -->
   <view wx:if="{{navIndex==1?true:false}}">
@@ -42,6 +44,9 @@
         <view class='fr co3f86ff'>1元偷看</view>
       </view>
     </view>
+      <!-- 下拉提示 -->
+  <view class='drop' wx:if="{{!finishNull}}">下拉刷新   加载更多内容</view>
+  <view wx:if="{{finishNull}}" class='drop'>暂无已解答问股数据</view>
   </view>
   <!-- 规则 -->
   <view class='mask' wx:if="{{maskState}}">
@@ -57,9 +62,7 @@
       <image id='m0' src='../images/icon_close.png' catch:tap='setMaskFalseFun'></image>
     </view>
   </view>
-  <!-- 下拉提示 -->
-  <view class='drop' wx:if="{{!finishNull}}">下拉刷新   加载更多内容</view>
-  <view wx:if="{{finishNull}}" class='drop'>暂无笔记数据</view>
+
   <!-- 写问股 -->
   <image style='display:none' class='write' src='../images/icon_write.png' catchtap='writeAskFun'></image>
 </view>

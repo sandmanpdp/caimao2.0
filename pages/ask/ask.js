@@ -54,7 +54,6 @@ Page({
         state: 1
       },
       success: function (res) {
-        console.log(res.data.data);
         if (res.data.data == '') {
           var finishNull = true;
           that.setData({
@@ -75,22 +74,31 @@ Page({
   getQuizList: function (state) {
     var that = this;
     var page = that.data.page;
+    
     wx.request({
       url: 'https://zhitouapi.romawaysz.com/quiz/list',
       data: {
         page: page,
-        size: 10,
+        size: 4,
         token: app.union_id,
         state: state
       },
       success: function (res) {
-        console.log(res.data.data);
+        var resData = res.data.data;
+        var quizList = that.data.quizList || [];
+        for (var i = 0; i < resData.length; i++) {
+          quizList.push(resData[i])
+        }
         if (res.data.page) {
           var page = res.data.page || '1'
         }
+        if (res.data.data.length < 10) {
+          var newNull = true;
+        }
         that.setData({
-          quizList: res.data.data,
-          page: page  
+          quizList: quizList,
+          page: page,
+          newNull: newNull
         })
       }
     })
@@ -143,7 +151,12 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-  
+    if (this.data.navIndex == 0){
+      this.getQuizList('-1');
+    }else {
+      this.getFinishQuiz('-1');
+    }
+    
   },
 
   //  转发

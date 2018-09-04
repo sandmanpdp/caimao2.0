@@ -20,6 +20,22 @@
       <input class='fl' placeholder='最多可选3人或不选' placeholder-class='cob9b9b9'></input>
       <text class='fr'>@</text>
     </view>
+    <!-- <view class='clearfix endDatePicker'>
+      <text class='fl' style='height:100rpx;'>
+        结束时间
+      </text>
+      <picker style='width:75%' mode='date' class='fl' bindchange="bindDateChange">
+        <text>{{endDate}}</text>
+        <image class='fr' src='../images/icon_right_arrow.png'></image>
+      </picker>
+    </view> -->
+    <view class='clearfix'>
+      <text class='fl'>结束时间</text>
+      <picker style='width:75%' range="{{dateArray}}" class='fl endDatePicker' bindchange="bindDateChange">
+        <text>{{endDate}}天后结束</text>
+        <image class='fr' src='../images/icon_right_arrow.png'></image>
+      </picker>
+    </view>
   </view>
   <!-- 须知 -->
   <view id='m1' class='clearfix notice' catch:tap='setMaskIndexFun'>

@@ -19,23 +19,27 @@ Page({
     sortBy : 0,
     isShow: false,
     readMaskState: false,
-    navIndex :true
+    navIndex :'0',
+    concernView : [],
+    concernViewPage : 1
   },
 
   setNavIndexFun: function (e) { //导航下标设置
     var a;
     if (e.currentTarget.id == '0') {
-      a = true
+      a = '0'
       // this.getReadFun()；
       this.setData({
         sortBy : 0
       })
-    } else {
-      a = false
+    } else if (e.currentTarget.id == '1'){
+      a = '1'
       // this.getNoteFun();
       this.setData({
         sortBy: 1
       })
+    } else if (e.currentTarget.id == '2') {
+      a = '2'
     }
     this.onPullDownRefresh();
     this.setData({
@@ -116,7 +120,6 @@ Page({
             // })
           }
           
-
           that.setData({
             viewArray: d,
             viewPage: res.data.page,
@@ -129,6 +132,26 @@ Page({
             bottomState: false,
           })
         }
+      }
+    })
+  },
+
+  //获取关注观点列表
+  getConcernView : function () {
+    var that = this;
+    wx.request({
+      url: 'https://zhitouapi.romawaysz.com/account/ConcernView',
+      data : {
+        token : app.union_id,
+        size :10,
+        page : 1,
+      },
+      success:function (res){
+        console.log(res.data.data);
+        that.setData({
+          concernView: res.data.data,
+          concernViewPage: res.data.page
+        })
       }
     })
   },
@@ -171,6 +194,7 @@ Page({
         id: options.id
       })
     }
+    this.getConcernView();
   },
 
   /**

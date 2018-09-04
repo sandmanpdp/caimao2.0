@@ -106,7 +106,7 @@
     </view>
     <view class='write-item-text'>问股</view>
   </view>
-  <view class='close' catchtap='closeMask'>
+  <view class='close-pen' catchtap='closeMask'>
     <image class='write-close' src='../images/close-pen.png'></image>
   </view>
 </view>

@@ -9,17 +9,38 @@
 
 <!-- 2.0版本导航 -->
 <view class='nav clearfix'>
-  <view id='0' class="fl blue pstRel {{navIndex?'co3f86ff':''}}" catch:tap='setNavIndexFun'>
+  <view id='0' class="fl blue pstRel {{navIndex == 0?'co3f86ff':''}}" catch:tap='setNavIndexFun'>
   热门
-  <view wx:if='{{navIndex==1}}' class='selectedBar'></view>
+  <view wx:if='{{navIndex==0}}' class='selectedBar'></view>
   </view>
-  <view id='1' class="fl pstRel {{!navIndex?'co3f86ff':''}}" catch:tap='setNavIndexFun'>最新
-    <view wx:if='{{navIndex==0}}' class='selectedBar'></view>
+  <view id='1' class="fl pstRel {{navIndex == 1?'co3f86ff':''}}" catch:tap='setNavIndexFun'>最新
+    <view wx:if='{{navIndex==1}}' class='selectedBar'></view>
+  </view>
+  <view id='2' class="fl pstRel {{navIndex == 2?'co3f86ff':''}}" catch:tap='setNavIndexFun'>关注
+    <view wx:if='{{navIndex==2}}' class='selectedBar'></view>
   </view>
 </view>
 
-<view class='section'>
+<view class='section' wx:if="{{navIndex != 2}}">
   <view class='box' wx:for="{{viewArray}}" id='{{item.id}}' catchtap='viewReadFun'>
+    <view class='title'>{{item.title}}</view>
+    <view class='text tw3'>{{item.intro}}</view>
+    <view class='info clearfix'>
+      <view class='author fl'>
+        <image class='headimg' src='{{item.avatar}}'></image>
+        <view class='name'>{{item.nickname}}</view>
+      </view>
+      <view class='data fr'>
+        <image src='../images/icon_look.png' class='icon'></image>
+        <text class='number'>{{item.look}}</text>
+        <image src='../images/icon_view.png' class='icon'></image>
+        <text class='number'>{{item.comment}}</text>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='section' wx:if="{{navIndex == 2}}">
+  <view class='box' wx:for="{{concernView}}" id='{{item.id}}' catchtap='viewReadFun'>
     <view class='title'>{{item.title}}</view>
     <view class='text tw3'>{{item.intro}}</view>
     <view class='info clearfix'>
@@ -60,7 +81,7 @@
     </view>
     <view class='write-item-text'>问股</view>
   </view>
-  <view class='close' catchtap='closeMask'>
+  <view class='close-pen' catchtap='closeMask'>
     <image class='write-close' src='../images/close-pen.png'></image>
   </view>
 </view>
