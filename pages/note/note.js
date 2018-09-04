@@ -128,12 +128,10 @@ Page({
   },
 
   getSharePricesFun: function (a, callback) {  //获取股票现价
-
     var scodeArray = [];
     var priceArray = [];
     for (var i = 0; i < a.length; i++) {
       scodeArray.push(a[i].scode)
-
     }
 
     wx.request({
@@ -166,12 +164,8 @@ Page({
               }
             }
           }
-
-    
           a[i]['actualTop'] = now_price;
-        
           hundredArray[scodeArray[i]]=now_price;
-
           // else {
           //   for (var r = 0; r < a.length; r++) {
           //     if (scodeArray[i] == a[r].S_No) {

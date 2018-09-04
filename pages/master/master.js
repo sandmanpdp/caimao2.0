@@ -12,13 +12,18 @@ Page({
     bottomState: true, //是否显示下拉状态
     noteNull: false, //笔记是否为空
     viewNull: false, //观点是否为空
+    askNull : false,//问股是否为空
     order: 0, //导航序列 
     master: [], //作者信息
     masterNote: [], //笔记数据
     notePage: -1, //笔记页码
     masterView: [], //观点数据
-    viewPage: -1, //观点页码
-    askTheStockNav: 0, //问股 
+    viewPage: 1, //观点页码
+    askTheStockNav: 0, //问股 ,
+    uid : '',
+    options:'',
+    askArray : '',
+    askNextPage:1,
     askTheStock: [ //问股数据
       {
         id: 334,
@@ -119,6 +124,7 @@ Page({
   navCutFun: function(e) {
     var that = this;
     var a = e.currentTarget.id;
+    var options = that.data.options;
     that.setData({
       order: a,
       bottomState: true, //是否显示下拉状态
@@ -126,9 +132,9 @@ Page({
       viewNull: false, //观点是否为空
     })
     if (a == 0) {
-      this.getNoteFun(a)
+      this.getNoteFun(options)
     } else if (a == 1) {
-      this.getViewFun(a)
+      this.getViewFun(options)
     }
   },
   // 笔记详情跳转方法
@@ -143,22 +149,16 @@ Page({
       url: '/pages/viewdetails/viewdetails?id=' + e.currentTarget.id
     })
   },
-  // 提问跳转方法
-  masterQuizFun: function(e) {
-    // wx.navigateTo({
-    //   url: '/pages/askreward/askreward?id=' + e.currentTarget.id
-    // })
-    wx.showToast({
-      title: '暂未开发',
+  askDetailFun : function (e) {
+    wx.navigateTo({
+      url: '/pages/askdetails/askdetails?id=' + e.currentTarget.id
     })
   },
-  /* 生命周期函数--监听页面加载 */
-  onLoad: function(options) {
-    app.globalData.page = true
-    app.globalData.scene += 1
-    this.getUserNote(options)
-    this.getNoteFun(options)
-    this.getViewFun(options)
+  // 提问跳转方法
+  masterQuizFun: function(e) {
+    wx.navigateTo({
+      url: '/pages/askreward/askreward?id=' + e.currentTarget.id
+    })
   },
 
   getUserNote: function(a) { //获取作者信息  
@@ -201,7 +201,7 @@ Page({
         next: '-1',
         order: 'new',
         area: 0,
-        index: '-1',
+        index: that.data.notePage,
         token: app.union_id
       },
       success: function(res) {
@@ -267,7 +267,7 @@ Page({
       data: {
         id: a.id,
         size: that.data.size,
-        next: that.data.viewPage,
+        page: that.data.viewPage,
         token: app.union_id
       },
       success: function(res) {
@@ -290,7 +290,7 @@ Page({
             viewNull: d,
             bottomState: !d,
             masterView: b,
-            viewPage: res.data.next
+            viewPage: res.data.page
           })
         } else {
           that.setData({
@@ -299,6 +299,33 @@ Page({
           })
         }
       }
+    })
+  },
+  getAskFun : function(){ //获取问股信息
+    var that =this;
+    wx.request({
+      url: 'https://zhitouapi.romawaysz.com/quiz/list',
+      data : {
+        token : app.union_id,
+        size : 10,
+        user_id : that.data.uid,
+        page: that.data.askNextPage
+      },
+      success (res) {
+        var resData = res.data.data;
+        var error = res.data.error;
+        var askArray = that.data.askArray || [];
+        if (error == 0) {
+          that.setData({
+            askArray: resData
+          })
+          if (askArray.length == 0){
+            that.setData({
+              askNull : true
+            })
+          }
+        }
+      },
     })
   },
   //购买方法
@@ -343,13 +370,26 @@ Page({
           token: app.union_id
         },
         success: function(res) {
-
+          
         }
       })
     }
     wx.navigateTo({
       url: '/pages/notedetails/notedetails?id=' + e.currentTarget.id + '&uid=' + e.currentTarget.dataset.uid
     })
+  },
+  /* 生命周期函数--监听页面加载 */
+  onLoad: function (options) {
+    app.globalData.page = true
+    app.globalData.scene += 1
+    this.getUserNote(options)
+    this.getNoteFun(options)
+    this.getViewFun(options);
+    this.setData({
+      uid : options.id,
+      options: options
+    })
+    this.getAskFun();
   },
 
   /**
@@ -391,11 +431,12 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function() {
-    var a = this.data.order
+    var a = this.data.order;
+    var options = this.data.options;
     if (a == 0) {
-      this.getNoteFun(a)
+      this.getNoteFun(options)
     } else if (a == 1) {
-      this.getViewFun(a)
+      this.getViewFun(options)
     }
   },
 
