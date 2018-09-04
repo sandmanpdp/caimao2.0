@@ -104,13 +104,13 @@ Page({
           }
           
           //获取每个观点（b数组）comment的数量 by pdp
-          for (var j = 0; j < b.length; j++) {
-            var commentTotals = 0,
-                lookTotals = 0,
-                praiseTotals = 0;
-                console.log(b[j]);
-            commentTotals = commentTotals + parseInt(b[j].comment);
-            console.log(commentTotals);
+          // for (var j = 0; j < b.length; j++) {
+          //   var commentTotals = 0,
+          //       lookTotals = 0,
+          //       praiseTotals = 0;
+          //       console.log(b[j]);
+          //   commentTotals = commentTotals + parseInt(b[j].comment);
+          //   console.log(commentTotals);
             // wx.setStorageSync("commentId"+b[j].id, b[j].comment);
             // wx.getStorage({
             //   key: "commentId" + b[j].id,
@@ -118,7 +118,7 @@ Page({
             //     console.log(res.data);
             //   },
             // })
-          }
+          //}
           
           that.setData({
             viewArray: d,
@@ -143,14 +143,27 @@ Page({
       url: 'https://zhitouapi.romawaysz.com/account/ConcernView',
       data : {
         token : app.union_id,
-        size :10,
-        page : 1,
+        size :4,
+        page: that.data.concernViewPage,
       },
       success:function (res){
         console.log(res.data.data);
+        var resData = res.data.data;
+        var concernView = that.data.concernView || [];
+        var nullState;
+        if (resData.length < 10) {
+          nullState = true; 
+        }else {
+          nullState = false;
+        }
+        for (var i = 0; i < resData.length; i++) {
+          concernView.push(resData[i])
+        }
         that.setData({
-          concernView: res.data.data,
-          concernViewPage: res.data.page
+          concernView: concernView,
+          concernViewPage: res.data.page,
+          notesNull: nullState,
+          bottomState : !nullState
         })
       }
     })
@@ -210,7 +223,9 @@ Page({
   onShow: function () {
     this.setData({
       isShow: false
-    })
+    });
+    this.getConcernView();
+    this.getListFun();
   },
 
   /**
@@ -257,7 +272,13 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    this.getListFun(this.data.id)
+    var navIndex = this.data.navIndex
+    if (navIndex == 0 || navIndex == 1){
+      this.getListFun(this.data.id);
+    } else if (navIndex == 2) {
+      this.getConcernView()
+    }
+    
   },
 
   //  转发
