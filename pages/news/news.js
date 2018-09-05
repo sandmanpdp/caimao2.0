@@ -122,17 +122,17 @@ Page({
       }
     })
     // 获取消息总数
-    wx.request({
-      url: 'https://zhitouapi.romawaysz.com/msg/unreadNum',
-      data: {
-        token: app.union_id
-      },
-      success: function(res){
-        that.setData({
-          otherNew: parseInt(res.data.total)
-        })
-      }
-    })
+    // wx.request({
+    //   url: 'https://zhitouapi.romawaysz.com/msg/unreadNum',
+    //   data: {
+    //     token: app.union_id
+    //   },
+    //   success: function(res){
+    //     that.setData({
+    //       otherNew: parseInt(res.data.total)
+    //     })
+    //   }
+    // })
   },
   
   linkFun: function(e){  //详情跳转方法

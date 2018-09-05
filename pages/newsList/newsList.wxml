@@ -17,7 +17,7 @@
   </view>
   <view class='news-slice' catchtap='getNews' data-type='1'>
     <view class='clearfix'>
-      <image class='left-image fl' src='../images/hot.png'></image>
+      <image class='left-image fl' src='../images/view.png'></image>
       <view class='fl text-box'>
         <view class='title'>观点</view>
         <view class='detail'>观点-是发动机可是还是看合适的发山东矿机发灰色空间</view>
@@ -32,7 +32,7 @@
   </view>
   <view class='news-slice' catchtap='getNews' data-type='6'>
     <view class='clearfix'>
-      <image class='left-image fl' src='../images/hot.png'></image>
+      <image class='left-image fl' src='../images/ask-info.png'></image>
       <view class='fl text-box'>
         <view class='title'>问股诊股</view>
         <view class='detail'>问股诊股-是发动机可是还是看合适的发山东矿机发灰色空间</view>
@@ -47,7 +47,7 @@
   </view>
   <view class='news-slice' catchtap='getNews' data-type='3'>
     <view class='clearfix'>
-      <image class='left-image fl' src='../images/hot.png'></image>
+      <image class='left-image fl' src='../images/system.png'></image>
       <view class='fl text-box'>
         <view class='title'>系统消息</view>
         <view class='detail'>系统消息-是发动机可是还是看合适的发山东矿机发灰色空间</view>
