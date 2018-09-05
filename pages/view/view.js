@@ -21,7 +21,11 @@ Page({
     readMaskState: false,
     navIndex :'0',
     concernView : [],
-    concernViewPage : 1
+    concernViewPage : 1,
+    searchBox : false,
+    searchConent : '',
+    searchArray : '',
+    searchContentBox : false
   },
 
   setNavIndexFun: function (e) { //导航下标设置
@@ -48,6 +52,70 @@ Page({
       notesNull: false
     })
   },
+
+  //显示搜索框
+  showSearchBox : function () {
+    this.setData({
+      searchBox : true
+    })
+  },
+  //关闭搜索
+  closeSearchMask:function () {
+    this.setData({
+      searchBox: false,
+      searchArray : [],
+      searchConent : ""
+    })
+  },
+  //搜索框内容 
+  bindKeyInput:function (e) {
+    this.setData({
+      searchConent :  e.detail.value
+    })
+  },
+
+  bindKeyConfirm : function (e) {
+    var that = this;
+    var searchConent = that.data.searchConent;
+    if (searchConent != ''){
+      wx.request({
+        url: 'https://zhitouapi.romawaysz.com/view/SearchView',
+        data : {
+          token : app.union_id,
+          content: searchConent,
+          limit : 5
+        },
+        success : function (res) {
+          var error = res.data.error;
+          var resData = res.data.data;
+          if (error == 0 && resData){
+            if (resData.length !=0 ){
+              that.setData({
+                searchContentBox: true,
+                searchArray: resData
+              })
+            }else if( resData.length == 0 ) {
+               that.setData({
+                 searchContentBox: false,
+                 searchConent:''
+               })
+               wx.showToast({
+                 title: '暂无相关内容',
+                 icon : 'none'
+               }) 
+            }
+          }
+        }
+      })
+    }else {
+      wx.showToast({
+        title: '搜索内容不能为空',
+        icon : 'none'
+      })
+    }
+  },
+
+
 
   viewReadFun: function (e) {// 观点阅读方法
     wx.navigateTo({

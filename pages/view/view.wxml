@@ -9,17 +9,41 @@
 
 <!-- 2.0版本导航 -->
 <view class='nav clearfix'>
-  <view id='0' class="fl blue pstRel {{navIndex == 0?'co3f86ff':''}}" catch:tap='setNavIndexFun'>
-  热门
-  <view wx:if='{{navIndex==0}}' class='selectedBar'></view>
+  <view id='0' wx:if="{{!searchBox}}" class="fl nav-item blue pstRel {{navIndex == 0?'co3f86ff':''}}" catch:tap='setNavIndexFun'>
+    热门
+    <view wx:if='{{navIndex==0}}' class='selectedBar'></view>
   </view>
-  <view id='1' class="fl pstRel {{navIndex == 1?'co3f86ff':''}}" catch:tap='setNavIndexFun'>最新
+  <view id='1' wx:if="{{!searchBox}}" class="fl nav-item pstRel {{navIndex == 1?'co3f86ff':''}}" catch:tap='setNavIndexFun'>最新
     <view wx:if='{{navIndex==1}}' class='selectedBar'></view>
   </view>
-  <view id='2' class="fl pstRel {{navIndex == 2?'co3f86ff':''}}" catch:tap='setNavIndexFun'>关注
+  <view id='2' wx:if="{{!searchBox}}" class="fl nav-item pstRel {{navIndex == 2?'co3f86ff':''}}" catch:tap='setNavIndexFun'>关注
     <view wx:if='{{navIndex==2}}' class='selectedBar'></view>
   </view>
+  <view wx:if="{{!searchBox}}" class='fr search nav-item' catchtap='showSearchBox'>
+    <image class='search' src='../images/search.png'></image>
+  </view>
+
+  <view class='mask' catchtap='closeSearchMask' wx:if="{{searchBox}}"></view>
+  <view class='searchBox' wx:if="{{searchBox}}">
+    <view class='searchInputBox'>
+      <input bindinput="bindKeyInput" value='{{searchConent}}' placeholder='输入观点关键字' bindconfirm="bindKeyConfirm"></input>
+    </view>
+    <view class='searchContentBox clearfix' wx:if='{{searchContentBox}}'>
+    <view class='clearfix searchContent-item' catchtap='viewReadFun' wx:for='{{searchArray}}' id='{{item.id}}'>
+      <view class='fl searchContent'>
+        {{item.title}}
+      </view>
+      <view class='fr right_arrow right_arrow_box'>
+        <image class='right_arrow' src='../images/icon_right_arrow.png'></image>
+      </view>
+    </view>
+  </view>
+  </view>
+  
+
 </view>
+
+
 
 <view class='section' wx:if="{{navIndex != 2}}">
   <view class='box' wx:for="{{viewArray}}" id='{{item.id}}' catchtap='viewReadFun'>

@@ -2,6 +2,10 @@ page {
   line-height: 0;
 }
 
+view {
+  box-sizing: border-box;
+}
+
 .section {
   padding: 0 30rpx 30rpx;
   background-color: #fff;
@@ -86,24 +90,109 @@ page {
   width: 34rpx;
   height: 19rpx;
 }
+
 .selecteBox {
   background: #fff;
   text-align: center;
-  border-bottom:1rpx solid #eee;
+  border-bottom: 1rpx solid #eee;
 }
 
 /* 导航 */
-.nav{padding: 30rpx;background-color: #fff;border-bottom: 2rpx solid #dcdcdc;position: fixed;width: 100%;}
-.nav view{width: 20%;font-size: 34rpx;line-height: 34rpx;color: #b9b9b9;font-weight: 500}
-.co3f86ff{color: #3f86ff!important}
-.co93b8ff{color: #93b8ff!important}
+
+.nav {
+  background-color: #fff;
+  border-bottom: 2rpx solid #dcdcdc;
+  position: fixed;
+  width: 100%;
+}
+
+.nav-item {
+  width: 20%;
+  font-size: 34rpx;
+  line-height: 34rpx;
+  color: #b9b9b9;
+  font-weight: 500;
+  padding: 30rpx 0;
+}
+.nav .nav-item:first-child {
+  margin-left: 30rpx;
+}
+
+.nav .nav-item:last-child {
+  margin-right: 30rpx;
+}
+
+.co3f86ff {
+  color: #3f86ff !important;
+}
+
+.co93b8ff {
+  color: #93b8ff !important;
+}
+
 .selectedBar {
   width: 50rpx !important;
   border-bottom: 6rpx solid #3f86ff;
   position: absolute;
-  bottom: -30rpx;
+  bottom: 0;
   left: 10rpx;
 }
+
 .pstRel {
   position: relative;
+}
+
+.search {
+  width: 36rpx;
+  height: 34rpx;
+}
+
+.searchBox {
+  width: 100%;
+  background: #fff;
+  position: relative;
+  z-index: 999999999999999999;
+  border-bottom:1rpx solid #ddd;
+}
+.searchInputBox {
+  border-bottom: 1rpx solid #ddd;
+  padding:20rpx 30rpx;
+
+}
+
+.searchBox input {
+  padding: 0 30rpx;
+  width:100%;
+  height: 70rpx;
+  border: 1px solid #ddd;
+  border-radius: 40rpx;
+  font-size: 28rpx;
+  color: #939393;
+  line-height: 0;
+  box-sizing: border-box;
+}
+.right_arrow_box {
+  height: 80rpx !important;
+}
+.right_arrow {
+  width: 19rpx;
+  height: 34rpx;
+  line-height: 80rpx;
+}
+.searchContentBox {
+  width: 100%;
+  background: #fff;
+  z-index: 999999999999999999;
+  padding: 0 30rpx;
+}
+.searchContent-item {
+  border-bottom:1rpx solid #eee; 
+}
+.searchContent {
+  color: #666;
+  font-size: 30rpx;
+  width: 80%;
+  height: 80rpx;
+  line-height: 50prx;
+  padding: 40rpx 0;
 }
