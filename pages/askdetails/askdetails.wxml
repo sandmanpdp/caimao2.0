@@ -24,7 +24,7 @@
         <view class='title clearfix'>
           <image class='fl' src='{{item.avatar}}'></image>
           <text class='fl'>{{item.nickname}}</text>
-          <view class='fr'>采纳答案</view>
+          <view class='fr' data-aid="{{item.id}}" catchtap='setSatistyAnswer'>采纳答案</view>
         </view>
         <view class='text'>{{item.content}}</view>
         <view class='fun clearfix'>

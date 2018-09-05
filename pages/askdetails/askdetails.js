@@ -111,14 +111,57 @@ Page({
             title: '点赞成功',
           })
           that.getCommetList();
-        }else {
+        } else if (res.data.error == 10200){
           wx.showToast({
-            title: '错误'+res.data.error,
+            title: '请勿重复点赞',
+          })
+        }else{
+          wx.showToast({
+            title: '错误' + res.data.error,
           })
         }
       },
     })
   },
+  //采纳答案
+  setSatistyAnswer : function (e) {
+    var that = this;
+    var aid = e.currentTarget.dataset.aid;
+    console.log(aid);
+    wx.request({
+      url: 'https://zhitouapi.romawaysz.com/quiz/set',
+      data : {
+        token : app.union_id,
+        id : that.data.id,
+        c_id : aid
+      },
+      success : function (res) {
+        var resData = res.data.data;
+        var error = res.data.error;
+        if(error == 0) {
+          wx.showToast({
+            title: '采纳答案成功',
+          })
+        }
+      }
+    })
+  },
+  //获取满意答案
+  getSatistyAnswer : function () {
+    var that = this;
+    wx.request({
+      url: 'https://zhitouapi.romawaysz.com/quiz/SatisfyAnswer',
+      data : {
+        token : app.union_id,
+        id : that.data.id
+      },
+      success:function (res) {
+        var resData = res.data.data;
+        console.log(resData);
+      }
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
@@ -129,6 +172,7 @@ Page({
     });
     this.getAskDetail();
     this.getCommetList();
+    this.getSatistyAnswer();
   },
 
   /**
