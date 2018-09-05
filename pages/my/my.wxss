@@ -70,16 +70,29 @@
 .head_bottom {
   box-sizing: border-box;
   padding: 30rpx 0;
-  background-color: #145ce3;
+  background-color: #fff;
 }
-
+.cofc7946 {
+  color: #FC7946;
+}
 .head_bottom_box {
   width: 33%;
 }
+.myGradeBox {
+  background: #fff;
+}
+.myGrade {
+  font-size: 32rpx;
+  line-height: 100rpx;
+  color: #333;
+  margin: 0 30rpx;
+  background: #fff;
+  border-bottom:1rpx solid #eee; 
+}
 
 .head_bottom_box:nth-child(2) {
-  border-left: 2rpx solid #689dff;
-  border-right: 2rpx solid #689dff;
+  /* border-left: 2rpx solid #689dff;
+  border-right: 2rpx solid #689dff; */
 }
 
 .head_bottom_box_number {
@@ -87,13 +100,13 @@
   line-height: 44rpx;
   font-size: 44rpx;
   font-weight: 600;
-  color: #fff;
+  color: #FC7946;
 }
 
 .head_bottom_box_depict {
   font-size: 26rpx;
   line-height: 26rpx;
-  color: rgba(255, 255, 255, 0.5);
+  color: #666;
 }
 
 /* 功能列表 */
@@ -154,7 +167,8 @@
 }
 
 .account {
-  margin-bottom: 20rpx;
+  margin-bottom: 0;
+  margin-top: 20rpx;
 }
 
 .help {

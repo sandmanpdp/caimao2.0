@@ -48,7 +48,8 @@
       <view class='fun clearfix'>
         <view class='fl'>还剩
           <text class='cofc7946'>30</text>小时结束</view>
-        <view class='fr co3f86ff'>我来回答</view>
+        <view wx:if="{{item.c_id != -1}}" class='fr co3f86ff'>满意回答</view>
+        <view wx:if="{{item.c_id == '-1'}}" class='fr cofc7946'>等待采纳</view>
       </view>
     </view>
   </view>

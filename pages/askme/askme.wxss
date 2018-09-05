@@ -65,3 +65,6 @@
   color:#808080;
   line-height:26rpx;
 }
+.cofc7946 {
+  color:#fc7946 !important;
+}

@@ -157,6 +157,7 @@ Page({
       },
       success:function (res) {
         var resData = res.data.data;
+        var error = res.data.error;
         console.log(resData);
       }
     })

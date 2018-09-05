@@ -31,6 +31,11 @@
       <view class='head_top_userFans_depict'>粉丝</view>
     </view>
   </view>
+  <view class='myGradeBox'>
+    <view class='myGrade'>
+      我的成绩
+    </view>
+  </view>
   <!-- 下半部分 -->
   <view class='head_bottom clearfix'>
     <view class='fl head_bottom_box tc clearfix' catchtap='linkHistoryFun'>
@@ -50,30 +55,10 @@
 <!-- 个人账户 -->
 <navigator class='clearfix' url="/pages/wallet/wallet" open-type='navigate' hover-class="navigator-hover">
   <view class='list_box account clearfix'>
-    <image class='list_box_icon' src='../images/icon_account.png'></image>
-    <view class='list_box_title'>个人账户</view>
-    <image class='list_box_arrow' src='../images/icon_right_arrow.png'></image>
-  </view>
-</navigator>
-<!-- 我的问股 -->
-<navigator class='clearfix' url='/pages/askme/askme' open-type='navigate' hover-class="navigator-hover">
-  <view class='list_box'>
     <view class='list_box_border clearfix'>
-      <image class='list_box_icon' src='../images/icon_myStock.png'></image>
-      <view class='list_box_title'>我的问股</view>
+      <image class='list_box_icon' src='../images/icon_account.png'></image>
+      <view class='list_box_title'>个人账户</view>
       <image class='list_box_arrow' src='../images/icon_right_arrow.png'></image>
-      <view class='list_box_number'>999</view>
-    </view>
-  </view>
-</navigator>
-<!-- 我的观点 -->
-<navigator url="/pages/view/view?id={{userInfo.id}}" open-type='navigate' hover-class="navigator-hover">
-  <view class='list_box'>
-    <view class='list_box_border clearfix'>
-      <image class='list_box_icon' src='../images/icon_myViewpoint.png'></image>
-      <view class='list_box_title'>我的观点{{userInfo.view_num == "0" ? "" : "(" + userInfo.view_num + ")" }}</view>
-      <image class='list_box_arrow' src='../images/icon_right_arrow.png'></image>
-      <!--<view wx:if="{{userInfo.view_num!='0'}}" class='list_box_number'>{{userInfo.view_num}}  </view> -->
     </view>
   </view>
 </navigator>
@@ -86,6 +71,29 @@
     <text class='list_box_depict'>做任务,免费看笔记</text>
   </view>
 </navigator>
+<!-- 我的问股 -->
+<navigator class='clearfix' url='/pages/askme/askme' open-type='navigate' hover-class="navigator-hover">
+  <view class='list_box'>
+    <view class='list_box_border clearfix'>
+      <image class='list_box_icon' src='../images/icon_myStock.png'></image>
+      <view class='list_box_title'>我的问股</view>
+      <image class='list_box_arrow' src='../images/icon_right_arrow.png'></image>
+      <!-- <view class='list_box_number'>999</view> -->
+    </view>
+  </view>
+</navigator>
+<!-- 我的观点 -->
+<navigator class='help' url="/pages/view/view?id={{userInfo.id}}" open-type='navigate' hover-class="navigator-hover">
+  <view class='list_box'>
+    <view class='clearfix'>
+      <image class='list_box_icon' src='../images/icon_myViewpoint.png'></image>
+      <view class='list_box_title'>我的观点{{userInfo.view_num == "0" ? "" : "(" + userInfo.view_num + ")" }}</view>
+      <image class='list_box_arrow' src='../images/icon_right_arrow.png'></image>
+      <!--<view wx:if="{{userInfo.view_num!='0'}}" class='list_box_number'>{{userInfo.view_num}}  </view> -->
+    </view>
+  </view>
+</navigator>
+
 <!-- 帮助与反馈 -->
 <navigator url="/pages/help/help" open-type='navigate' hover-class="navigator-hover">
   <view class='list_box'>

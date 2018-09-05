@@ -211,7 +211,7 @@ Page({
       url: 'https://zhitouapi.romawaysz.com/account/ConcernView',
       data : {
         token : app.union_id,
-        size :4,
+        size :10,
         page: that.data.concernViewPage,
       },
       success:function (res){
