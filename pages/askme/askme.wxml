@@ -13,25 +13,28 @@
   <!-- 我的提问 -->
   <view wx:if="{{navIndex==0?true:false}}">
     <view wx:for="{{quizList}}">
-    <view class='box' data-id='{{item.id}}' catchtap='detailsAskFun'>
-      <view class='title clearfix'>
-        <image class='fl' src='../images/ask.png'></image>
-        <!-- <text class='fl'>sandman</text> -->
-        <text class='fr money'>{{item.hook_price}}</text>
-      </view>
-      <view class='text'>
-        <view></view>
-        <view class='ask-text'>
-          {{item.content}}
+      <view class='box' data-id='{{item.id}}' catchtap='detailsAskFun'>
+        <view class='title clearfix'>
+          <image class='fl' src='../images/ask.png'></image>
+          <!-- <text class='fl'>sandman</text> -->
+          <text class='fr money'>{{item.hook_price}}</text>
+          <view class='fr yuanbaoBox'>
+            <image class='yuanbao' src='../images/yuanbaoO.png'></image>
+          </view>
+        </view>
+        <view class='text'>
+          <view></view>
+          <view class='ask-text'>
+            {{item.content}}
+          </view>
+        </view>
+        <view class='fun clearfix'>
+          <view class='fl'>还剩
+            <text class='cofc7946'>30</text>小时结束</view>
+          <view class='fr box-bottom'>{{item.comment}}人回答</view>
         </view>
       </view>
-      <view class='fun clearfix'>
-        <view class='fl'>还剩
-          <text class='cofc7946'>30</text>小时结束</view>
-        <view class='fr box-bottom'>{{item.comment}}人回答</view>
-      </view>
     </view>
-  </view>
   </view>
   <!-- 我的回答 -->
   <view wx:if="{{navIndex==1?true:false}}">
@@ -40,6 +43,9 @@
         <image class='fl' src='../images/answer.png'></image>
         <!-- <text class='fl'>sandman</text> -->
         <text class='fr money'>{{item.hook_price}}</text>
+        <view class='fr yuanbaoBox'>
+          <image class='yuanbao' src='../images/yuanbaoO.png'></image>
+        </view>
       </view>
       <view class='text'>
         <view class='ask-text'>{{item.c_content}}</view>

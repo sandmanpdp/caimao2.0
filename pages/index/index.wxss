@@ -90,7 +90,7 @@
 .view .section{padding: 0 30rpx}
 .view .section .box:last-child{border: 0}
 .view .section .box .title{font-size: 36rpx;color: #2e2e2e;font-weight: 600;line-height: 40rpx;}
-.view .section .box .text{margin: 26rpx 0;line-height: normal;font-size: 28rpx;color: #808080}
+.view .section .box .text{margin: 26rpx 0;line-height: normal;font-size: 28rpx;color: #666}
 .view .section .box .info{height:52rpx}
 .view .section .box .info .headimg{margin:0 20rpx 0 0;width:49rpx;height:49rpx;border-radius:50%;vertical-align: middle}
 .view .section .box .info .name{display: inline-block;font-size: 26rpx;color: #666}
@@ -212,11 +212,11 @@
 .view .section .box{padding: 30rpx 0;border-bottom: 1px solid #eeeeee}
 .box{padding: 30rpx 30rpx 21rpx 30rpx;background-color: #fff}
 .box:first-child{margin: 0}
-.box .title image{margin-right: 20rpx;width: 48rpx;height: 48rpx;border-radius: 50%}
-.box .title text:nth-child(2){font-size: 28rpx;color: #808080;line-height: 48rpx}
-.box .title text:nth-child(3){font-size: 36rpx;color: #fc7946;line-height: 48rpx}
+.avatarImage{margin-right: 20rpx;width: 48rpx;height: 48rpx;border-radius: 50%;float: left;}
+.nickname{font-size: 28rpx;color: #808080;line-height: 48rpx}
+.money-text{font-size: 36rpx;color: #fc7946;line-height: 48rpx}
 .box .text{margin: 29rpx 0 30rpx;font-size: 30rpx;color: #2e2e2e}
-.box .fun view:nth-child(1){font-size: 24rpx;color: #808080;line-height: 26rpx}
+.box .fun view:nth-child(1){font-size: 24rpx;color: #999;line-height: 26rpx}
 .box .fun view:nth-child(2){font-size: 26rpx;line-height: 26rpx}
 .co3f86ff{color: #3f86ff!important}
 .cofc7946{color: #fc7946!important}
@@ -228,4 +228,14 @@
   font-size: 26rpx;
   line-height: 100rpx;
   text-align: center;
+}
+.yuanbaoBox {
+  display: inline-block;
+  width:44rpx;
+  height:44rpx;
+  margin-right: 10rpx;
+}
+.yuanbao {
+  width: 100% !important;
+  height: 100% !important;
 }

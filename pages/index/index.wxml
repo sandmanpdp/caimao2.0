@@ -240,9 +240,12 @@
     <view class='ask-box'>
       <view data-id='{{item.id}}' class='box' wx:for='{{quizList}}' catchtap='detailsAskFun'>
         <view class='title clearfix'>
-          <image class='fl' src='{{item.avatar}}'></image>
-          <text class='fl'>{{item.nickname}}</text>
-          <text class='fr'>{{item.hook_price}}</text>
+          <image class='fl' class='avatarImage' src='{{item.avatar}}'></image>
+          <text class='fl nickname'>{{item.nickname}}</text>
+          <text class='fr money-text'>{{item.hook_price}}</text>
+          <view class='fr yuanbaoBox'>
+            <image class='yuanbao' src='../images/yuanbaoO.png'></image>
+          </view>
         </view>
         <view class='text tw4'>{{item.content}}</view>
         <view class='fun clearfix'>

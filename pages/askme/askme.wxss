@@ -68,3 +68,13 @@
 .cofc7946 {
   color:#fc7946 !important;
 }
+.yuanbaoBox {
+  display: inline-block;
+  width:44rpx;
+  height:44rpx;
+  margin-right: 10rpx;
+}
+.yuanbao {
+  width: 100% !important;
+  height: 100% !important;
+}

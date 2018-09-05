@@ -7,40 +7,43 @@ Page({
    */
   data: {
     navIndex: 0,
-    id : '',
-    askdetail:'',
-    comment:'',
-    commentNext : '-1',
-    commentList:''
+    id: '',
+    askdetail: '',
+    comment: '',
+    commentNext: '-1',
+    commentList: '',
+    userId: '',
+    hasSatistyAnswer: false,
+    askdetail_userId: ''
   },
-  setNavIndexFun:function(e){
+  setNavIndexFun: function(e) {
     this.setData({
       navIndex: (e.currentTarget.id.split('n'))[1]
     })
   },
 
-  getAskDetail : function () {
+  getAskDetail: function() {
     var that = this;
     var id = that.data.id;
     wx.request({
-      url: 'https://zhitouapi.romawaysz.com/quiz/QuizDetails?token='+app.union_id,
-      data :{
-        id : id
+      url: 'https://zhitouapi.romawaysz.com/quiz/QuizDetails?token=' + app.union_id,
+      data: {
+        id: id
       },
-      success (res) {
+      success(res) {
         var resData = res.data.data;
         var error = res.data.error;
-        if(error == 0){
+        if (error == 0) {
           that.setData({
-            askdetail: resData[0]
+            askdetail: resData[0],
+            askdetail_userId: resData[0].q_user_id
           })
         }
-        console.log(that.data.askdetail)
       }
     })
   },
 
-  getComment : function (e) {
+  getComment: function(e) {
     var comment = e.detail.value;
     console.log(comment)
     this.setData({
@@ -48,74 +51,83 @@ Page({
     })
   },
 
-  addComment:function () {
+  addComment: function() {
     var that = this;
-    if(that.data.comment != ''){
-      wx.request({
-        url: 'https://zhitouapi.romawaysz.com/comment/create',
-        data: {
-          token: app.union_id,
-          type: 3,
-          id: that.data.id,
-          content: that.data.comment,
-        },
-        success : function (res) {
-          if(res.data.error == 0) {
-            wx.showToast({
-              title: '回答成功',
-            })
-            that.getCommetList();
+    if (that.data.comment != '') {
+
+      if (that.data.userId == that.data.askdetail_userId) {
+        wx.showToast({
+          title: '亲，您不能回答自己的问股',
+          icon : 'none'
+        })
+      } else {
+        wx.request({
+          url: 'https://zhitouapi.romawaysz.com/comment/create',
+          data: {
+            token: app.union_id,
+            type: 3,
+            id: that.data.id,
+            content: that.data.comment,
+          },
+          success: function(res) {
+            if (res.data.error == 0) {
+              wx.showToast({
+                title: '回答成功',
+              })
+              that.getCommetList();
+            }
           }
-        }
-      }) 
-    }else{
+        })
+
+      }
+    } else {
       wx.showToast({
         title: '回答内容不能为空',
-        icon : 'none'
+        icon: 'none'
       })
     }
   },
 
-  getCommetList: function () {
+  getCommetList: function() {
     var that = this;
     wx.request({
       url: 'https://zhitouapi.romawaysz.com/comment/list',
-      data : {
-        token : app.union_id,
-        type : 3,
-        id : that.data.id,
-        next : that.data.commentNext,
+      data: {
+        token: app.union_id,
+        type: 3,
+        id: that.data.id,
+        next: that.data.commentNext,
         size: 10,
       },
-      success : function(res) {
+      success: function(res) {
         that.setData({
-          commentList : res.data.data
+          commentList: res.data.data
         })
       }
     })
   },
   //点赞
-  createPraise : function (e) {
+  createPraise: function(e) {
     var that = this;
     wx.request({
       url: 'https://zhitouapi.romawaysz.com/praise/create',
       data: {
-        token : app.union_id,
+        token: app.union_id,
         user_id: app.localUserData.user_id,
-        type : 3,
-        sId : e.currentTarget.dataset.id
+        type: 3,
+        sId: e.currentTarget.dataset.id
       },
-      success : function(res) {
-        if(res.data.error == 0){
+      success: function(res) {
+        if (res.data.error == 0) {
           wx.showToast({
             title: '点赞成功',
           })
           that.getCommetList();
-        } else if (res.data.error == 10200){
+        } else if (res.data.error == 10200) {
           wx.showToast({
             title: '请勿重复点赞',
           })
-        }else{
+        } else {
           wx.showToast({
             title: '错误' + res.data.error,
           })
@@ -124,41 +136,49 @@ Page({
     })
   },
   //采纳答案
-  setSatistyAnswer : function (e) {
+  setSatistyAnswer: function(e) {
     var that = this;
     var aid = e.currentTarget.dataset.aid;
     console.log(aid);
     wx.request({
       url: 'https://zhitouapi.romawaysz.com/quiz/set',
-      data : {
-        token : app.union_id,
-        id : that.data.id,
-        c_id : aid
+      data: {
+        token: app.union_id,
+        id: that.data.id,
+        c_id: aid
       },
-      success : function (res) {
+      success: function(res) {
         var resData = res.data.data;
         var error = res.data.error;
-        if(error == 0) {
+        if (error == 0) {
           wx.showToast({
             title: '采纳答案成功',
           })
+          that.getCommetList();
         }
       }
     })
   },
   //获取满意答案
-  getSatistyAnswer : function () {
+  getSatistyAnswer: function() {
     var that = this;
     wx.request({
       url: 'https://zhitouapi.romawaysz.com/quiz/SatisfyAnswer',
-      data : {
-        token : app.union_id,
-        id : that.data.id
+      data: {
+        token: app.union_id,
+        id: that.data.id
       },
-      success:function (res) {
+      success: function(res) {
         var resData = res.data.data;
         var error = res.data.error;
-        console.log(resData);
+        if (error == 0) {
+          if (resData != '') {
+            that.setData({
+              satistyAnswer: resData,
+              hasSatistyAnswer: true
+            })
+          }
+        }
       }
     })
   },
@@ -166,10 +186,11 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function(options) {
     var id = options.id;
     this.setData({
-      id : id
+      id: id,
+      userId: app.localUserData.user_id
     });
     this.getAskDetail();
     this.getCommetList();
@@ -179,47 +200,47 @@ Page({
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
-  
+  onReady: function() {
+
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
-  
+  onShow: function() {
+
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
-  
+  onHide: function() {
+
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
-  
+  onUnload: function() {
+
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
+  onPullDownRefresh: function() {
     wx.stopPullDownRefresh()
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
-  
+  onReachBottom: function() {
+
   },
 
   //  转发
-  onShareAppMessage: function (res) {
+  onShareAppMessage: function(res) {
     if (res.from === 'button') {
       // 来自页面内转发按钮
       console.log(res.target)
@@ -227,12 +248,12 @@ Page({
     return {
       title: '黑石笔记',
       path: '/pages/index/index',
-      success: function (res) {
+      success: function(res) {
         // 转发成功
       },
-      fail: function (res) {
+      fail: function(res) {
         // 转发失败
       }
     }
-  } 
+  }
 })

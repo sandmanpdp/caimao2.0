@@ -12,12 +12,12 @@
 .box .title text:nth-child(2){font-size: 28rpx;color: #808080;line-height: 48rpx}
 .box .title text:nth-child(3){font-size: 36rpx;color: #fc7946;line-height: 48rpx}
 .box .text{margin: 29rpx 0 30rpx;font-size: 30rpx;color: #2e2e2e}
-.box .fun view:nth-child(1){font-size: 24rpx;color: #808080;line-height: 26rpx}
+.box .fun view:nth-child(1){font-size: 24rpx;color: #999;line-height: 26rpx}
 .box .fun view:nth-child(2){font-size: 26rpx;line-height: 26rpx}
 /* 已解答 */
 .box .title view{font-size: 30rpx;color: #b9b9b9;line-height: 48rpx}
-.box .text view:nth-child(1){margin-bottom: 25rpx;font-size: 36rpx;color: #141414;line-height: 36rpx;font-weight: 600}
-.box .text view:nth-child(2){font-size: 30rpx;color: #2e2e2e;line-height: 36rpx}
+.box .text view:nth-child(1){margin-bottom: 25rpx;font-size: 36rpx;color: #333;line-height: 36rpx;font-weight: 600}
+.box .text view:nth-child(2){font-size: 30rpx;color: #666;line-height: 36rpx}
 .box .answer{margin-bottom: 20rpx;font-size: 28rpx;color: #808080;line-height: 28rpx}
 .box .end view{font-size: 24rpx;color: #808080;line-height: 26rpx}
 .box .end view:nth-child(1){margin-right: 28rpx}
