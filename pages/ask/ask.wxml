@@ -23,7 +23,7 @@
       </view>
     </view>
     <view class='drop' wx:if="{{!newNull}}">下拉刷新   加载更多内容</view>
-  <view wx:if="{{finishNull}}" class='drop'>暂无最新问股数据</view>
+  <view wx:if="{{newNull}}" class='drop'>暂无最新问股数据</view>
   </view>
   <!-- 已解答 -->
   <view wx:if="{{navIndex==1?true:false}}">

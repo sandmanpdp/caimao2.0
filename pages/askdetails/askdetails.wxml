@@ -24,13 +24,14 @@
         <view class='title clearfix'>
           <image class='fl' src='{{item.avatar}}'></image>
           <text class='fl'>{{item.nickname}}</text>
-          <view class='fr'>满意答案</view>
+          <view class='fr'>采纳答案</view>
         </view>
         <view class='text'>{{item.content}}</view>
         <view class='fun clearfix'>
           <text class='fl'>10-27  12:42</text>
           <view class='fr'>
-            <image src='../images/icon_laud2.png'></image>
+            <image catchtap='createPraise' data-id="{{item.id}}" wx:if='{{item.is_praise==0}}' src='../images/icon_laud2.png'></image>
+            <image catchtap='createPraise' data-id="{{item.id}}" wx:if='{{item.is_praise==1}}' src='../images/icon_laudRed4.png'></image>
             <text>{{item.praise}}</text>
           </view>
         </view>

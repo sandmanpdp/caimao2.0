@@ -18,6 +18,7 @@ Page({
       navIndex: (e.currentTarget.id.split('n'))[1]
     })
   },
+
   getAskDetail : function () {
     var that = this;
     var id = that.data.id;
@@ -93,7 +94,31 @@ Page({
       }
     })
   },
-
+  //点赞
+  createPraise : function (e) {
+    var that = this;
+    wx.request({
+      url: 'https://zhitouapi.romawaysz.com/praise/create',
+      data: {
+        token : app.union_id,
+        user_id: app.localUserData.user_id,
+        type : 3,
+        sId : e.currentTarget.dataset.id
+      },
+      success : function(res) {
+        if(res.data.error == 0){
+          wx.showToast({
+            title: '点赞成功',
+          })
+          that.getCommetList();
+        }else {
+          wx.showToast({
+            title: '错误'+res.data.error,
+          })
+        }
+      },
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

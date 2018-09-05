@@ -94,6 +94,8 @@ Page({
         }
         if (res.data.data.length < 10) {
           var newNull = true;
+        }else {
+          var newNull = false;
         }
         that.setData({
           quizList: quizList,

@@ -6,16 +6,18 @@ Page({
    * 页面的初始数据
    */
   data: {
-    navIndex: true, //导航下标
+    navIndex: '0', //导航下标
     page : 1,
-    quizList:''
+    quizList:[],
+    answerList:[],
+    answerPage : 1
   },
   setNavIndexFun: function (e) { //导航下标设置
     var a;
     if (e.currentTarget.id == '0') {
-      a = true
+      a = '0'
     } else {
-      a = false
+      a = '1'
     }
     this.setData({
       navIndex:a
@@ -42,22 +44,56 @@ Page({
       },
       success: function (res) {
         console.log(res.data.data);
+        var resData = res.data.data;
+        var error = res.data.error;
         if (res.data.page) {
           var page = res.data.page || '1'
         }
-        that.setData({
-          quizList: res.data.data,
-          page: page
-        })
+        if (error == 0 && resData !=''){
+          var quizList = that.data.quizList || [];
+          for (var i = 0; i < resData.length; i++) {
+            quizList.push(resData[i])
+          }
+          that.setData({
+            quizList: quizList,
+            page: page
+          })
+        }
+        
       }
     })
   },
-
+  getAnswerQuiz : function () {
+    var that = this;
+    wx.request({
+      url: 'https://zhitouapi.romawaysz.com/quiz/AnswerQuiz',
+      data :{
+        page: that.data.answerPage,
+        size : 10,
+        token : app.union_id
+      },
+      success : function (res) {
+        var resData = res.data.data
+        var error = res.data.error;
+        var answerList = that.data.answerList || [];
+        if(error == 0 ){
+          for (var i = 0; i < resData.length; i++) {
+            answerList.push(resData[i])
+          }
+          that.setData({
+            answerList: answerList,
+            answerPage : res.data.page
+          })
+        }
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getMyQuizList()
+    this.getMyQuizList();
+    this.getAnswerQuiz();
   },
 
   /**
@@ -99,7 +135,12 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-  
+    var navIndex = this.data.navIndex;
+    if (navIndex == 0){
+      this.getMyQuizList();
+    }else {
+      this.getAnswerQuiz();
+    }
   },
 
   /**
