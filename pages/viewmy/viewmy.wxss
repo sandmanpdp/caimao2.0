@@ -1,0 +1,198 @@
+/* pages/viewmy/viewmy.wxss */
+page {
+  line-height: 0;
+}
+
+view {
+  box-sizing: border-box;
+}
+
+.section {
+  padding:0 30rpx 0;
+  background-color: #fff;
+}
+
+.section .box {
+  padding: 30rpx 0;
+  border-bottom: 1px solid #eee;
+  line-height: 36rpx;
+}
+
+.section .box:first-child {
+}
+
+.section .box:last-child {
+  padding-bottom: 20rpx;
+  border: 0;
+}
+
+.section .box .title {
+  font-size: 36rpx;
+  color: #333;
+  font-weight: 600;
+  line-height: 38rpx;
+}
+
+.section .box .text {
+  margin: 30rpx 0;
+  font-size: 30rpx;
+  color: #666;
+}
+
+.section .box .info {
+  height: 49rpx;
+}
+
+.section .box .info .headimg {
+  margin: 0 20rpx 0 0;
+  width: 49rpx;
+  height: 49rpx;
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+.section .box .info .name {
+  display: inline-block;
+  font-size: 26rpx;
+  color: #808080;
+}
+
+.section .box .info .data .icon {
+  margin-right: 20rpx;
+  width: 40rpx;
+  height: 35rpx;
+  vertical-align: middle;
+}
+
+.section .box .info .data .number {
+  font-size: 24rpx;
+  color: #808080;
+}
+
+.section .box .info .data .number:nth-child(2) {
+  margin-right: 49rpx;
+}
+
+.sortPicker {
+  height: 88rpx;
+  line-height: 88rpx;
+  color: #666;
+}
+
+.sortPicker view {
+  font-size: 30rpx;
+}
+
+.icon_bottom_arrow {
+  position: relative;
+  margin-left: 10rpx;
+  top: -2rpx;
+  width: 34rpx;
+  height: 19rpx;
+}
+
+.selecteBox {
+  background: #fff;
+  text-align: center;
+  border-bottom: 1rpx solid #eee;
+}
+
+/* 导航 */
+
+.nav {
+  background-color: #fff;
+  border-bottom: 2rpx solid #dcdcdc;
+  position: fixed;
+  width: 100%;
+}
+
+.nav-item {
+  width: 20%;
+  font-size: 34rpx;
+  line-height: 34rpx;
+  color: #b9b9b9;
+  font-weight: 500;
+  padding: 30rpx 0;
+}
+.nav .nav-item:first-child {
+  margin-left: 30rpx;
+}
+
+.nav .nav-item:last-child {
+  margin-right: 30rpx;
+}
+
+.co3f86ff {
+  color: #3f86ff !important;
+}
+
+.co93b8ff {
+  color: #93b8ff !important;
+}
+
+.selectedBar {
+  width: 50rpx !important;
+  border-bottom: 6rpx solid #3f86ff;
+  position: absolute;
+  bottom: 0;
+  left: 10rpx;
+}
+
+.pstRel {
+  position: relative;
+}
+
+.search {
+  width: 36rpx;
+  height: 34rpx;
+}
+
+.searchBox {
+  width: 100%;
+  background: #fff;
+  position: relative;
+  z-index: 999999999999999999;
+  border-bottom:1rpx solid #ddd;
+}
+.searchInputBox {
+  border-bottom: 1rpx solid #ddd;
+  padding:20rpx 30rpx;
+
+}
+
+.searchBox input {
+  padding: 0 30rpx;
+  width:100%;
+  height: 70rpx;
+  border: 1px solid #ddd;
+  border-radius: 40rpx;
+  font-size: 28rpx;
+  color: #939393;
+  line-height: 0;
+  box-sizing: border-box;
+}
+.right_arrow_box {
+  height: 80rpx !important;
+}
+.right_arrow {
+  width: 19rpx;
+  height: 34rpx;
+  line-height: 80rpx;
+}
+.searchContentBox {
+  width: 100%;
+  background: #fff;
+  z-index: 999999999999999999;
+  padding: 0 30rpx;
+}
+.searchContent-item {
+  border-bottom:1rpx solid #eee; 
+}
+.searchContent {
+  color: #666;
+  font-size: 30rpx;
+  width: 80%;
+  height: 80rpx;
+  line-height: 50prx;
+  padding: 40rpx 0;
+}

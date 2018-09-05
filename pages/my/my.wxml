@@ -83,7 +83,7 @@
   </view>
 </navigator>
 <!-- 我的观点 -->
-<navigator class='help' url="/pages/view/view?id={{userInfo.id}}" open-type='navigate' hover-class="navigator-hover">
+<navigator class='help' url="/pages/viewmy/viewmy?id={{userInfo.id}}" open-type='navigate' hover-class="navigator-hover">
   <view class='list_box'>
     <view class='clearfix'>
       <image class='list_box_icon' src='../images/icon_myViewpoint.png'></image>
