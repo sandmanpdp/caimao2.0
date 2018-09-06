@@ -1,6 +1,18 @@
 .bb {
-  border-bottom: 2px solid #2772ff;
+  /* border-bottom: 2px solid #2772ff; */
   color: #2772ff;
+}
+
+.pstRel {
+  position: relative;
+}
+
+.selectedBar {
+  width: 50rpx !important;
+  border-bottom: 6rpx solid #3f86ff;
+  position: absolute;
+  bottom: 0;
+  left: 36rpx;
 }
 
 .o {

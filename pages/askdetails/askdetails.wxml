@@ -16,8 +16,14 @@
   <!-- 列表 -->
   <view class='list'>
     <view class='nav clearfix'>
-      <view id='n0' class="fl {{navIndex==0?'bb':''}}" catch:tap='setNavIndexFun'>全部回答</view>
-      <view id='n1' class="fl {{navIndex==1?'bb':''}}" catch:tap='setNavIndexFun'>满意回答</view>
+      <view id='n0' class="fl pstRel {{navIndex==0? 'bb' : ''}}" catch:tap='setNavIndexFun'>
+        全部回答
+        <view wx:if='{{navIndex==0}}' class='selectedBar'></view>
+      </view>
+      <view id='n1' class="fl pstRel {{navIndex==1? 'bb' : ''}}" catch:tap='setNavIndexFun'>
+      满意回答
+      <view wx:if='{{navIndex==1}}' class='selectedBar'></view>
+      </view>
     </view>
     <view wx:if="{{navIndex==0?true:false}}">
       <view class='box' wx:for="{{commentList}}">
