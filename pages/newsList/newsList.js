@@ -11,6 +11,10 @@ Page({
     unReadNote :'',
     unReadSys:'',
     unReadAsk :'',
+    noteContent:'',
+    viewContent:'',
+    askContent : '',
+    systemContent:''
   },
   getNews: function(e) {
     var type = e.currentTarget.dataset.type;
@@ -34,6 +38,10 @@ Page({
           unReadNote: res.data[2].total,
           unReadSys: res.data[3].total,
           unReadAsk: res.data[6].total,
+          noteContent: res.data[1].content,
+          viewContent: res.data[2].content,
+          askContent: res.data[3].content,
+          systemContent: res.data[6].content
         })
       }
     })

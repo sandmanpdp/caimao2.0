@@ -14,11 +14,19 @@ Page({
     commentList: '',
     userId: '',
     hasSatistyAnswer: false,
-    askdetail_userId: ''
+    askdetail_userId: '',
+    restDay : '',
+    isfocus : false
   },
   setNavIndexFun: function(e) {
     this.setData({
       navIndex: (e.currentTarget.id.split('n'))[1]
+    })
+  },
+
+  setInputFocus:function(){
+    this.setData({
+      isfocus : true
     })
   },
 
@@ -34,9 +42,13 @@ Page({
         var resData = res.data.data;
         var error = res.data.error;
         if (error == 0) {
+          var limit_date = resData[0].limit_date;
+          var created_at = resData[0].created_at
+          var restDay = app.getRestTime(created_at, limit_date);
           that.setData({
             askdetail: resData[0],
-            askdetail_userId: resData[0].q_user_id
+            askdetail_userId: resData[0].q_user_id,
+            restDay: restDay
           })
         }
       }
@@ -54,7 +66,6 @@ Page({
   addComment: function() {
     var that = this;
     if (that.data.comment != '') {
-
       if (that.data.userId == that.data.askdetail_userId) {
         wx.showToast({
           title: '亲，您不能回答自己的问股',

@@ -290,9 +290,14 @@ Page({
         token: app.union_id
       },
       success: function(res) {
-        console.log(res.data.data);
+        var quizList = res.data.data;
+        var newQuizList = quizList.map(function(item) {
+          item.resDay = app.getRestTime(item.created_at, item.limit_date);
+          return item;
+        });
+        console.log(newQuizList);
         that.setData({
-          quizList: res.data.data
+          quizList: newQuizList
         })
       }
     })
@@ -309,7 +314,7 @@ Page({
       url: '/pages/write/write?pageId=0',
     })
   },
-  toView: function () {
+  toView: function() {
     wx.navigateTo({
       url: '/pages/write/write?pageId=1',
     })
@@ -386,7 +391,7 @@ Page({
       }
     })
     that.setData({
-      isShow:false
+      isShow: false
     })
   },
 
@@ -394,7 +399,7 @@ Page({
   onHide: function() {
     app.globalData.scene -= 1;
     this.setData({
-      isShow:false
+      isShow: false
     })
   },
   //  转发

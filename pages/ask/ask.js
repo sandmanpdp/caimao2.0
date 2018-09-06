@@ -97,8 +97,12 @@ Page({
         }else {
           var newNull = false;
         }
+        var newQuizList = quizList.map(function (item) {
+          item.resDay = app.getRestTime(item.created_at, item.limit_date);
+          return item;
+        });
         that.setData({
-          quizList: quizList,
+          quizList: newQuizList,
           page: page,
           newNull: newNull
         })

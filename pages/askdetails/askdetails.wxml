@@ -8,8 +8,8 @@
     <view class='text'>{{askdetail.content}}</view>
     <view class='answer'>
       <view>悬赏{{askdetail.hook_price}}</view>
-      <view>离悬赏结束时间还有 12小时3分</view>
-      <view>我来回答</view>
+      <view>离悬赏结束时间还有{{restDay}}</view>
+      <view catchtap='setInputFocus'>我来回答</view>
       <image src='../images/icon_cue.png'></image>
     </view>
   </view>
@@ -28,7 +28,7 @@
         </view>
         <view class='text'>{{item.content}}</view>
         <view class='fun clearfix'>
-          <text class='fl'>10-27  12:42</text>
+          <text class='fl'>{{item.created_at}}</text>
           <view class='fr'>
             <image catchtap='createPraise' data-id="{{item.id}}" wx:if='{{item.is_praise==0}}' src='../images/icon_laud2.png'></image>
             <image catchtap='createPraise' data-id="{{item.id}}" wx:if='{{item.is_praise==1}}' src='../images/icon_laudRed4.png'></image>
@@ -46,10 +46,11 @@
         </view>
         <view class='text'>{{item.c_content}}</view>
         <view class='fun clearfix'>
-          <text class='fl'>10-27  12:42</text>
+          <text class='fl'>{{item.created_at}}</text>
           <view class='fr'>
-            <image src='../images/icon_laud2.png'></image>
-            <text>99</text>
+             <image catchtap='createPraise' data-id="{{item.id}}" wx:if='{{item.is_praise==0}}' src='../images/icon_laud2.png'></image>
+            <image catchtap='createPraise' data-id="{{item.id}}" wx:if='{{item.is_praise==1}}' src='../images/icon_laudRed4.png'></image>
+            <text>{{item.praise}}</text>
           </view>
         </view>
       </view>
@@ -59,7 +60,7 @@
   <view class='drop'>没有更多回答</view>
   <!-- 评论 -->
   <view class='pf comment clearfix'>
-    <input bindinput='getComment' value='{{comment}}' class='fl input' placeholder='回答问股...'></input>
+    <input focus="{{isfocus}}" bindinput='getComment' value='{{comment}}' class='fl input' placeholder='回答问股...'></input>
     <view catchtap='addComment' class='fr submit'>发表</view>
   </view>
 </view>

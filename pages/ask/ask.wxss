@@ -31,3 +31,13 @@
 .mask .one image{position: absolute;bottom: -120rpx;left: 50%;margin-left: -23.5rpx;width: 47rpx;height: 47rpx}
 /* 写问股 */
 .write{position: fixed;bottom: 100rpx;right: 40rpx;width: 80rpx;height: 80rpx;}
+.yuanbaoBox {
+  display: inline-block;
+  width:44rpx;
+  height:44rpx;
+  margin-right: 10rpx;
+}
+.yuanbao {
+  width: 100% !important;
+  height: 100% !important;
+}

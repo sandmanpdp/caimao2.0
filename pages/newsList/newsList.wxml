@@ -5,7 +5,7 @@
       <image class='left-image fl' src='../images/hot.png'></image>
       <view class='fl text-box'>
         <view class='title'>笔记</view>
-        <view class='detail'>笔记-是发动机可是还是看合适的发山东矿机发灰色空间</view>
+        <view class='detail'>笔记-{{noteContent}}</view>
       </view>
       <view class='list_box_number fl'>
         {{unReadNote}}
@@ -20,7 +20,7 @@
       <image class='left-image fl' src='../images/view.png'></image>
       <view class='fl text-box'>
         <view class='title'>观点</view>
-        <view class='detail'>观点-是发动机可是还是看合适的发山东矿机发灰色空间</view>
+        <view class='detail'>观点-{{viewContent}}</view>
       </view>
       <view class='list_box_number fl'>
          {{unReadView}}
@@ -35,7 +35,7 @@
       <image class='left-image fl' src='../images/ask-info.png'></image>
       <view class='fl text-box'>
         <view class='title'>问股诊股</view>
-        <view class='detail'>问股诊股-是发动机可是还是看合适的发山东矿机发灰色空间</view>
+        <view class='detail'>问股诊股-{{askContent}}</view>
       </view>
       <view class='list_box_number fl'>
          {{unReadAsk}}
@@ -50,7 +50,7 @@
       <image class='left-image fl' src='../images/system.png'></image>
       <view class='fl text-box'>
         <view class='title'>系统消息</view>
-        <view class='detail'>系统消息-是发动机可是还是看合适的发山东矿机发灰色空间</view>
+        <view class='detail'>系统消息-{{systemContent}}</view>
       </view>
       <view class='list_box_number fl'>
          {{unReadSys}}
