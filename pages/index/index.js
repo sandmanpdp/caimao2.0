@@ -11,7 +11,8 @@ Page({
     quizList: '',
     isShow: false,
     readMaskState: false,
-    userId : ''
+    userId: '',
+    swiperData : ""
   },
 
   openMsk: function(e) {
@@ -50,6 +51,7 @@ Page({
         if (app.requestState == true) {
           setTimeout(function() {
             that.getUserData()
+            that.getActivity()
           }, 500)
           clearInterval(time)
         }
@@ -207,8 +209,26 @@ Page({
         }
       }
     })
-
   },
+
+  getActivity: function() {
+    var that = this;
+    wx.request({
+      url: 'https://zhitouapi.romawaysz.com/activity/Img',
+      data: {
+        token: app.union_id,
+        site: 0
+      },
+      success: function(res) {
+        var resData = res.data.data;
+        that.setData({
+          swiperData: resData
+        })
+        console.log(resData);
+      }
+    })
+  },
+
   //当前页面下拉刷新
   onPullDownRefresh: function() {
     var that = this
@@ -288,7 +308,8 @@ Page({
       data: {
         page: 1,
         size: 3,
-        token: app.union_id
+        token: app.union_id,
+        state : -1
       },
       success: function(res) {
         var quizList = res.data.data;
@@ -296,7 +317,6 @@ Page({
           item.resDay = app.getRestTime(item.created_at, item.limit_date);
           return item;
         });
-        console.log(newQuizList);
         that.setData({
           quizList: newQuizList
         })
@@ -331,11 +351,19 @@ Page({
       isShow: false
     })
   },
+
+  swiperGoto : function (e) {
+    var goto_url = e.currentTarget.dataset.gotourl;
+    console.log(goto_url);
+    wx.navigateTo({
+      url: '/pages/swiperActivity/swiperActivity',
+    })
+  },
+
   //监听页面加载
   onLoad: function() {
     var that = this
     // app.getUserToken()
-
     //调用应用实例的方法获取全局数据
     app.getUserInfo(function(userInfo) {
       //更新数据
@@ -357,6 +385,7 @@ Page({
         setTimeout(function() {
           that.getUserData();
           that.getQuizList();
+          that.getActivity()
         }, 500)
         clearInterval(time)
       }
@@ -372,7 +401,8 @@ Page({
     }
     if (app.globalData.page == true) {
       //   console.log('刷新执行了');
-      that.getUserData()
+      that.getUserData();
+      that.getActivity();
     }
 
     wx.getSetting({
@@ -394,6 +424,7 @@ Page({
     that.setData({
       isShow: false
     })
+
   },
 
   // 生命周期函数--监听页面隐藏

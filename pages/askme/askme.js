@@ -54,12 +54,16 @@ Page({
           for (var i = 0; i < resData.length; i++) {
             quizList.push(resData[i])
           }
+          var newQuizList = quizList.map(function(item){
+            item.resDay = app.getRestTime(item.created_at,item.limit_date);
+            return item;
+          })
+
           that.setData({
-            quizList: quizList,
+            quizList: newQuizList,
             page: page
           })
         }
-        
       }
     })
   },
@@ -80,6 +84,11 @@ Page({
           for (var i = 0; i < resData.length; i++) {
             answerList.push(resData[i])
           }
+          // var newAnswerList = answerList.map(function(item){
+          //   item.resDay = app.getRestTime(item.created_at,item.limit_date);
+          //   return item
+          // })
+
           that.setData({
             answerList: answerList,
             answerPage : res.data.page

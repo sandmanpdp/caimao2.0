@@ -42,7 +42,7 @@
   padding: 92rpx 30rpx 0;
 }
 /* 列表 */
-.box{margin-top: 20rpx;padding: 30rpx 0;background-color: #fff;border-bottom: 1rpx solid #eeeeee}
+.box{padding: 30rpx 0;background-color: #fff;border-bottom: 1rpx solid #eeeeee}
 .box:first-child{margin: 0}
 .box .title image{margin-right: 20rpx;width: 48rpx;height: 48rpx;border-radius: 6rpx}
 /* .box .title text:nth-child(2){font-size: 28rpx;color: #808080;line-height: 48rpx} */

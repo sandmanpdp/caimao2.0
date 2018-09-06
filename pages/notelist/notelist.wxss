@@ -31,7 +31,7 @@
 .buy_true{background-color: #ff9b74}
 .trigon_true{border-top: 11rpx solid #ff9b74}
 .killer_section_box_left{float: left;width: 209rpx}
-.killer_section_box_left_userHead{display: block;margin: 0 auto;width: 83rpx;height: 83rpx;border-radius: 10rpx}
+.killer_section_box_left_userHead{display: block;margin: 0 auto;width: 83rpx;height: 83rpx;border-radius: 50%;}
 .killer_section_box_left_userName{margin: 17rpx auto 8rpx;width: 70%;font-size: 28rpx;color: #3e3e3e;text-align: center}
 .killer_section_box_left_depict{width: 100%;font-size: 24rpx;color: #b9b9b9;text-align: center}
 .killer_section_box_right{float: right;width: 376rpx;}
