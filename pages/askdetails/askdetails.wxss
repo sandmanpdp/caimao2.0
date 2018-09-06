@@ -19,7 +19,7 @@
   margin-right: 20rpx;
   width: 48rpx;
   height: 48rpx;
-  border-radius: 6rpx;
+  border-radius: 500%;
 }
 
 .section text {
@@ -55,15 +55,21 @@
   line-height: 28rpx;
 }
 
-.section .answer view:nth-child(3) {
-  margin: 0 auto;
+.answer_btn {
+  margin: 0 auto; 
   width: 240rpx;
   height: 72rpx;
   font-size: 32rpx;
-  color: #fff;
   line-height: 72rpx;
-  background-color: #fc7946;
   border-radius: 36rpx;
+}
+.not_answer {
+  color: #fff;
+  background-color: #fc7946;
+}
+.answered {
+  background: #dcdcdc;
+  color: #fff
 }
 
 .section .answer image {
@@ -86,7 +92,7 @@
   line-height: 86rpx;
   border-bottom: 1px solid #ddd;
   font-size: 30rpx;
-  color: #b9b9b9;
+  color: #666;
 }
 
 .list .nav view {
@@ -112,7 +118,7 @@
   margin-right: 20rpx;
   width: 48rpx;
   height: 48rpx;
-  border-radius: 6rpx;
+  border-radius: 50%;
 }
 
 .list .box .title text {
@@ -186,7 +192,7 @@
   border: 1px solid #ddd;
   border-radius: 40rpx;
   font-size: 28rpx;
-  color: #939393;
+  color: #666;
 }
 
 .comment image {
@@ -230,4 +236,13 @@
   text-align: center;
   line-height: 68rpx;
   border-radius: 10rpx;
+}
+.icon_empty_box {
+  width: 100%;
+  margin-top: 150rpx;
+  text-align: center;
+}
+.icon_empty_box>image {
+  width: 252rpx;
+  height: 236rpx;
 }

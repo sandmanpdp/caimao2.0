@@ -353,10 +353,9 @@ Page({
   },
 
   swiperGoto : function (e) {
-    var goto_url = e.currentTarget.dataset.gotourl;
-    console.log(goto_url);
+    var id = e.currentTarget.dataset.id;
     wx.navigateTo({
-      url: '/pages/swiperActivity/swiperActivity',
+      url: '/pages/swiperActivity/swiperActivity?id='+id,
     })
   },
 

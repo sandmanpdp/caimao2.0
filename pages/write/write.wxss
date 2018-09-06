@@ -36,7 +36,7 @@
 .bc_blue{background-color: #2772ff}
 .prict{color: #fc7946!important;font-size: 34rpx!important}
 .box_picker_notice_icon{margin: 33rpx 0 0;width: 19rpx;height: 34rpx}
-.reading{margin: 80rpx 0 0;height: 100rpx;line-height: 100rpx;text-align: center;color: #fff;font-size: 40rpx;background-color: #2772ff}
+.reading{margin: 80rpx auto 0;width: 690rpx;border-radius: 10rpx;height: 100rpx;line-height: 100rpx;text-align: center;color: #fff;font-size: 40rpx;background-color: #2772ff}
 .logic_textarea{padding: 21rpx 0 22rpx 0;width: 100%;font-size: 34rpx;min-height: 30rpx;color:#2e2e2e;text-align: justify}
 .box_textarea{height: auto!important}
 

@@ -31,7 +31,7 @@
   <view>
     <!-- 列表渲染 -->
     <!-- <view class='killer_section_box' catchtap="{{item.is_look ==-1 && item.price != 0 ?'buyFun':'readFun'}}" id="{{'box_'+item.id}}" data-uid='{{item.user_id}}' wx:for="{{noteArray}}"> -->
-    <view class='killer_section_box' catchtap="{{item.readOrbuyFun}}" id="{{'box_'+item.id}}" data-uid='{{item.user_id}}' wx:for="{{noteArray}}">
+    <view class='killer_section_box clearfix' catchtap="{{item.readOrbuyFun}}" id="{{'box_'+item.id}}" data-uid='{{item.user_id}}' wx:for="{{noteArray}}">
       <!-- 图标 -->
       <view class='killer_section_icon_line'></view>
       <!-- 购买按钮样式状态：true/false -->

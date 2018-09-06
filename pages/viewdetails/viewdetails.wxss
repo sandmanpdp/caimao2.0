@@ -31,7 +31,7 @@ page {
 }
 
 
-.fun>view>image{margin-right: 20rpx;width: 35rpx;height: 35rpx;vertical-align: middle}
+.fun>view>image{margin-right: 20rpx;width: 42rpx;height: 35rpx;vertical-align: middle}
 .fun>view>text{font-size: 30rpx;color: #2772ff;line-height: 30rpx;vertical-align: middle}
 /* 评论 */
 .comment{padding-top: 30rpx;background-color: #fff;font-size: 0;margin-top:20rpx;}
@@ -48,7 +48,7 @@ page {
 .comment .list>view:nth-child(3){font-size: 26rpx;color: #999999;line-height: 24rpx;}
 /* 输入框 */
 .input{box-sizing: border-box;border-top: 2rpx solid #ddd;position: fixed;bottom: 0;left: 0;padding: 20rpx 32rpx;width: 100%;height: 114rpx;background-color: #fff;z-index: 99999}
-.input input{padding: 0 30rpx;width: 440rpx;height: 70rpx;border: 1px solid #dddddd;border-radius: 40rpx;font-size: 28rpx;color: #939393;line-height: 0}
+.input input{padding: 0 30rpx;width: 440rpx;height: 70rpx;border: 1px solid #dddddd;border-radius: 40rpx;font-size: 28rpx;color: #666;line-height: 0}
 .input image{margin-top: 12.5rpx;width: 49rpx;height: 47rpx}
 .input image:nth-child(3){margin-right: 54rpx}
 .input>view:nth-child(2){margin-left:32rpx;width: 150rpx;height: 70rpx;background-color: #2772ff;font-size: 32rpx;color: #fff;text-align: center;line-height: 68rpx;border-radius: 10rpx;}

@@ -52,7 +52,7 @@
 }
 /* 导航 */
 .nav{padding: 30rpx;z-index: 99999999;background-color: #fff;border-bottom: 2rpx solid #dcdcdc;position: fixed;width: 100%;}
-.nav view{width: 30%;font-size: 34rpx;line-height: 34rpx;color: #b9b9b9;font-weight: 500}
+.nav view{width: 30%;font-size: 34rpx;line-height: 34rpx;color: #666;font-weight: 500}
 .co3f86ff{color: #3f86ff!important}
 .co93b8ff{color: #93b8ff!important}
 .selectedBar {

@@ -14,7 +14,7 @@
   width: 50%;
   font-size: 34rpx;
   line-height: 34rpx;
-  color: #b9b9b9;
+  color: #666;
   text-align: center;
   font-weight: 500;
 }

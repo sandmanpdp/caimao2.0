@@ -16,12 +16,27 @@ Page({
     hasSatistyAnswer: false,
     askdetail_userId: '',
     restDay : '',
-    isfocus : false
+    isfocus : false,
+    noComment : true,
+    satistyAnswer : ""
   },
   setNavIndexFun: function(e) {
     this.setData({
-      navIndex: (e.currentTarget.id.split('n'))[1]
+      navIndex: (e.currentTarget.id.split('n'))[1],
     })
+    if (this.data.navIndex == 0 && this.data.commentList.length == 0){
+      this.setData({
+        noComment : true
+      })
+    } else if (this.data.navIndex == 1 && this.data.satistyAnswer.length == 0) {
+      this.setData({
+        noComment: true
+      })
+    }else {
+      this.setData({
+        noComment: false
+      })
+    }
   },
 
   setInputFocus:function(){
@@ -98,7 +113,7 @@ Page({
       })
     }
   },
-
+  //获取观点列表
   getCommetList: function() {
     var that = this;
     wx.request({
@@ -111,9 +126,20 @@ Page({
         size: 10,
       },
       success: function(res) {
-        that.setData({
-          commentList: res.data.data
-        })
+        var resData = res.data.data;
+        var error = res.data.error;
+        if (error==0){
+          var noComment;
+          if (resData.length == 0) {
+            noComment = true;
+          } else {
+            noComment = false
+          }
+          that.setData({
+            commentList: resData,
+            noComment: noComment
+          })
+        }
       }
     })
   },
@@ -150,7 +176,6 @@ Page({
   setSatistyAnswer: function(e) {
     var that = this;
     var aid = e.currentTarget.dataset.aid;
-    console.log(aid);
     wx.request({
       url: 'https://zhitouapi.romawaysz.com/quiz/set',
       data: {
@@ -166,6 +191,7 @@ Page({
             title: '采纳答案成功',
           })
           that.getCommetList();
+          that.getSatistyAnswer();
         }
       }
     })
@@ -186,7 +212,14 @@ Page({
           if (resData != '') {
             that.setData({
               satistyAnswer: resData,
-              hasSatistyAnswer: true
+              hasSatistyAnswer: true,
+              noComment: false
+            })
+          }else if(resData == ''){
+            //noComment 
+            that.setData({
+              satistyAnswer: resData,
+              noComment : true
             })
           }
         }

@@ -7,7 +7,7 @@
 .nav-btm-text {
   font-size: 26rpx;
   color: #666;
-  margin-top: 10rpx;
+  margin-top: 5rpx;
 }
 .nav-swiper-box {
   width: 690rpx;
@@ -37,7 +37,7 @@
 .hot_title{box-sizing: border-box;padding: 25rpx 0;width:100%;}
 .hot_title_icon{margin: 0 20rpx 0 30rpx;width: 10rpx;height: 30rpx;background-color: #2772ff}
 .hot_title_text{position: relative;top:-2.5rpx;font-size: 32rpx;color: #141414}
-.hot_title_more{font-size: 26rpx;color: #b9b9b9}
+.hot_title_more{font-size: 26rpx;color: #999}
 .hot_section{box-sizing: border-box;padding: 0 15rpx;height: 281rpx}
 .hot_section_daub_one{margin: 0 auto;width: 599rpx;height: 27rpx;background-color: #f8f8f8;border-top-left-radius: 15rpx;border-top-right-radius: 15rpx}
 .hot_section_daub_two{margin: -12rpx auto 0;width: 632rpx;height: 12rpx;background-color: rgba(235,235,235,0.5);border-top-left-radius: 10rpx;border-top-right-radius: 10rpx}
@@ -102,17 +102,17 @@
 /* 高手笔记 */
 .killer{padding-bottom: 35rpx;background-color: #fff}
 .killer_section{padding: 0 30rpx}
-.killer_section_box{box-sizing: border-box;position: relative;margin-top: 20rpx;padding: 30rpx 19rpx 34rpx;width: 695rpx;height: 255rpx;border: 3rpx solid #dddddd;border-top-left-radius: 30rpx;border-top-right-radius: 30rpx}
+.killer_section_box{box-sizing: border-box;position: relative;margin-top: 20rpx;padding: 30rpx 19rpx 34rpx;width: 683rpx;height: 255rpx;border: 3rpx solid #dddddd;border-top-left-radius: 30rpx;border-top-right-radius: 30rpx}
 .killer_section_box:first-child{margin-top: 0}
 .killer_section_icon_line{position: absolute;top: 50%;left: 261rpx;margin-top: -75rpx;width: 2rpx;height: 150rpx;background-color: #dddddd}
-.killer_section_icon_buy{position: absolute;top:45rpx;right: -12rpx;width: 140rpx;height: 50rpx;line-height: 50rpx;border-top-left-radius: 25rpx;border-bottom-left-radius: 25rpx;font-size: 24rpx;text-align: center;color: #fff}
-.killer_section_icon_trigon{position: absolute;top: 95rpx;right: -12rpx;width: 0;height: 0;border-right: 12rpx solid #fff}
+.killer_section_icon_buy{position: absolute;top:30rpx;right: -12rpx;width: 140rpx;height: 50rpx;line-height: 50rpx;border-top-left-radius: 25rpx;border-bottom-left-radius: 25rpx;font-size: 24rpx;text-align: center;color: #fff}
+.killer_section_icon_trigon{position: absolute;top: 80rpx;right: -12rpx;width: 0;height: 0;border-right: 12rpx solid #fff}
 .buy_false{background-color: #dddddd}
 .trigon_false{border-top: 12rpx solid #b9b9b9}
 .buy_true{background-color: #ff9b74}
 .trigon_true{border-top: 12rpx solid #e68d00}
 .killer_section_box_left{float: left;width: 230rpx}
-.killer_section_box_left_userHead{display: block;margin: 0 auto;width: 83rpx;height: 83rpx;border-radius: 50%;}
+.killer_section_box_left_userHead{border: 2rpx solid #eee;display: block;margin: 0 auto;width: 82rpx;height: 82rpx;border-radius: 50%;}
 .killer_section_box_left_userName{margin: 20rpx auto;width: 70%;font-size: 28rpx;color: #333;text-align: center;line-height: 28rpx;}
 .killer_section_box_left_depict{width: 100%;font-size: 24rpx;line-height: 24rpx;color: #999;text-align: center}
 .killer_section_box_right{float: right;width: 376rpx;}
@@ -120,7 +120,7 @@
 .killer_section_box_right_one_depict{float: left;margin-top: 20rpx;font-size: 24rpx;color: #aac0ff;line-height: 24rpx;}
 .killer_sectsion_box_right_one_title {font-size: 36rpx;line-height: 36rpx;}
 .killer_section_box_right_two_left{float: left}
-.killer_section_box_right_two_left_title{width: 200rpx;font-size: 34rpx;line-height: 34rpx;color: #e32f37;margin-top: 30rpx;}
+.killer_section_box_right_two_left_title{width: 200rpx;font-size: 34rpx;line-height: 34rpx;color: #e32f37;margin-top: 30rpx;font-weight: 600}
 .killer_section_box_right_two_left_depict{font-size: 26rpx;line-height: 26rpx;margin-top: 20rpx;color: #999}
 .killer_section_box_right_two_right{float: right}
 .killer_section_box_right_two_right_title{color: #ffad2b;text-align: center}
@@ -130,7 +130,7 @@
 .recommend_scroll{padding: 0 30rpx}
 .recommend_scroll_box{float: left;width: 25%;}
 .recommend_scroll_box:last-child{margin-right: 0} 
-.recommend_scroll_box_userHaed{display: block;margin: 0 auto;width: 84rpx;height: 84rpx;border-radius: 50%;}
+.recommend_scroll_box_userHaed{border:2rpx solid #eee;display: block;margin: 0 auto;width: 84rpx;height: 84rpx;border-radius: 50%;}
 .recommend_scroll_box_userName{margin: 17rpx auto;width: 70%;font-size: 26rpx;line-height: 32rpx;color: #333333;text-align: center}
 .recommend_scroll_box_depict{width: 100%;font-size: 24rpx;line-height:24rpx;color: #FF9B74;text-align: center;font-weight: 500}
 .recommend_scroll .btn{margin: 30rpx auto 0;width: 88rpx;height: 38rpx;font-size: 22rpx;color: #e32f37;border: 1px solid #e32f37;border-radius: 20rpx;text-align: center;line-height: 37rpx}
@@ -183,7 +183,7 @@
 .needPriceText{
   display: inline-block;
   font-size:36rpx;
-  color:#ffad2b;
+  color:#FC885F;
   text-align:center;
   line-height: 21rpx;
   padding-left: 50rpx;
@@ -191,7 +191,7 @@
 .freePriceText{
   display: inline-block;
   font-size:36rpx;
-  color:#ffad2b;
+  color:#FC885F;
   line-height: 30rpx;
   text-align:center;
 }
@@ -214,8 +214,8 @@
 .box{padding: 30rpx 30rpx 21rpx 30rpx;background-color: #fff}
 .box:first-child{margin: 0}
 .avatarImage{margin-right: 20rpx;width: 48rpx;height: 48rpx;border-radius: 50%;float: left;}
-.nickname{font-size: 28rpx;color: #808080;line-height: 48rpx}
-.money-text{font-size: 36rpx;color: #fc7946;line-height: 48rpx}
+.nickname{font-size: 28rpx;color: #666;line-height: 48rpx}
+.money-text{font-size: 36rpx;color: #fc7946;line-height: 48rpx;font-weight: 500}
 .box .text{margin: 29rpx 0 30rpx;font-size: 30rpx;color: #2e2e2e}
 .box .fun view:nth-child(1){font-size: 24rpx;color: #999;line-height: 26rpx}
 .box .fun view:nth-child(2){font-size: 26rpx;line-height: 26rpx}

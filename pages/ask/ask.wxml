@@ -9,7 +9,7 @@
       已解答
       <view wx:if='{{navIndex==1}}' class='selectedBar selectedBarL'></view>
     </view>
-    <image class='fr' src='../images/icon_rule.png' catchtap='setMaskTrueFun'></image>
+    <image class='fr' src='../images/icon_rule3.png' catchtap='setMaskTrueFun'></image>
   </view>
   <!-- 最新 -->
   <view wx:if="{{navIndex==0?true:false}}" class='section'>

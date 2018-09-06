@@ -1,7 +1,7 @@
 
 /* 导航 */
 .nav{padding: 28rpx 0;position: fixed;width: 100%;z-index: 999999;background-color: #fff;border-bottom: 2rpx solid #dcdcdc; }
-.nav view{width: 50%;font-size: 34rpx;line-height: 34rpx;color: #b9b9b9;text-align: center;font-weight: 500}
+.nav view{width: 50%;font-size: 34rpx;line-height: 34rpx;color: #666;text-align: center;font-weight: 500}
 .co3f86ff{color: #3f86ff!important}
 .co93b8ff{color: #93b8ff!important}
 /* 列表 */
@@ -71,7 +71,7 @@
 }
 .selectedBar {
   width: 70rpx !important;
-  border-bottom: 12rpx solid #3f86ff;
+  border-bottom: 6rpx solid #3f86ff;
   position: absolute;
   bottom: -30rpx;
   left: 152rpx;

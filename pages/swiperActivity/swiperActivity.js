@@ -1,18 +1,39 @@
 // pages/swiperActivity/swiperActivity.js
+var app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    options : '',
+    goto_url : ''
   },
-
+  getUrl : function () {
+    var that = this;
+    wx.request({
+      url: 'https://zhitouapi.romawaysz.com/activity/Img',
+      data : {
+        token : app.union_id,
+        site :0,
+        id: that.data.options.id
+      },
+      success : function (res) {
+        var resData = res.data.data[0];
+        that.setData({
+          goto_url: resData.goto_url
+        })
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    this.setData({
+      options: options
+    })
+    this.getUrl()
   },
 
   /**

@@ -1,7 +1,7 @@
 .co3f86ff{color: #3f86ff!important}
 .cofc7946{color: #fc7946!important}
 /* 导航 */ 
-.nav{padding: 0 30rpx;font-size: 36rpx;color: #b9b9b9;line-height: 88rpx;background-color: #fff;border-bottom:2rpx solid #dcdcdc;}
+.nav{padding: 0 30rpx;font-size: 36rpx;color: #666;line-height: 88rpx;background-color: #fff;border-bottom:2rpx solid #dcdcdc;}
 .nav view{margin-right: 78rpx}
 .nav view:last-child{margin: 0}
 .nav image{margin-top: 25.5rpx;width: 37rpx;height: 37rpx}

@@ -35,7 +35,7 @@
   <!-- 测试问股 -->
   <view class='nav-swiper-box'>
     <swiper autoplay='true' interval='4000' circular='true'>
-      <swiper-item class='nav-swiper-item' catchtap="swiperGoto" data-gotoUrl='{{item.goto_url}}' wx:for="{{swiperData}}">
+      <swiper-item data-id="{{item.id}}" class='nav-swiper-item' catchtap="swiperGoto" data-gotoUrl='{{item.goto_url}}' wx:for="{{swiperData}}">
         <image src='{{item.img_url}}'></image>
       </swiper-item>
     </swiper>

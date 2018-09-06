@@ -87,7 +87,7 @@
   color: #333;
   margin: 0 30rpx;
   background: #fff;
-  border-bottom:1rpx solid #eee; 
+  border-bottom:2rpx solid #eee; 
 }
 
 .head_bottom_box:nth-child(2) {

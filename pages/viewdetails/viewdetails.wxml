@@ -27,12 +27,10 @@
       <text  class="{{viewArray.is_praise!=1? '' :'thumed'}}">{{viewArray.praise}}</text>
     </view>
     <view class='fl' catchtap="{{viewArray.is_concern!=-1?'openRewardMaskFun':''}}">
-      <image src='../images/icon_reward.png'></image>
+      <image src='../images/yuanbaoB.png'></image>
       <text>赏</text>
     </view>
   </view>
-
-
   <!-- 打赏 -->
   <view class='read' style='margin-top:20rpx;' wx:if="{{profitNum == 0 ? false : true}}">
     <view>打赏
@@ -84,7 +82,7 @@
   <!-- 输入框 -->
   <view class='pf input clearfix'>
     <!-- <view class='fl' catchtap='setMaskTrueFun'>发表评论...</view> -->
-    <input class='fl' placeholder='发表评论...' maxlength='300' bindinput="bindCommentInput" value='{{commentValue}}'></input>
+    <input class='fl'placeholder-style="color:#999" placeholder='发表评论...' maxlength='300' bindinput="bindCommentInput" value='{{commentValue}}'></input>
     <view class='fl' catchtap='getCommentFun'>发表</view>
     
   </view>
