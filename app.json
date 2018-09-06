@@ -59,7 +59,9 @@
     "pages/authSuccess/authSuccess",
     "pages/authPage/authPage",
     "pages/newsList/newsList",
-    "pages/askme/askme"
+    "pages/askme/askme",
+    "pages/viewmy/viewmy",
+    "pages/swiperActivity/swiperActivity"
   ],
   "window": {
     "navigationBarBackgroundColor": "#2772ff",

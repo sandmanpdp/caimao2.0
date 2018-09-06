@@ -288,7 +288,7 @@ page {
   position: fixed;
   bottom: 0;
   width: 100%;
-  padding: 40rpx 50rpx 0;
+  padding: 40rpx 30rpx 0;
   background: #fff;
   z-index: 999999999;
 }
@@ -307,7 +307,7 @@ page {
   width: 33%;
   text-align: center;
 }
-.close {
+.close-pen {
   width: 100%;
   background: #fff;
   color: #999;
