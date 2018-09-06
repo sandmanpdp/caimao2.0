@@ -11,6 +11,7 @@ Page({
     quizList: '',
     isShow: false,
     readMaskState: false,
+    userId : ''
   },
 
   openMsk: function(e) {

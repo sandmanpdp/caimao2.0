@@ -1,12 +1,18 @@
 <view class="{{maskState?'ban':''}}">
   <!-- 导航 -->
   <view class='nav clearfix'>
-    <view id='n0' class="fl {{navIndex==0?'co3f86ff':''}}" catchtap='setNavIndexFun'>最新</view>
-    <view id='n1' class="fl {{navIndex==1?'co3f86ff':''}}" catchtap='setNavIndexFun'>已解答</view>
+    <view id='n0' class="fl pstRel {{navIndex==0?'co3f86ff':''}}" catchtap='setNavIndexFun'>
+      最新
+      <view wx:if='{{navIndex==0}}' class='selectedBar'></view>
+    </view>
+    <view id='n1' class="fl pstRel {{navIndex==1?'co3f86ff':''}}" catchtap='setNavIndexFun'>
+      已解答
+      <view wx:if='{{navIndex==1}}' class='selectedBar selectedBarL'></view>
+    </view>
     <image class='fr' src='../images/icon_rule.png' catchtap='setMaskTrueFun'></image>
   </view>
   <!-- 最新 -->
-  <view wx:if="{{navIndex==0?true:false}}">
+  <view wx:if="{{navIndex==0?true:false}}" class='section'>
     <view class='box' data-id='{{item.id}}' catchtap='detailsAskFun' wx:for="{{quizList}}">
       <view class='title clearfix'>
         <image class='fl' src='{{item.avatar}}'></image>
@@ -26,12 +32,11 @@
         <view class='fr co3f86ff'>我来回答</view>
       </view>
     </view>
-    <view class='drop' wx:if="{{!newNull}}">下拉刷新 加载更多内容</view>
-    <view wx:if="{{newNull}}" class='drop'>暂无最新问股数据</view>
+
   </view>
   <!-- 已解答 -->
-  <view wx:if="{{navIndex==1?true:false}}">
-    <view class='box' catchtap='detailsAskFun' wx:for="{{finishQuizList}}">
+  <view wx:if="{{navIndex==1?true:false}}" class='section'>
+    <view class='box' data-id='{{item.id}}' catchtap='detailsAskFun' wx:for="{{finishQuizList}}">
       <view class='title clearfix'>
         <image class='fl' src='{{item.avatar}}'></image>
         <text class='fl'>{{item.nickname}}</text>
@@ -41,18 +46,18 @@
         <view>{{item.share}} {{item.code}}</view>
         <view class='tw3'>{{item.content}}</view>
       </view>
-      <view class='answer'>特邀
-        <text class='co3f86ff'>@GS阳光</text>回答</view>
+      <!-- <view class='answer'>特邀
+        <text class='co3f86ff'>@GS阳光</text>回答</view> -->
       <view class='end clearfix'>
         <view class='fl'>已结束</view>
         <view class='fl'>
-          <text class='cofc7946'>30</text>人已抢答</view>
-        <view class='fr co3f86ff'>1元偷看</view>
+          <text class='cofc7946'>{{item.comment}}</text>人已抢答</view>
+        <!-- <view class='fr co3f86ff'>1元偷看</view> -->
       </view>
     </view>
     <!-- 下拉提示 -->
-    <view class='drop' wx:if="{{!finishNull}}">下拉刷新 加载更多内容</view>
-    <view wx:if="{{finishNull}}" class='drop'>暂无已解答问股数据</view>
+    <!-- <view class='drop' wx:if="{{!finishNull}}">下拉刷新 加载更多内容</view>
+    <view wx:if="{{finishNull}}" class='drop'>暂无已解答问股数据</view> -->
   </view>
   <!-- 规则 -->
   <view class='mask' wx:if="{{maskState}}">
@@ -68,7 +73,8 @@
       <image id='m0' src='../images/icon_close.png' catch:tap='setMaskFalseFun'></image>
     </view>
   </view>
-
+  <view class='drop' wx:if="{{!newNull}}">下拉刷新 加载更多内容</view>
+  <view wx:if="{{newNull}}" class='drop'>暂无更多问股数据</view>
   <!-- 写问股 -->
   <image style='display:none' class='write' src='../images/icon_write.png' catchtap='writeAskFun'></image>
 </view>

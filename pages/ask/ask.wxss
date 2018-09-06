@@ -1,12 +1,12 @@
 .co3f86ff{color: #3f86ff!important}
 .cofc7946{color: #fc7946!important}
 /* 导航 */ 
-.nav{padding: 0 30rpx;font-size: 36rpx;color: #b9b9b9;line-height: 88rpx;background-color: #fff}
+.nav{padding: 0 30rpx;font-size: 36rpx;color: #b9b9b9;line-height: 88rpx;background-color: #fff;border-bottom:2rpx solid #dcdcdc;}
 .nav view{margin-right: 78rpx}
 .nav view:last-child{margin: 0}
 .nav image{margin-top: 25.5rpx;width: 37rpx;height: 37rpx}
 /* 最新 */
-.box{margin-top: 20rpx;padding: 30rpx 30rpx 21rpx 30rpx;background-color: #fff}
+.box{padding: 30rpx 0;background-color: #fff;border-bottom:1px solid #eeeeee;}
 .box:first-child{margin: 0}
 .box .title image{margin-right: 20rpx;width: 48rpx;height: 48rpx;border-radius: 6rpx}
 .box .title text:nth-child(2){font-size: 28rpx;color: #808080;line-height: 48rpx}
@@ -19,7 +19,7 @@
 .box .text view:nth-child(1){margin-bottom: 25rpx;font-size: 36rpx;color: #333;line-height: 36rpx;font-weight: 600}
 .box .text view:nth-child(2){font-size: 30rpx;color: #666;line-height: 36rpx}
 .box .answer{margin-bottom: 20rpx;font-size: 28rpx;color: #808080;line-height: 28rpx}
-.box .end view{font-size: 24rpx;color: #808080;line-height: 26rpx}
+.box .end view{font-size: 24rpx;color: #999;line-height: 26rpx}
 .box .end view:nth-child(1){margin-right: 28rpx}
 .box .end view:nth-child(3){font-size: 26rpx;line-height: 26rpx}
 /* 规则 */
@@ -40,4 +40,24 @@
 .yuanbao {
   width: 100% !important;
   height: 100% !important;
+}
+.section {
+  padding: 0 30rpx;
+  background: #fff;
+}
+.pstRel {
+  position: relative;
+}
+.selectedBar {
+  width: 50rpx !important;
+  border-bottom: 6rpx solid #3f86ff;
+  position: absolute;
+  bottom: 0;
+  left: 10rpx;
+}
+.selectedBarL {
+  left: 30rpx !important;
+}
+.box:last-child {
+  border: none;
 }

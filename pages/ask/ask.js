@@ -17,7 +17,8 @@ Page({
   },
   setNavIndexFun:function (e) { //导航选择
     this.setData({
-      navIndex: (e.currentTarget.id.split('n'))[1]
+      navIndex: (e.currentTarget.id.split('n'))[1],
+      newNull: false
     })
   },
   setMaskTrueFun: function (e) { //遮罩选择
@@ -54,18 +55,29 @@ Page({
         state: 1
       },
       success: function (res) {
-        if (res.data.data == '') {
-          var finishNull = true;
-          that.setData({
-            finishNull: finishNull
-          })
+        var resData = res.data.data;
+        var finishQuizList = that.data.finishQuizList || [];
+        for (var i = 0; i < resData.length; i++) {
+          finishQuizList.push(resData[i])
         }
         if (res.data.page) {
           var page = res.data.page || '1'
         }
+
+        if (res.data.data.length < 10) {
+          var newNull = true;
+        } else {
+          var newNull = false;
+        }
+        var newFinishQuizList = finishQuizList.map(function (item) {
+          item.resDay = app.getRestTime(item.created_at, item.limit_date);
+          return item;
+        });
+
         that.setData({
-          finishQuizList: res.data.data,
-          finishPage: page
+          finishQuizList: newFinishQuizList,
+          finishPage: page,
+          newNull: newNull
         })
       }
     })
