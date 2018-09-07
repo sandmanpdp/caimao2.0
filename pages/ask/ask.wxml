@@ -64,12 +64,34 @@
     <view class='one'>
       <view>规则</view>
       <view>
-        <view>1.问题有效期为72天，逾期没人回答赏金全额退回账户。</view>
-        <view>2.您提交的问题可以指定给牛人回答或由平台推送给炒股达人回答。</view>
-        <view>3.您的问题以及答案，其他人查看即可获得0.5元/条。</view>
-        <view>4.把您的问题分享给更多的朋友，收获更多满意的答案，同时获得更多的打赏。</view>
+        <scroll-view scroll-y style='width:100%;height:400rpx;'>
+          <view class='tips_title'>Q1:什么是悬赏问题</view>
+          <view class='tips_text'>为了帮助提问者获得优质答案，黑石智投在免费提问基础上增加了悬赏功能。提问者发布问题的同时支付一- 笔赏金。悬赏结束后，满意回答者平分赏金。</view>
+
+
+
+          <view class='tips_title'>Q2:如何发布悬赏问题?</view>
+          <view class='tips_text'>1.在首页点击“问股诊股”按钮;</view>
+
+          <view class='tips_text'>2.编写问题内容，同时设置悬赏金额，20元宝起步，最高1000元宝</view>
+
+          <view class='tips_text'>3.支付悬赏金后，问题发布成功，等待回答。</view>
+
+
+          <view class='tips_title'>Q3: 如何参与悬赏?</view>
+          <view class='tips_text'>在悬赏问题发布后的120小时内回答问题，就有机会被选为满意答案，赢得贫金。</view>
+
+
+          <view class='tips_title'>Q4:如何分配赏金?</view>
+          <view class='tips_text'> 1.提问者在悬赏期内选出满意答案，那么满意回答者平分贫金;</view>
+
+          <view class='tips_text'>2提问者没有在悬贫期内选出满息答案，由平台选出满意答案，平分赏金，</view>
+
+          <view class='tips_text'>3问题无人回答，赏金会在悬贫结束后24小时内迟还提问者。</view>
+
+        </scroll-view>
       </view>
-      <view>朕知道了</view>
+      <view class='iKnow' catch:tap='setMaskFalseFun'>朕知道了</view>
       <image id='m0' src='../images/icon_close.png' catch:tap='setMaskFalseFun'></image>
     </view>
   </view>

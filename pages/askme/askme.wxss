@@ -29,7 +29,7 @@
 
 .selectedBar {
   width: 70rpx !important;
-  border-bottom: 12rpx solid #3f86ff;
+  border-bottom: 6rpx solid #3f86ff;
   position: absolute;
   bottom: -30rpx;
   left: 152rpx;

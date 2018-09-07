@@ -6,15 +6,15 @@ Page({
    * 页面的初始数据
    */
   data: {
-    otherNew :'',
-    unReadView:'',
-    unReadNote :'',
-    unReadSys:'',
-    unReadAsk :'',
-    noteContent:'',
-    viewContent:'',
-    askContent : '',
-    systemContent:''
+    otherNew: '',
+    unReadView: 0,
+    unReadNote: 0,
+    unReadSys: 0,
+    unReadAsk: 0,
+    noteContent: '',
+    viewContent: '',
+    askContent: '',
+    systemContent: ''
   },
   getNews: function(e) {
     var type = e.currentTarget.dataset.type;
@@ -22,26 +22,41 @@ Page({
       url: '/pages/news/news?type=' + type,
     })
   },
-  getUnreadFun : function () {
+  getUnreadFun: function() {
     var that = this;
     wx.request({
       url: 'https://zhitouapi.romawaysz.com/msg/unreadNum',
       data: {
         token: app.union_id,
-        type : 0
+        type: 0
       },
-      success: function (res) {
-        console.log(res.data[1].total)
+      success: function(res) {
+        if (res.data[3]) {
+          that.setData({
+            unReadSys: res.data[3].total,
+            systemContent: '系统消息-' +res.data[3].content,
+          })
+        }
+        if (res.data[1]) {
+          that.setData({
+            unReadView: res.data[1].total,
+            noteContent: '笔记-' +res.data[1].content,
+          })
+        }
+        if (res.data[2]) {
+          that.setData({
+            unReadNote: res.data[2].total,
+            viewContent: '观点-' +res.data[2].content,
+          })
+        }
+        if (res.data[6]) {
+          that.setData({
+            unReadAsk: res.data[6].total,
+            askContent: '问股诊股-'+res.data[6].content
+          })
+        }
         that.setData({
           otherNew: res.data,
-          unReadView: res.data[1].total,
-          unReadNote: res.data[2].total,
-          unReadSys: res.data[3].total,
-          unReadAsk: res.data[6].total,
-          noteContent: res.data[1].content,
-          viewContent: res.data[2].content,
-          askContent: res.data[3].content,
-          systemContent: res.data[6].content
         })
       }
     })
@@ -57,7 +72,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function() {
-    
+
   },
 
   /**

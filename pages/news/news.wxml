@@ -137,12 +137,15 @@
       <image class='fl' src='../images/robot.png'></image>
       <view class='fr'>神奇牛股关注了您<image src='../images/icon_talk.png'></image></view>
     </view> -->
-    <view class="ordinary {{item.state!=1?'bkfafafa':''}}">
+    <view class="ordinary">
       <view>
-        <view class="tw1 {{item.state!=1?'cob9b9b9':''}}">{{item.title}}</view>
+        <view class="tw1 {{item.state!=1?'co999':''}}">{{item.title}}</view>
         <view>{{item.content}}</view>
       </view>
-      <view>查看详情</view>
+      <view class="{{item.state!=1?'co999':''}} pstRel">
+        查看详情
+        <image class='right_arrow' src='../images/icon_right_arrow.png'></image>
+      </view>
     </view>
   </view> 
 </view>

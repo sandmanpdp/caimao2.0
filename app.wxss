@@ -328,3 +328,21 @@ page {
   height: 30rpx;
 }
 .askMask{position:fixed;top:0;left:0;width:100%;height:100vh;background-color:rgba(0,0,0,.5);z-index:9999999}
+.tips_title:first-child {
+  padding-top: 0;
+}
+.tips_title {
+  color: #3F86FF;
+  font-size: 30rpx;
+  line-height: 30rpx;
+  font-weight: 600;
+  padding:15rpx 0;
+}
+.tips_text {
+  color: #666;
+  font-size: 26rpx;
+  line-height: auto;
+}
+.iKonw {
+  padding-bottom:30rpx;
+}

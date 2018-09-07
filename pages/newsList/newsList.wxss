@@ -28,9 +28,9 @@ view {
 
 .title {
   width: 70%;
-  font-size: 30rpx;
-  line-height: 30rpx;
-  color: #666;
+  font-size: 32rpx;
+  line-height: 32rpx;
+  color: #333;
   margin-top: 15rpx;
 }
 
@@ -39,9 +39,9 @@ view {
   text-overflow: ellipsis;
   white-space: nowrap;
   width: 85%;
-  font-size: 26rpx;
-  line-height: 26rpx;
-  color: #b9b9b9;
+  font-size: 28rpx;
+  line-height: 28rpx;
+  color: #999;
   margin-top: 15rpx;
 }
 

@@ -5,9 +5,9 @@
       <image class='left-image fl' src='../images/hot.png'></image>
       <view class='fl text-box'>
         <view class='title'>笔记</view>
-        <view class='detail'>笔记-{{noteContent}}</view>
+        <view class='detail'>{{unReadNote == 0 ? '暂无新消息':noteContent}}</view>
       </view>
-      <view class='list_box_number fl'>
+      <view wx:if="{{unReadNote != 0}}" class='list_box_number fl'>
         {{unReadNote}}
       </view>
       <view class='arrow fr'>
@@ -20,9 +20,9 @@
       <image class='left-image fl' src='../images/view.png'></image>
       <view class='fl text-box'>
         <view class='title'>观点</view>
-        <view class='detail'>观点-{{viewContent}}</view>
+        <view class='detail'>{{unReadView ==0 ? '暂无新消息':viewContent}}</view>
       </view>
-      <view class='list_box_number fl'>
+      <view wx:if="{{unReadView != 0}}" class='list_box_number fl'>
          {{unReadView}}
       </view>
       <view class='arrow fr'>
@@ -35,9 +35,9 @@
       <image class='left-image fl' src='../images/ask-info.png'></image>
       <view class='fl text-box'>
         <view class='title'>问股诊股</view>
-        <view class='detail'>问股诊股-{{askContent}}</view>
+        <view class='detail'>{{unReadAsk == 0? '暂无新消息':askContent}}</view>
       </view>
-      <view class='list_box_number fl'>
+      <view wx:if="{{unReadAsk != 0}}" class='list_box_number fl'>
          {{unReadAsk}}
       </view>
       <view class='arrow fr'>
@@ -50,9 +50,9 @@
       <image class='left-image fl' src='../images/system.png'></image>
       <view class='fl text-box'>
         <view class='title'>系统消息</view>
-        <view class='detail'>系统消息-{{systemContent}}</view>
+        <view class='detail'>{{unReadSys == 0? '暂无新消息':systemContent}}</view>
       </view>
-      <view class='list_box_number fl'>
+      <view wx:if="{{unReadSys != 0}}" class='list_box_number fl'>
          {{unReadSys}}
       </view>
       <view class='arrow fr'>

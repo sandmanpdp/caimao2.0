@@ -10,7 +10,8 @@ Page({
     page : 1,
     quizList:[],
     answerList:[],
-    answerPage : 1
+    answerPage : 1,
+    finishNull : true
   },
   setNavIndexFun: function (e) { //导航下标设置
     var a;
@@ -20,7 +21,8 @@ Page({
       a = '1'
     }
     this.setData({
-      navIndex:a
+      navIndex:a,
+      finishNull : true
     })
   },
   
@@ -43,9 +45,9 @@ Page({
         user_id: app.localUserData.user_id
       },
       success: function (res) {
-        console.log(res.data.data);
         var resData = res.data.data;
         var error = res.data.error;
+        var finishNull;
         if (res.data.page) {
           var page = res.data.page || '1'
         }
@@ -59,9 +61,16 @@ Page({
             return item;
           })
 
+          if (resData.length < 10) {
+            finishNull = true
+          } else {
+            finishNull = false
+          }
+
           that.setData({
             quizList: newQuizList,
-            page: page
+            page: page,
+            finishNull: finishNull
           })
         }
       }
@@ -81,17 +90,19 @@ Page({
         var error = res.data.error;
         var answerList = that.data.answerList || [];
         if(error == 0 ){
+          var finishNull;
           for (var i = 0; i < resData.length; i++) {
             answerList.push(resData[i])
           }
-          // var newAnswerList = answerList.map(function(item){
-          //   item.resDay = app.getRestTime(item.created_at,item.limit_date);
-          //   return item
-          // })
-
+          if (resData.length < 10) {
+            finishNull = true
+          }else {
+            finishNull = false
+          }
           that.setData({
             answerList: answerList,
-            answerPage : res.data.page
+            answerPage : res.data.page,
+            finishNull: finishNull
           })
         }
       }

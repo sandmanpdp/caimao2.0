@@ -79,3 +79,24 @@
   width: 40rpx;
   height: 30rpx;
 }
+.icon_empty_box {
+  width: 100%;
+  margin-top: 150rpx;
+  text-align: center;
+}
+.icon_empty_box>image {
+  width: 252rpx;
+  height: 246rpx;
+}
+.icon_empty_box>.empty_box {
+  width: 252rpx;
+  height: 190rpx;
+}
+.empty_box_text {
+  font-size: 26rpx;
+  line-height: 26rpx;
+  margin-top: 23rpx;
+  width: 100%;
+  text-align: center;
+  color: #999;
+}

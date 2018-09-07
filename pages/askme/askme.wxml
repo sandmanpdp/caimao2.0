@@ -61,4 +61,4 @@
 </view>
 <!-- 下拉提示 -->
 <view class='drop' wx:if="{{!finishNull}}">下拉刷新 加载更多内容</view>
-<view wx:if="{{finishNull}}" class='drop'>暂无笔记数据</view>
+<view wx:if="{{finishNull}}" class='drop'>暂无更多数据</view>

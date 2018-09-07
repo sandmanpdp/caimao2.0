@@ -18,7 +18,8 @@ Page({
     restDay : '',
     isfocus : false,
     noComment : true,
-    satistyAnswer : ""
+    satistyAnswer : "",
+    isShowMask : false
   },
   setNavIndexFun: function(e) {
     this.setData({
@@ -227,6 +228,17 @@ Page({
           }
         }
       }
+    })
+  },
+
+  setMaskIndexFun : function () {
+    this.setData({
+      isShowMask : false
+    })
+  },
+  showMask : function (){
+    this.setData({
+      isShowMask: true
     })
   },
 

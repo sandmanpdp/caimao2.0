@@ -42,20 +42,20 @@
 .viewpoint .info image{margin-right: 20rpx;width: 40rpx;height: 32rpx;vertical-align: middle}
 .viewpoint .info text{font-size: 26rpx;color: #808080;vertical-align: middle}
 /* 其他 */
-.other{margin-top: 70rpx;padding: 0 30rpx 0}
-.other:first-child{padding: 40rpx 30rpx 0}
+.other{margin-top: 30rpx;padding: 0 30rpx 0}
+.other:first-child{padding:30rpx 0;padding-bottom: 0}
 .other:last-child{padding: 0 30rpx 40rpx}
-.other:first-child{margin: 0}
-.other .time{margin: 0 auto 21rpx;width: 330rpx;height: 54rpx;line-height: 54rpx;font-size: 26rpx;color: #ffffff;background-color: #e2e2e2;text-align: center;border-radius: 8rpx}
+.other:first-child{margin: 0 30rpx}
+.other .time{margin: 0 auto 30rpx;width: 314rpx;height: 54rpx;line-height: 54rpx;font-size: 26rpx;color: #ffffff;background-color: #e2e2e2;text-align: center;border-radius: 8rpx}
 .other .talk>image{width: 74rpx;height: 74rpx}
 .other .talk view{box-sizing: border-box;position: relative;padding: 30rpx;width: 574rpx;background-color: #fff;border: 1px solid #e2e2e2;border-radius: 20rpx;font-size: 30rpx;color: #2e2e2e}
 .other .talk view image{position: absolute;top: 25rpx;left: -19rpx;width: 20rpx;height: 21rpx}
-.other .ordinary{box-sizing: border-box;padding: 40rpx;width: 100%;background-color: #fff}
+.other .ordinary{box-sizing: border-box;padding: 30rpx;width: 100%;background-color: #fff;border-radius: 10rpx;}
 .other .ordinary>view:nth-child(1){box-sizing: border-box;border-bottom: 1px solid #eeeeee}
 .other .ordinary>view>view{margin-bottom: 30rpx}
-.other .ordinary>view>view:nth-child(1){font-size: 36rpx;color: #2e2e2e;line-height: 36rpx}
-.other .ordinary>view>view:nth-child(2){font-size: 24rpx;color: #b9b9b9;line-height: 24rpx}
-.other .ordinary>view:nth-child(2){margin-top: 30rpx;font-size: 24rpx;color: #b9b9b9;line-height: 24rpx}
+.other .ordinary>view>view:nth-child(1){font-size: 36rpx;color: #3F86FF;line-height: 36rpx}
+.other .ordinary>view>view:nth-child(2){font-size: 28rpx;color: #999;line-height: 28rpx}
+.other .ordinary>view:nth-child(2){margin-top: 30rpx;font-size: 28rpx;color: #666;line-height: 28rpx}
 /* 遮罩 */
 .icon{position: relative;top: 5rpx;margin: 0 30rpx 0 0;}
 .icon icon{margin: 4rpx;width: 15rpx;height: 15rpx;background-color: #eeeeee;border-radius: 50%}
@@ -86,3 +86,16 @@
   font-size: 32rpx; 
 }
 .box_picker_icon{position: absolute;top: 35rpx;left: 44rpx;width: 34rpx;height: 19rpx}
+.co999 {
+  color: #999 !important;
+}
+.right_arrow {
+  width: 19rpx;
+  height: 34rpx;
+  position: absolute;
+  top: -4rpx;
+  right: 0;
+}
+.pstRel {
+  position: relative;
+}

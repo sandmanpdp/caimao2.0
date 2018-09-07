@@ -91,7 +91,11 @@
           </view>
         </view>
       </view>
-      <view wx:if="{{noteNull}}" class='drop'>暂无更多笔记信息</view>
+      <view class='icon_empty_box' wx:if="{{masterNote.length > 0 ? false : true}}">
+        <image class='empty_box' src='../images/empty_box.png'></image>
+        <view class='empty_box_text'>暂无相关内容</view>
+      </view>
+      <view wx:if="{{masterNote.length > 0 && noteNull}}" class='drop'>暂无更多笔记信息</view>
     </view>
     <!-- 观点 -->
     <!-- <view class='section_show_box' wx:if="{{order ==1 ? true :false}}" wx:for="{{masterView}}">
@@ -129,18 +133,23 @@
           </view>
         </view>
       </view>
-      <view wx:if="{{viewNull}}" class='drop'>暂无更多观点信息</view>
+      <view class='icon_empty_box' wx:if="{{masterView.length > 0 ? false : true}}">
+        <image class='empty_box' src='../images/empty_box.png'></image>
+        <view class='empty_box_text'>暂无相关内容</view>
+      </view>
+      <view wx:if="{{masterView.length > 0 && viewNull}}" class='drop'>暂无更多观点信息</view>
     </view>
     <!-- 问股 -->
 
     <view wx:if="{{order ==2 ? true :false}}">
-      <view class='section_show_box'  wx:for="{{askArray}}" id='{{item.id}}' catchtap='askDetailFun'>
+      <view class='section_show_box' wx:for="{{askArray}}" id='{{item.id}}' catchtap='askDetailFun'>
         <view class='section_show_view_title bc_yellow clearfix'>
           <view class="fl section_show_askTheStock_title_icon {{item.state ? '' : 'fc_gray'}}">问</view>
           <view class='fl section_show_view_title_text'>{{item.share}}</view>
           <view class='fl section_show_view_title_number'>({{item.code}})</view>
           <!-- <view class="'fr section_show_view_title_price {{item.state ? '' : 'fs30'}} {{item.state ? '' : 'fc_gray'}}">{{item.state ? '￥'+item.hook_price : '已过期'}}</view> -->
-          <view class="'fr section_show_view_title_price {{item.state ? '' : 'fs30'}} {{item.state ? '' : 'fc_gray'}}"> <image src='../images/yuanbaoN.png' style='margin-right:15rpx;' class='yuanbao'></image>{{item.hook_price }}</view>
+          <view class="'fr section_show_view_title_price {{item.state ? '' : 'fs30'}} {{item.state ? '' : 'fc_gray'}}">
+            <image src='../images/yuanbaoN.png' style='margin-right:15rpx;' class='yuanbao'></image>{{item.hook_price }}</view>
         </view>
 
         <view>
@@ -156,9 +165,11 @@
           </view>
         </view>
       </view>
-      <view wx:if="{{askNull}}" class='drop'>暂无更多问股信息</view>
+      <view class='icon_empty_box' wx:if="{{askArray.length > 0 ? false : true}}">
+        <image src='../images/icon_issue.png'></image>
+      </view>
+      <view wx:if="{{askArray.length > 0 && askNull}}" class='drop'>暂无更多问股信息</view>
     </view>
-
     <view class='issue' wx:if="{{false}}">
       <image src='../images/icon_issue.png'></image>
     </view>
