@@ -245,7 +245,7 @@ Page({
             title: '提问成功',
           })
           wx.navigateTo({
-            url: '/pages/askdetail/askdetail?id='+res.data.data.id,
+            url: '/pages/ask/ask',
           })
         } else {
           wx.showToast({

@@ -20,9 +20,11 @@ view {
 
 .section .box:first-child {
 }
+
 .data {
   margin-top: 4rpx;
 }
+
 .section .box:last-child {
   padding-bottom: 20rpx;
   border: 0;
@@ -117,6 +119,7 @@ view {
   font-weight: 500;
   padding: 30rpx 0;
 }
+
 .nav .nav-item:first-child {
   margin-left: 30rpx;
 }
@@ -138,7 +141,7 @@ view {
   border-bottom: 6rpx solid #3f86ff;
   position: absolute;
   bottom: 0;
-  left: 10rpx;
+  left: 9rpx;
 }
 
 .pstRel {
@@ -155,17 +158,17 @@ view {
   background: #fff;
   position: relative;
   z-index: 999999999999999999;
-  border-bottom:1rpx solid #ddd;
+  border-bottom: 1rpx solid #ddd;
 }
+
 .searchInputBox {
   border-bottom: 1rpx solid #eee;
-  padding:20rpx 30rpx;
-
+  padding: 20rpx 30rpx;
 }
 
 .searchBox input {
   padding: 0 30rpx;
-  width:100%;
+  width: 87%;
   height: 70rpx;
   border: 1px solid #ddd;
   border-radius: 40rpx;
@@ -173,24 +176,30 @@ view {
   color: #666;
   line-height: 0;
   box-sizing: border-box;
+  display: inline-block;
 }
+
 .right_arrow_box {
   height: 80rpx !important;
 }
+
 .right_arrow {
   width: 19rpx;
   height: 34rpx;
   line-height: 80rpx;
 }
+
 .searchContentBox {
   width: 100%;
   background: #fff;
   z-index: 999999999999999999;
   padding: 0 30rpx;
 }
+
 .searchContent-item {
-  border-bottom:1rpx solid #eee; 
+  border-bottom: 1rpx solid #eee;
 }
+
 .searchContent {
   color: #666;
   font-size: 30rpx;
@@ -198,4 +207,12 @@ view {
   height: 80rpx;
   line-height: 50prx;
   padding: 40rpx 0;
+}
+
+.cancelBtn {
+  color: #666;
+  font-size: 30rpx;
+  height: 70rpx;
+  float: right;
+  line-height: 68rpx;
 }

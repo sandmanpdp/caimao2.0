@@ -139,22 +139,22 @@
           <view class="fl section_show_askTheStock_title_icon {{item.state ? '' : 'fc_gray'}}">问</view>
           <view class='fl section_show_view_title_text'>{{item.share}}</view>
           <view class='fl section_show_view_title_number'>({{item.code}})</view>
-          <view class="'fr section_show_view_title_price {{item.state ? '' : 'fs30'}} {{item.state ? '' : 'fc_gray'}}">{{item.state ? '￥'+item.hook_price : '已过期'}}</view>
+          <!-- <view class="'fr section_show_view_title_price {{item.state ? '' : 'fs30'}} {{item.state ? '' : 'fc_gray'}}">{{item.state ? '￥'+item.hook_price : '已过期'}}</view> -->
+          <view class="'fr section_show_view_title_price {{item.state ? '' : 'fs30'}} {{item.state ? '' : 'fc_gray'}}"> <image src='../images/yuanbaoN.png' style='margin-right:15rpx;' class='yuanbao'></image>{{item.hook_price }}</view>
         </view>
+
         <view>
           <view class='section_show_view_bottom_depict tw2'>{{item.content}}</view>
           <view class='clearfix'>
-            <view class='fl section_show_view_bottom_time'>{{item.day}}</view>
-            <view class='fl section_show_view_bottom_time'>{{item.time}}</view>
+            <view class='fl section_show_view_bottom_time'>{{item.created_at}}</view>
             <view class='data fr'>
-              <image src='../images/icon_look.png' class='icon'></image>
-              <text class='number'>2</text>
+              <!-- <image src='../images/icon_look.png' class='icon'></image> -->
+              <!-- <text class='number'>2</text> -->
               <image src='../images/icon_view.png' class='icon'></image>
               <text class='number'>{{item.comment}}</text>
             </view>
           </view>
         </view>
-        
       </view>
       <view wx:if="{{askNull}}" class='drop'>暂无更多问股信息</view>
     </view>

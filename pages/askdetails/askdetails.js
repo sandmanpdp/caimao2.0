@@ -100,6 +100,9 @@ Page({
               wx.showToast({
                 title: '回答成功',
               })
+              that.setData({
+                comment : ''
+              })
               that.getCommetList();
             }
           }

@@ -48,19 +48,19 @@
     <view class='clearfix'>
       <view id='s0' class="moneyBox fl {{sumIndex==0?'bgfc7946':''}}" catchtap='setSumIndexFun'>
         <view class='yuanbao'>
-          <image src="{{sumIndex==0?'../images/yuanbaoW.png':'../images/yuanbaoN.png'}}"></image>
+          <image src="{{sumIndex==0?'../images/yuanbao30w.png':'../images/yuanbao30.png'}}"></image>
         </view>
         20
       </view>
       <view id='s1' class="moneyBox fl {{sumIndex==1?'bgfc7946':''}}" catchtap='setSumIndexFun'>
         <view class='yuanbao'>
-          <image src="{{sumIndex==1?'../images/yuanbaoW.png':'../images/yuanbaoN.png'}}"></image>
+          <image src="{{sumIndex==1?'../images/yuanbao30w.png':'../images/yuanbao30.png'}}"></image>
         </view>
         50
       </view>
       <view id='s2' class="moneyBox fl {{sumIndex==2?'bgfc7946':''}}" catchtap='setSumIndexFun'>
         <view class='yuanbao'>
-          <image src="{{sumIndex==2?'../images/yuanbaoW.png':'../images/yuanbaoN.png'}}"></image>
+          <image src="{{sumIndex==2?'../images/yuanbao30w.png':'../images/yuanbao30.png'}}"></image>
         </view>
         88
       </view>

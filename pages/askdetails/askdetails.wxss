@@ -117,9 +117,8 @@
 }
 
 .list .box {
-  margin-top: 10rpx;
-  padding: 30rpx 30rpx 44rpx 30rpx;
-  border-bottom: 1px solid #eee
+  padding: 30rpx;
+  border-bottom: 2rpx solid #eee
 }
 
 .list .box:last-child {
@@ -152,7 +151,7 @@
 }
 
 .list .box .text {
-  margin: 29rpx 0 40rpx;
+  margin: 28rpx 0 ;
   font-size: 30rpx;
   color: #2e2e2e;
   word-break: break-all;

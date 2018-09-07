@@ -63,7 +63,7 @@
   left: 45rpx;
 }
 .selectedBarL {
-  left: 82rpx !important;
+  left: 78rpx !important;
 }
 .pstRel {
   position: relative;

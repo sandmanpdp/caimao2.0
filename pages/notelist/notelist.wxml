@@ -1,33 +1,35 @@
 <!--pages/oxnotes/oxnotes.wxml-->
 <!-- 头部 -->
-<view class='head clearfix'>
+<view class="head clearfix" >
   <!-- 选项一 -->
   <view class='fl head_condition_noe clearfix' catch:tap='defaultOptFun' id='headOne'>
     <!-- 默认选项 -->
     <view class='fl head_condition_option'>{{optionOne[indexOne].text}}笔记</view>
     <!-- 向下箭头 -->
-    <image class='fl icon_bottom_arrow' src='../images/icon_bottom_arrow.png'></image>
+    <image class='fl icon_bottom_arrow' src="{{opt && mask?'../images/icon_top_arrow.png':'../images/icon_bottom_arrow.png'}}"></image>
   </view>
   <!-- 选项二 -->
   <view class='fl head_condition_two clearfix' catch:tap='defaultOptFun' id='headTwo'>
     <!-- 默认选项 -->
     <view class='fl head_condition_option'>{{optionTwo[indexTwo].text}}</view>
     <!-- 向下箭头 -->
-    <image class='fl icon_bottom_arrow' src='../images/icon_bottom_arrow.png'></image>
+    <image class='fl icon_bottom_arrow' src="{{!opt && mask?'../images/icon_top_arrow.png':'../images/icon_bottom_arrow.png'}}"></image>
+
   </view>
   <!-- 选项列表 -->
-  <view class='head_list' wx:if="{{mask}}">
+  <view catchtouchmove="true" catchtap='closeMask' class="{{mask?'detailMask':''}}">
+    <view class="head_list {{opt ? 'head_list_option_one' : 'head_list_option_two'}}" wx:if="{{mask}}">
     <!-- 向上三角形 -->
-    <view class="head_icon_trigon {{opt ? 'head_icon_trigon_one' : 'head_icon_trigon_two'}}"></view>
+    <!-- <view class="head_icon_trigon {{opt ? 'head_icon_trigon_one' : 'head_icon_trigon_two'}}"></view> -->
     <!-- 列表渲染 -->
-    <view wx:for="{{opt ? optionOne : optionTwo}}" class="head_list_box clearfix {{item.state ? 'bc_gray' : 'bc_none'}}" catch:tap='optionOptFun' data-index="{{index}}">
-      <view class='fl head_list_box_option'>{{item.text}}</view>
-      <icon hidden="{{item.state ? false : true}}" class='fl success_no_circle' type='success_no_circle' size='18' color='#b9b9b9'></icon>
+    <view wx:for="{{opt ? optionOne : optionTwo}}" class="head_list_box clearfix " catch:tap='optionOptFun' data-index="{{index}}">
+      <view class="fl head_list_box_option {{item.state ? 'selecte_item' : ''}}">{{item.text}}</view>
     </view>
+  </view>
   </view>
 </view>
 <!-- 笔记列表 -->
-<view class='killer_section'>
+<view class="killer_section">
   <view>
     <!-- 列表渲染 -->
     <!-- <view class='killer_section_box' catchtap="{{item.is_look ==-1 && item.price != 0 ?'buyFun':'readFun'}}" id="{{'box_'+item.id}}" data-uid='{{item.user_id}}' wx:for="{{noteArray}}"> -->

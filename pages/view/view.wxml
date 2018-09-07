@@ -27,6 +27,7 @@
   <view class='searchBox' wx:if="{{searchBox}}">
     <view class='searchInputBox'>
       <input bindinput="bindKeyInput" placeholder-style='color:#999' value='{{searchConent}}' placeholder='输入观点关键字' bindconfirm="bindKeyConfirm"></input>
+      <view class='cancelBtn' catchtap='closeSearchMask'>取消</view>
     </view>
     <view class='searchContentBox clearfix' wx:if='{{searchContentBox}}'>
     <view class='clearfix searchContent-item' catchtap='viewReadFun' wx:for='{{searchArray}}' id='{{item.id}}'>

@@ -54,6 +54,12 @@ Page({
       })
     }
   },
+  //关闭模态框
+  closeMask : function () {
+    this.setData({
+      mask :false
+    })
+  },
   // 列表选项选择方法
   optionOptFun: function (e) {
     if(this.data.opt){ //选项一
