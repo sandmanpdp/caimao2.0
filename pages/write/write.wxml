@@ -8,25 +8,29 @@
   <view wx:if="{{nav}}">
     <!-- 标题 -->
     <view class='box clearfix'>
+
       <view class='fl box_title'>标题</view>
       <view class='fl box_value'>
         <input class='box_input' type='text' placeholder='请输入2-16个字符' placeholder-class='box_input_placeholder' maxlength='16' bindinput="bindTitleInput" value='{{titleValue}}'></input>
       </view>
+
     </view>
     <!-- 逻辑 -->
     <!-- <view class='box box_textarea clearfix'> -->
     <view class='box clearfix viewHeightAuto'>
       <view class='fl box_logicTitle'>逻辑</view>
-      <view class='fl box_value'>
+      <view class='fl box_value' style='height:auto'>
         <textarea class='logic_textarea' auto-height="true" placeholder='请输入不少于10个字的推荐理由' placeholder-class='logic_input_placeholder' maxlength='300' bindinput="bindLogicInput" value='{{logicValue}}'></textarea>
         <!-- <input class='box_input' placeholder='请输入不少于10个字的推荐理由' placeholder-class='logic_input_placeholder' maxlength='300' bindinput="bindLogicInput" value='{{logicValue}}'></input> -->
       </view>
     </view>
     <!-- 股票代码 -->
-    <view class='box clearfix pr'>
-      <view class='fl box_title'>股票</view>
+    <view class='box  pr mt20'>
+      <view class='clearfix'>
+        <view class='fl box_title'>股票</view>
       <view class='fl box_value'>
         <input class='box_input' placeholder='请输入股票代码/名称' placeholder-class='box_input_placeholder' maxlength='30' bindinput="bindKeyInput" value='{{shareValue}}' bindblur="shareMaskEnd" bindconfirm='confirmShare'></input>
+      </view>
       </view>
       <!-- 修改 matchingState 状态 -->
       <view wx:if="{{matchingState}}" class='codeMask codeMaskTop'>
@@ -44,7 +48,7 @@
       <view class='percent'>个交易日</view>
     </view>
     <!-- 上涨 -->
-    <view class='box clearfix pr'>
+    <!-- <view class='box clearfix pr'>
       <view class='fl box_title'>上涨</view>
       <view class='fl box_value_half'>
         <picker class='box_picker_date' mode="selector" bindchange="riseChange" range="{{riseArray}}">
@@ -52,9 +56,9 @@
         </picker>
       </view>
       <view class='percent'>%</view>
-    </view>
+    </view> -->
     <!-- 止损 -->
-    <view class='box clearfix pr'>
+    <!-- <view class='box clearfix pr'>
       <view class='fl box_title'>止损</view>
       <view class='fl box_value_half'>
         <picker class='box_picker_date' mode="selector" bindchange="stopChange" range="{{stopArray}}">
@@ -62,15 +66,34 @@
         </picker>
       </view>
       <view class='percent'>%</view>
-    </view>
+    </view> -->
 
     <!-- 上涨止损2.0 -->
+    <view class='box clearfix'>
+      <view class='fl pr box_half'>
+        <view class='fl box_title'>上涨</view>
+        <view class='fl box_value_half'>
+          <picker class='box_picker_date' mode="selector" bindchange="riseChange" range="{{riseArray}}">
+            <view class="picker prict">{{riseArray[riseIndex]}}</view>
+          </picker>
+        </view>
+        <view class='percent'>%</view>
+      </view>
+      <view class='fl pr box_half'>
+        <view class='fl box_title'>止损</view>
+        <view class='fl box_value_half'>
+          <picker class='box_picker_date' mode="selector" bindchange="stopChange" range="{{stopArray}}">
+            <view class="picker prict">{{stopArray[stopIndex]}}</view>
+          </picker>
+        </view>
+        <view class='percent'>%</view>
+      </view>
 
-
+    </view>
     <!-- 提示 -->
-    <view class='box'>实时计算，24小时后判断是否达标</view>
+    <view class='tips'>实时计算，24小时后判断是否达标</view>
     <!-- 标签 -->
-    <view class='box clearfix pr'>
+    <view class='box clearfix pr label_container'>
       <view class='fl box_title label_title'>标签：</view>
       <view class='fl label_value claerfix'>
         <view class="fl label_box {{item.state ? 'co_orange' : ''}}" wx:for="{{label}}" catch:tap='labelOptFun' id='{{item.id}}'>
@@ -85,7 +108,7 @@
       </view>
     </view>
     <!-- 收费 -->
-    <view class='box clearfix'>
+    <view class='box clearfix mt20'>
       <view class='fl box_title'>收费</view>
       <view class='fl box_value'>
         <picker class='box_picker_date' mode="selector" bindchange="noteChargeChange" range="{{chargeArray}}">
@@ -127,7 +150,7 @@
       </view>
     </view>
     <!-- 人数  -->
-    <view class='box clearfix' wx:if="{{noteChargeIndex!=0}}">
+    <view class='box clearfix people_box' wx:if="{{noteChargeIndex!=0}}">
       <view class='fl box_title'>人数</view>
       <view class='fl box_value'>
         <picker class='box_picker_date' mode="selector" bindchange="bindPeopleChange" range="{{peopleArray}}">
@@ -181,7 +204,7 @@
     </view> -->
     <!-- 关联笔记 -->
     <view class='box clearfix'>
-      <view class='clearfix slice_border_bt' >
+      <view class='clearfix slice_border_bt'>
         <view class='fl box_title_relatedNote'>关联笔记</view>
         <view class='fl box_value' style='width:512rpx;'>
           <picker class='box_picker_date' mode="selector" bindchange="relatedNote" range="{{pickerNameArray}}">
