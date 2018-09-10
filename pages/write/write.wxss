@@ -34,6 +34,8 @@
   padding: 0 30rpx;
   height: 100rpx;
   background: #fff;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .textareaBox {
@@ -110,7 +112,7 @@
 }
 
 .box_input_placeholder {
-  color: #b9b9b9;
+  color: #999;
 }
 
 .box_picker_date, .box_picker_date view {

@@ -519,11 +519,10 @@ Page({
     this.setData({
       viewPriceArray: a
     })
-    console.log(that.data.viewPriceArray)
   },
 
   getDay: function (b, c) {  //遍历天数数组
-    var a = []
+    var a = [];
     for (var i = b; i < c; i++) {
       a.push("发布" + i + "天后不可购买")
     }
