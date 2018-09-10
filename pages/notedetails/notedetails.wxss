@@ -25,20 +25,20 @@ view {
 /* 标题 */
 .title{border-bottom: 1px solid #ddd;background-color: #fff}
 .title>view{padding: 30rpx 0 30rpx;width: 33.3%;text-align: center}
-.title>view>view:nth-child(1){margin-bottom: 20rpx;font-size: 36rpx;color: #2e2e2e;line-height: 36rpx}
-.title>view>view:nth-child(2){font-size: 30rpx;color: #808080;line-height: 26rpx}
+.title>view>view:nth-child(2){margin-top: 20rpx;font-size: 30rpx;color: #666;line-height: 30rpx}
+.title>view>view:nth-child(1){font-size: 36rpx;color: #666;line-height: 36rpx}
 /* 内容 */
 .section{padding: 36rpx 30rpx 30rpx;background-color: #fff;margin: 20rpx 0}
 .section>view{margin-bottom:30rpx}
 .section>view:last-child{margin: 0}
-.section>view>view:nth-child(1){padding-right: 30rpx;font-size: 30rpx;color: #b9b9b9;line-height: 30rpx}
-.section>view>view:nth-child(2){width: 600rpx;font-size: 30rpx;color: #808080;line-height: 30rpx}
+.section>view>view:nth-child(1){padding-right: 30rpx;font-size: 30rpx;color: #999;line-height: 30rpx}
+.section>view>view:nth-child(2){width: 600rpx;font-size: 30rpx;color: #666;line-height: 30rpx}
 /* 数据 */
 .data{background-color: #fff;padding:0 24rpx;}
-.data>view{margin-right: 34rpx;width: 151rpx;height: 136rpx;text-align: center;border-radius: 20rpx}
+.data>view{margin-right: 34rpx;width: 151rpx;text-align: center;border-radius: 20rpx}
 .data>view:last-child{margin: 0}
-.data>view>view:nth-child(1){margin: 30rpx 0 20rpx;font-size: 30rpx;color: #fc7946; line-height: 30rpx}
-.data>view>view:nth-child(2){font-size: 26rpx;color: #b9b9b9;line-height: 26rpx}
+.data>view>view:nth-child(1){margin: 20rpx 0;font-size: 30rpx;color: #fc7946; line-height: 30rpx}
+.data>view>view:nth-child(2){font-size: 26rpx;color: #999;line-height: 26rpx;margin-bottom: 20rpx;}
 /* 阅读 */
 .read{padding: 34rpx 30rpx 30rpx;background-color: #fff}
 .read>view:nth-child(1){margin-bottom: 30rpx;font-size: 34rpx;color: #2e2e2e;line-height: 34rpx;text-align: left}

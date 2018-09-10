@@ -25,7 +25,7 @@ Page({
     peopleArray: [],  //笔记人数数组
     peopleIndex: null,  //笔记人数下标
     noteChargeIndex: 0,  //笔记收费类型下标
-
+    viewPriceArray:[],
     lableValue: [],  //标签的值
     label: [ //笔记标签
       { id: 0, state: false, title: '装饰园林' },
@@ -252,7 +252,6 @@ Page({
   },
   // 标价获取方法
   bindPriceChange: function (e) {
-    console.log(e.detail.value);
     this.setData({
       priceIndex: e.detail.value
     })
@@ -510,6 +509,19 @@ Page({
       priceArray: a
     })
   },
+
+  getViewPrice: function (b,c) {
+    var a = []
+    for (var i = b; i < c; i++) {
+      a.push(i * 10)
+    }
+    a.unshift('免费');
+    this.setData({
+      viewPriceArray: a
+    })
+    console.log(that.data.viewPriceArray)
+  },
+
   getDay: function (b, c) {  //遍历天数数组
     var a = []
     for (var i = b; i < c; i++) {
@@ -594,8 +606,8 @@ Page({
         title: a,
         intro: b,
         content: c,
-        price: that.data.viewChargeIndex == 0 ? 0 : that.data.priceArray[that.data.viewPriceIndex],
-        type: that.data.viewChargeIndex == 0 ? 1 : that.data.viewChargeIndex
+        price:that.data.viewPriceArray[that.data.viewPriceIndex],
+        type: 1
       },
       success: function (res) {
         var d = res.data.error;
@@ -672,6 +684,7 @@ Page({
     this.setData({
       viewPriceIndex: e.detail.value
     })
+    console.log("viewPriceIndex" + this.data.viewPriceArray[this.data.viewPriceIndex])
   },
   setNoteMaskTrueFun: function () {  //打开遮罩方法
     this.setData({
@@ -837,7 +850,8 @@ Page({
     app.globalData.page = true
     app.globalData.scene += 1
 
-    that.getPrice(1, 101)
+    that.getPrice(1, 101);
+    that.getViewPrice(1,101)
     that.getDay(1, 31)
     that.getPeople(1, 100)
     that.getTime()

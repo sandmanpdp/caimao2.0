@@ -18,7 +18,7 @@
     <view class='box clearfix viewHeightAuto'>
       <view class='fl box_logicTitle'>逻辑</view>
       <view class='fl box_value'>
-       <textarea class='logic_textarea' style='width:513rpx' auto-height="true" placeholder='请输入不少于10个字的推荐理由' placeholder-class='logic_input_placeholder' maxlength='300' bindinput="bindLogicInput" value='{{logicValue}}'></textarea> 
+        <textarea class='logic_textarea' auto-height="true" placeholder='请输入不少于10个字的推荐理由' placeholder-class='logic_input_placeholder' maxlength='300' bindinput="bindLogicInput" value='{{logicValue}}'></textarea>
         <!-- <input class='box_input' placeholder='请输入不少于10个字的推荐理由' placeholder-class='logic_input_placeholder' maxlength='300' bindinput="bindLogicInput" value='{{logicValue}}'></input> -->
       </view>
     </view>
@@ -37,54 +37,58 @@
     <view class='box clearfix pr'>
       <view class='fl box_title'>时间</view>
       <view class='fl box_value'>
-        <picker class='box_picker_date' mode="selector"  bindchange="timeChange" range="{{timeArray}}">
+        <picker class='box_picker_date' mode="selector" bindchange="timeChange" range="{{timeArray}}">
           <view class="picker prict">{{timeArray[timeIndex]}}</view>
         </picker>
-      </view> 
-      <view class='percent'>个交易日</view>  
+      </view>
+      <view class='percent'>个交易日</view>
     </view>
     <!-- 上涨 -->
     <view class='box clearfix pr'>
       <view class='fl box_title'>上涨</view>
-      <view class='fl box_value'>
-        <picker class='box_picker_date' mode="selector"  bindchange="riseChange" range="{{riseArray}}">
+      <view class='fl box_value_half'>
+        <picker class='box_picker_date' mode="selector" bindchange="riseChange" range="{{riseArray}}">
           <view class="picker prict">{{riseArray[riseIndex]}}</view>
         </picker>
-      </view> 
-      <view class='percent'>%</view> 
+      </view>
+      <view class='percent'>%</view>
     </view>
     <!-- 止损 -->
     <view class='box clearfix pr'>
       <view class='fl box_title'>止损</view>
-      <view class='fl box_value'>
-        <picker class='box_picker_date' mode="selector"  bindchange="stopChange" range="{{stopArray}}">
+      <view class='fl box_value_half'>
+        <picker class='box_picker_date' mode="selector" bindchange="stopChange" range="{{stopArray}}">
           <view class="picker prict">{{stopArray[stopIndex]}}</view>
         </picker>
       </view>
       <view class='percent'>%</view>
     </view>
+
+    <!-- 上涨止损2.0 -->
+
+
     <!-- 提示 -->
     <view class='box'>实时计算，24小时后判断是否达标</view>
     <!-- 标签 -->
     <view class='box clearfix pr'>
       <view class='fl box_title label_title'>标签：</view>
       <view class='fl label_value claerfix'>
-        <view class="fl label_box {{item.state ? 'co_blue' : ''}}" wx:for="{{label}}" catch:tap='labelOptFun' id='{{item.id}}'>
+        <view class="fl label_box {{item.state ? 'co_orange' : ''}}" wx:for="{{label}}" catch:tap='labelOptFun' id='{{item.id}}'>
           {{item.title}}
-          <view class="label_box_icon {{item.state ? 'bc_blue' : ''}}">
+          <view class="label_box_icon {{item.state ? 'bg_orange' : ''}}">
             <icon wx:if="{{item.state}}" class="label_box_icon_circle" type='success_no_circle' color='#fff' size='10'></icon>
           </view>
         </view>
-      </view> 
+      </view>
       <view wx:if="{{tableState}}" class='codeMask codeMaskBottom'>
         <view wx:for="{{showTableArray}}" id="{{item}}" catchtap='setTableFun'>{{item}}</view>
       </view>
     </view>
-     <!-- 收费 -->
+    <!-- 收费 -->
     <view class='box clearfix'>
       <view class='fl box_title'>收费</view>
       <view class='fl box_value'>
-        <picker class='box_picker_date' mode="selector"  bindchange="noteChargeChange" range="{{chargeArray}}">
+        <picker class='box_picker_date' mode="selector" bindchange="noteChargeChange" range="{{chargeArray}}">
           <view class="picker prict">{{chargeArray[noteChargeIndex]}}</view>
           <image class='box_picker_icon' src='../images/icon_bottom_arrow.png'></image>
         </picker>
@@ -94,13 +98,13 @@
     <view class='box clearfix' wx:if="{{noteChargeIndex!=0}}">
       <view class='fl box_title'>标价</view>
       <view class='fl box_value'>
-        <picker disabled="{{noteChargeIndex==0?true:false}}" class="box_picker_date" mode="selector"  bindchange="bindPriceChange" range="{{priceArray}}">
+        <picker disabled="{{noteChargeIndex==0?true:false}}" class="box_picker_date" mode="selector" bindchange="bindPriceChange" range="{{priceArray}}">
           <view class="picker prict {{noteChargeIndex==0?'c0b9b9b9':''}}">{{priceArray[priceIndex]}}</view>
           <image class='box_picker_icon' src='../images/icon_bottom_arrow.png'></image>
         </picker>
       </view>
     </view>
-    
+
     <!-- 押金 -->
     <!-- <view class='box clearfix'>
       <view class='fl box_title'>押金</view>
@@ -114,29 +118,29 @@
     <view class='box clearfix' wx:if="{{noteChargeIndex!=0}}">
       <view class='fl box_title'>限时</view>
       <view class='fl box_value'>
-        <picker class='box_picker_date' mode="selector"  bindchange="bindEndDateChange" range="{{endDateArray}}">
+        <picker class='box_picker_date' mode="selector" bindchange="bindEndDateChange" range="{{endDateArray}}">
           <view class="picker">
             {{endDateArray[endDateIndex]}}
           </view>
           <image class='box_picker_icon' src='../images/icon_bottom_arrow.png'></image>
         </picker>
-      </view>  
+      </view>
     </view>
     <!-- 人数  -->
     <view class='box clearfix' wx:if="{{noteChargeIndex!=0}}">
       <view class='fl box_title'>人数</view>
       <view class='fl box_value'>
-        <picker class='box_picker_date' mode="selector"  bindchange="bindPeopleChange" range="{{peopleArray}}">
+        <picker class='box_picker_date' mode="selector" bindchange="bindPeopleChange" range="{{peopleArray}}">
           <view class="picker">{{peopleArray[peopleIndex]}}
           </view>
           <image class='box_picker_icon' src='../images/icon_bottom_arrow.png'></image>
         </picker>
-      </view>  
+      </view>
     </view>
     <!-- 须知 -->
     <view class='box clearfix' catchtap='setNoteMaskTrueFun'>
       <view class='fl box_title'>须知</view>
-      <image class='fr box_picker_notice_icon' src='../images/icon_right_arrow.png'></image>  
+      <image class='fr box_picker_notice_icon' src='../images/icon_right_arrow.png'></image>
     </view>
     <!-- 阅览发布 -->
     <view class='reading' catch:tap='trueFun'>阅览</view>
@@ -145,8 +149,8 @@
   <view wx:if="{{!nav}}" class='viewpoint'>
     <!-- 标题 -->
     <view class='box'>
-      <view class='box_value box_viewpoint'>
-        <input class='logic_input' placeholder='请输入标题' placeholder-class='logic_input_placeholder' maxlength='32' bindinput="viewpointTitleInput" value='{{viewpointTitleValue}}'></input>
+      <view class='box_value box_viewpoint slice_border_bt'>
+        <input class='logic_input' placeholder='观点的标题' placeholder-class='logic_input_placeholder' maxlength='32' bindinput="viewpointTitleInput" value='{{viewpointTitleValue}}'></input>
       </view>
     </view>
     <!-- 简介 -->
@@ -161,12 +165,12 @@
     <!-- <view class='box box_textarea'> -->
     <view class='textareaBox'>
       <view class='box_value box_viewpoint'>
-         <textarea class='logic_textarea' auto-height="true" placeholder='请输入内容' placeholder-class='logic_input_placeholder' maxlength='300' bindinput="bindContentInput" value='{{viewpointContentValue}}'></textarea> 
+        <textarea class='logic_textarea' auto-height="true" placeholder='观点的内容' placeholder-class='logic_input_placeholder' maxlength='300' bindinput="bindContentInput" value='{{viewpointContentValue}}'></textarea>
         <!-- <input class='logic_input' auto-height="true" placeholder='请输入内容' placeholder-class='logic_input_placeholder' maxlength='300' bindinput="bindContentInput" value='{{viewpointContentValue}}'></input> -->
       </view>
     </view>
     <!-- 收费 -->
-    <view class='box clearfix'>
+    <!-- <view class='box clearfix'>
       <view class='fl box_title'>收费</view>
       <view class='fl box_value'>
         <picker class='box_picker_date' mode="selector"  bindchange="viewChargeChange" range="{{chargeArray}}">
@@ -174,31 +178,37 @@
           <image class='box_picker_icon' src='../images/icon_bottom_arrow.png'></image>
         </picker>
       </view>
-    </view>
-    <!-- 标价 -->
-    <view class='box clearfix'>
-      <view class='fl box_title'>标价</view>
-      <view class='fl box_value'>
-        <picker class='box_picker_date' mode="selector"  bindchange="viewPriceChange" range="{{priceArray}}" disabled="{{viewChargeIndex==0?true:false}}">
-          <view class="picker prict {{viewChargeIndex==0?'c0b9b9b9':''}}">{{priceArray[viewPriceIndex]}}</view>
-          <image class='box_picker_icon' src='../images/icon_bottom_arrow.png'></image>
-        </picker>
-      </view>
-    </view>
+    </view> -->
     <!-- 关联笔记 -->
     <view class='box clearfix'>
-      <view class='fl box_title_relatedNote'>关联笔记</view>
-      <view class='fl box_value'>
-        <picker class='box_picker_date' mode="selector" bindchange="relatedNote" range="{{pickerNameArray}}" >
-          <view class="picker">{{pickerNameArray[note_index]}}</view>
-          <image class='box_picker_icon' src='../images/icon_bottom_arrow.png'></image>
-        </picker>
+      <view class='clearfix slice_border_bt' >
+        <view class='fl box_title_relatedNote'>关联笔记</view>
+        <view class='fl box_value' style='width:512rpx;'>
+          <picker class='box_picker_date' mode="selector" bindchange="relatedNote" range="{{pickerNameArray}}">
+            <view class="picker">{{pickerNameArray[note_index]}}</view>
+            <image class='box_picker_right_icon' src='../images/icon_right_arrow.png'></image>
+          </picker>
+        </view>
       </view>
     </view>
+    <!-- 标价 -->
+    <view class='box clearfix' style='border-top:none'>
+      <view class='clearfix ' style='border-top:2rpx solid #eee !important'>
+        <view class='fl box_title'>标价</view>
+        <view class='fl box_value'>
+          <picker class='box_picker_date' mode="selector" bindchange="viewPriceChange" range="{{viewPriceArray}}">
+            <view class="picker prict">{{viewPriceArray[viewPriceIndex]}}</view>
+            <image class='box_picker_right_icon' src='../images/icon_right_arrow.png'></image>
+          </picker>
+        </view>
+      </view>
+
+    </view>
+
     <!-- 须知 -->
-    <view class='box clearfix' catchtap='setViewMaskTrueFun'>
+    <view class='box clearfix' catchtap='setViewMaskTrueFun' style='margin-top:20rpx;'>
       <view class='fl box_title'>须知</view>
-      <image class='fr box_picker_notice_icon' src='../images/icon_right_arrow.png'></image>  
+      <image class='fr box_picker_notice_icon' src='../images/icon_right_arrow.png'></image>
     </view>
     <!-- 阅览发布 -->
     <view class='reading' catchtap='viewpointReleaseFun'>发布</view>
@@ -232,13 +242,13 @@
     </view>
   </view>
   <!-- 阅览 -->
-  <view wx:if="{{readMaskState}}" class='readMask' catchtouchmove='true' >
+  <view wx:if="{{readMaskState}}" class='readMask' catchtouchmove='true'>
     <view class='readBox'>
       <view class='readContent'>
         <view class='clearfix'>
           <view class='fl'>股票</view>
           <view class='fl' style='width:48%'>{{shareValue}}</view>
-          <view class='fr' style='color:#fc7946' wx:if="{{xPrice!=''}}">{{xPrice}}元</view> 
+          <view class='fr' style='color:#fc7946' wx:if="{{xPrice!=''}}">{{xPrice}}元</view>
         </view>
         <view class='clearfix'>
           <view class='fl'>逻辑</view>
@@ -270,9 +280,9 @@
           <view class='fl'>限时</view>
           <view class='fl'>{{endDateArray[endDateIndex]}}</view>
         </view>
-        <view class='readLable'>将显示在“最新笔记、成功率高，日均高收益”</view>   
+        <view class='readLable'>将显示在“最新笔记、成功率高，日均高收益”</view>
       </view>
-      
+
       <view class='readBtn clearfix'>
         <view class='fl' catch:tap='falseFun'>编辑修改</view>
         <view class='fr' catch:tap='noteReleaseFun'>确认发布</view>
@@ -289,8 +299,7 @@
       <view class='close' catchtap='toNotedetails'></view>
     </view>
   </view>
-  
+
   <!-- 底部 -->
   <view class='footer'></view>
 </view>
-

@@ -47,6 +47,7 @@ Page({
       success: function (res) {
         var resData = res.data.data;
         var error = res.data.error;
+        var nowDate = new Date()
         var finishNull;
         if (res.data.page) {
           var page = res.data.page || '1'
@@ -57,7 +58,7 @@ Page({
             quizList.push(resData[i])
           }
           var newQuizList = quizList.map(function(item){
-            item.resDay = app.getRestTime(item.created_at,item.limit_date);
+            item.resDay = app.getRestTime(nowDate,item.limit_date);
             return item;
           })
 

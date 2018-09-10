@@ -303,6 +303,7 @@ Page({
 
   getQuizList: function() {
     var that = this;
+    var nowDate = new Date();
     wx.request({
       url: 'https://zhitouapi.romawaysz.com/quiz/list',
       data: {
@@ -314,7 +315,7 @@ Page({
       success: function(res) {
         var quizList = res.data.data;
         var newQuizList = quizList.map(function(item) {
-          item.resDay = app.getRestTime(item.created_at, item.limit_date);
+          item.resDay = app.getRestTime(nowDate, item.limit_date);
           return item;
         });
         that.setData({

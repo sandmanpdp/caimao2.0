@@ -45,6 +45,7 @@ Page({
 
   getFinishQuiz : function () {
     var that = this;
+    var nowDate = new Date();
     var finishPage = that.data.finishPage;
     wx.request({
       url: 'https://zhitouapi.romawaysz.com/quiz/list',
@@ -70,7 +71,7 @@ Page({
           var newNull = false;
         }
         var newFinishQuizList = finishQuizList.map(function (item) {
-          item.resDay = app.getRestTime(item.created_at, item.limit_date);
+          item.resDay = app.getRestTime(nowDate, item.limit_date);
           return item;
         });
 
@@ -86,7 +87,7 @@ Page({
   getQuizList: function (state) {
     var that = this;
     var page = that.data.page;
-    
+    var nowDate = new Date()
     wx.request({
       url: 'https://zhitouapi.romawaysz.com/quiz/list',
       data: {
@@ -110,7 +111,7 @@ Page({
           var newNull = false;
         }
         var newQuizList = quizList.map(function (item) {
-          item.resDay = app.getRestTime(item.created_at, item.limit_date);
+          item.resDay = app.getRestTime(nowDate, item.limit_date);
           return item;
         });
         that.setData({

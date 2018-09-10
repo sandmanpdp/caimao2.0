@@ -35,8 +35,8 @@
   <!-- 标题 -->
   <view class='title clearfix'>
     <view class='fl'>
-      <view>{{noteInfo.share}}</view>
       <view class='coe32f37'>{{noteInfo.code}}</view>
+      <view>{{noteInfo.share}}</view>
     </view>
     <view class='fl'>
       <view class='coe32f37'>{{noteInfo.rise}}%</view>
