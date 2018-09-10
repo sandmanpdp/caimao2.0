@@ -198,6 +198,7 @@
   height: 110rpx;
   background-color: #fff;
   z-index: 99999;
+  border-top:2rpx solid #eee;
 }
 
 .comment .input {

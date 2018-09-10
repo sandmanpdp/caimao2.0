@@ -8,14 +8,12 @@
   <view wx:if="{{nav}}">
     <!-- 标题 -->
     <view class='box '>
-
       <view class='clearfix slice_border_bt'>
         <view class='fl box_title'>标题</view>
         <view class='fl box_value'>
           <input class='box_input' type='text' placeholder='请输入2-16个字符' placeholder-class='box_input_placeholder' maxlength='16' bindinput="bindTitleInput" value='{{titleValue}}'></input>
         </view>
       </view>
-
     </view>
     <!-- 逻辑 -->
     <!-- <view class='box box_textarea clearfix'> -->
@@ -162,13 +160,13 @@
     <view class='box  people_box' wx:if="{{noteChargeIndex!=0}}">
       <view class='clearfix slice_border_top'>
         <view class='fl box_title'>人数</view>
-      <view class='fl box_value'>
-        <picker class='box_picker_date' mode="selector" bindchange="bindPeopleChange" range="{{peopleArray}}">
-          <view class="picker">{{peopleArray[peopleIndex]}}
-          </view>
-          <image class='box_picker_icon' src='../images/icon_bottom_arrow.png'></image>
-        </picker>
-      </view>
+        <view class='fl box_value'>
+          <picker class='box_picker_date' mode="selector" bindchange="bindPeopleChange" range="{{peopleArray}}">
+            <view class="picker">{{peopleArray[peopleIndex]}}
+            </view>
+            <image class='box_picker_icon' src='../images/icon_bottom_arrow.png'></image>
+          </picker>
+        </view>
       </view>
     </view>
     <!-- 须知 -->
@@ -201,8 +199,10 @@
     <!-- <view class='box box_textarea'> -->
     <view class='textareaBox'>
       <view class='box_value box_viewpoint' style='height:auto;'>
-        <textarea class='logic_textarea' auto-height="true" placeholder='观点的内容' placeholder-class='logic_input_placeholder' maxlength='300' bindinput="bindContentInput" value='{{viewpointContentValue}}'></textarea>
-        <!-- <input class='logic_input' auto-height="true" placeholder='请输入内容' placeholder-class='logic_input_placeholder' maxlength='300' bindinput="bindContentInput" value='{{viewpointContentValue}}'></input> -->
+        <textarea wx:if="{{maskViewState?false:true}}" class='logic_textarea' auto-height="true" placeholder='观点的内容' placeholder-class='logic_input_placeholder' maxlength='300' bindinput="bindContentInput" value='{{viewpointContentValue}}'></textarea>
+      <view class='viewpointContentValue' wx:if="{{maskViewState?true:false}}">
+        {{viewpointContentValue==''?'观点的内容':viewpointContentValue}}
+      </view>
       </view>
     </view>
     <!-- 收费 -->

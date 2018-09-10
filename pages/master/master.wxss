@@ -21,7 +21,7 @@
 /* 主体 */
 /* .section{margin-top: 20rpx} */
 .section_nav{height: 98rpx;background-color: #fff;border-bottom: 2rpx solid #dddddd}
-.section_nav_box{width: 33.33%;line-height: 98rpx;text-align: center;font-size: 34rpx;color: #b9b9b9}
+.section_nav_box{width: 33.33%;line-height: 98rpx;text-align: center;font-size: 34rpx;color: #666}
 .section_nav_true{color: #2772ff}
 .section_show_box{margin-top: 20rpx;padding-bottom: 26rpx;background-color: #fff}
 .section_show_box:first-child{margin-top: 0}
@@ -40,10 +40,10 @@
 .section_show_view_title{box-sizing: border-box;position: relative;padding: 30rpx 30rpx 0}
 .section_show_view_title_icon{margin-right: 20rpx;width: 72rpx;height: 46rpx;line-height: 46rpx;border: 2rpx solid #ffad2b;border-radius: 10rpx;font-size: 30rpx;text-align: center;color: #ffad2b}
 .section_show_view_title_text{margin-right: 20rpx;line-height: 50rpx;font-size: 34rpx;color: #141414;font-weight: 400}
-.section_show_view_title_number{line-height: 50rpx;font-size: 34rpx;color: #b9b9b9}
+.section_show_view_title_number{line-height: 50rpx;font-size: 34rpx;color: #999}
 .section_show_view_title_price{line-height: 50rpx;font-size: 34rpx;color: #fc7946}
 .section_show_view_title_state{position: absolute;top: 50%;right: 0;margin-top: -25rpx;padding-left: 24rpx;width: 152rpx;height: 50rpx;line-height: 50rpx;font-size: 24rpx;color: #fff;background-color: #ffad2b;border-top-left-radius: 25rpx;border-bottom-left-radius: 25rpx;}
-.section_show_view_bottom_depict{margin: 42rpx 30rpx 32rpx;font-size: 28rpx;color: #808080}
+.section_show_view_bottom_depict{margin: 26rpx 30rpx;font-size: 28rpx;color: #666}
 .section_show_view_bottom_jump,.section_show_view_bottom_time{margin: 0 0 0 30rpx ;font-size: 26rpx;color: #b9b9b9}
 .section_show_askTheStock_title_icon{margin-right: 20rpx;width: 46rpx;height: 46rpx;line-height: 46rpx;border: 2rpx solid #2772ff;border-radius: 10rpx;font-size: 30rpx;text-align: center;color: #2772ff}
 
@@ -53,12 +53,12 @@
 
 
 .box_box{padding: 0 30rpx;background-color: #fff}
-.box_box>.box{padding: 40rpx 0;border-bottom: 1px solid #eeeeee}
+.box_box>.box{padding: 30rpx 0;border-bottom: 1px solid #eeeeee}
 .box_box>.box:last-child{border: 0}
-.box .title{font-size: 36rpx;color: #2e2e2e;font-weight: 600}
-.box .text{margin: 25rpx 0 38rpx;line-height: 50rpx;font-size: 28rpx;color: #808080}
+.box .title{font-size: 36rpx;color: #333;font-weight: 600;line-height: 36rpx;}
+.box .text{margin: 25rpx 0;line-height: 50rpx;font-size: 28rpx;color: #666}
 .box .info,.data{font-size: 0}
-.box .info .author{font-size: 26rpx;color: #b9b9b9}
+.box .info .author{font-size: 26rpx;color: #999}
 .box .info .headimg{margin:0 20rpx 0 0;width:49rpx;height:49rpx;border-radius:6rpx;vertical-align: middle}
 .box .info .name{display: inline-block;font-size: 26rpx;color: #808080}
 .data .icon{margin-right: 20rpx;width: 40rpx;height: 35rpx;vertical-align: middle}
