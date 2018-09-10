@@ -12,9 +12,7 @@
     <view class='fl head_top_userName'>
       <view class='head_top_userName_name tw1'>{{userInfo.nickname}}</view>
       <view class='head_top_userName_depict' catchtap='changeSign'>
-        <view class='tw1 signTextBox'>
-          {{sign}}
-        </view>
+        <view class='tw1 signTextBox'>{{sign}}</view>
         <!-- <image src='../images/modifyPen.png' class='modifyPen'></image> -->
       </view>
     </view>

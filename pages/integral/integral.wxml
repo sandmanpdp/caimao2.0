@@ -60,6 +60,6 @@
     <view>
       <view>人民币与积分的兑换比例为：1：2，一元等于2积分，充值的积分不可提现可直接用于查看购买笔记，VIP产品，打赏作者，兑换礼品，玩游戏。</view>
     </view>
-    <view id='m0' catch:tap='endMaskFun'>朕知道了</view>
+    <view id='m0' catch:tap='endMaskFun'>知道了</view>
   </view>
 </view>

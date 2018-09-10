@@ -1,8 +1,9 @@
-<view>
+<view style='padding-bottom:1rpx;'>
   <!-- 输入框 -->
   <view class='input'>
-    <textarea auto-height="true" bindinput='problemDateChange' class='' placeholder='提问不得少于10个字' placeholder-class='cob9b9b9' maxlength='300'></textarea>
-    <view>悬赏{{sumValue}}元宝</view>
+    <textarea auto-height="true" bindinput='problemDateChange' placeholder='欢迎向我提问:)' placeholder-class='co999' maxlength='300' wx:if="{{maskIndex==1?false:true}}" value='{{problemValue}}'></textarea>
+    <view class='problemValue' wx:if="{{maskIndex==1?true:false}}">{{problemValue ==''?'欢迎向我提问:)':problemValue}}</view>
+    <view class='money_tips'>悬赏<text class='cofc7946'>{{sumValue}}</text>元宝</view>
   </view>
   <!-- 关联股票 -->
   <view class='shares pr'>
@@ -103,8 +104,8 @@
 
         </scroll-view>
       </view>
-      <view class='iKonw' catch:tap='setMaskIndexFun'>朕知道了</view>
-      <image id='m0' src='../images/icon_close.png' catch:tap='setMaskIndexFun'></image>
+      <view class='iKonw' id='m0' catch:tap='setMaskIndexFun'>知道了</view>
+      <!-- <image id='m0' src='../images/icon_close.png' catch:tap='setMaskIndexFun'></image> -->
     </view>
   </view>
   <!-- 其他金额 -->

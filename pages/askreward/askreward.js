@@ -11,7 +11,7 @@ Page({
     sumValue: 20, //当前选中的金额值 
     sumOther: '其他金额', //其他金额页面显示
     sumOtherValue: 0, //其他金额值
-    problemValue: null, //提问值
+    problemValue: '', //提问值
     sharesValue: null, //股票值
     oxValue: [], //指定牛人值
     matchingState: false, //股票提示
@@ -53,7 +53,8 @@ Page({
     }
     this.setData({
       sumIndex: a,
-      sumValue: b
+      sumValue: b,
+      sumOther: '其他金额'
     })
   },
 

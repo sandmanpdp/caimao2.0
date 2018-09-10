@@ -105,6 +105,7 @@ Page({
                 comment : ''
               })
               that.getCommetList();
+              that.getAskDetail();
             }
           }
         })

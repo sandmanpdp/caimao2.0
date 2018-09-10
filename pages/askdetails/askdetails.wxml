@@ -1,4 +1,4 @@
-<view class=''>
+<view style='padding-bottom:110rpx;'>
   <!-- 主体 -->
   <view class='section'>
     <view class='clearfix'>
@@ -97,8 +97,8 @@
 
         </scroll-view>
       </view>
-      <view class='iKonw' catch:tap='setMaskIndexFun'>朕知道了</view>
-      <image id='m0' src='../images/icon_close.png' catch:tap='setMaskIndexFun'></image>
+      <view id='m0' class='iKonw' catch:tap='setMaskIndexFun'>知道了</view>
+      <!-- <image  src='../images/icon_close.png' catch:tap='setMaskIndexFun'></image> -->
     </view>
   </view>
 

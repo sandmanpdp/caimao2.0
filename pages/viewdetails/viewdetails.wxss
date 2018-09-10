@@ -1,12 +1,13 @@
 page {
   line-height: 0;
+  padding-bottom: 114rpx;
 }
 .co2772ff{color: #2772ff!important}
 .cof4ebd4{color: #f4ebd4!important;background-color: #e32f37}
 /* 文章 */
 .article{padding: 50rpx 30rpx 0;background-color: #fff;font-size: 0}
 .article>view:nth-child(1){margin-bottom: 50rpx;font-size: 40rpx;color: #333;font-weight: 600;line-height: 40rpx;}
-.article>view:nth-child(2)>image{margin-right: 30rpx;width: 64rpx;height: 64rpx;border-radius: 50%}
+.article>view:nth-child(2)>image{margin-right: 30rpx;width: 64rpx;height: 64rpx;border-radius: 50%;border: 2rpx solid #eee;}
 .article>view:nth-child(2)>view:nth-child(2){font-size: 0}
 .article>view:nth-child(2)>view:nth-child(2)>view:nth-child(1) view{margin: 2rpx 20rpx 10rpx 0;font-size: 28rpx;color: #3e3e3e;line-height: 28rpx}
 .article>view:nth-child(2)>view:nth-child(2)>view:nth-child(1) image{width: 60rpx;height: 30rpx;vertical-align: middle}
@@ -38,7 +39,7 @@ page {
 .comment>view:nth-child(1){padding-left: 30rpx;padding-bottom: 26rpx; font-size: 28rpx;font-weight: 600;color: #333;line-height: 28rpx;border-bottom: 1rpx solid #eeeeee}
 .comment .list{padding: 30rpx;border-bottom: 1px solid #eee}
 .comment .list:last-child{border: 0}
-.comment .list>view:nth-child(1)>image{margin-right: 20rpx;width: 48rpx;height: 48rpx;border-radius: 50%}
+.comment .list>view:nth-child(1)>image{margin-right: 20rpx;width: 48rpx;height: 48rpx;border-radius: 50%;border: 2rpx solid #eee;}
 .comment .list>view:nth-child(1)>text{font-size: 28rpx;color: #2772FF;line-height: 48rpx}
 .comment .list>view:nth-child(1)>view{padding-top: 6rpx}
 .comment .list>view:nth-child(1)>view:nth-child(4){margin-right: 50rpx}
@@ -56,7 +57,7 @@ page {
 .input>view .number{position: absolute;top: -15rpx;left: 50%;padding: 5rpx 13rpx;font-size: 22rpx;line-height: 24rpx;color: #ffffff;border: 1rpx solid #fff;background-color: #e32f37;border-radius: 17rpx}
 /* 底部 */
 .footer_indie{min-height: 110rpx}
-.empty{padding-top: 25rpx;height: 385rpx;background-color: #f5f5f9}
+.empty{padding-top: 125rpx;height: 385rpx;background-color: #f5f5f9}
 .empty image{display: block;margin: 0 auto;width: 252rpx;height: 236rpx;background-color: #f5f5f9}
 /* 未购买 */
 .not{padding-bottom: 80rpx;background-color: #fff;text-align: center}
