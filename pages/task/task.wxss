@@ -4,3 +4,15 @@
 .box>view:nth-child(2)>view:nth-child(1){margin: 6rpx 0 18rpx;font-size: 32rpx;color: #333333;line-height: 32rpx}
 .box>view:nth-child(2)>view:nth-child(2){font-size: 26rpx;color: #939393;line-height: 26rpx}
 .box>view:nth-child(3){margin-top: 17rpx;width: 120rpx;height: 54rpx;background-color: #5491ff;border-radius: 27rpx;text-align: center;line-height: 54rpx;font-size: 26rpx;color: #fff}
+.swiper-box {
+  width: 100%;
+  height: 320rpx;
+}
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+.swiper image {
+  width: 100%;
+  height: 100%;
+}

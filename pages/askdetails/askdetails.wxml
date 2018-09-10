@@ -72,7 +72,7 @@
         <view>3.每天收益主动提现到您的账户。</view> -->
         <scroll-view scroll-y style='width:100%;height:400rpx;'>
           <view class='tips_title'>Q1:什么是悬赏问题</view>
-          <view class='tips_text'>为了帮助提问者获得优质答案，黑石智投在免费提问基础上增加了悬赏功能。提问者发布问题的同时支付一- 笔赏金。悬赏结束后，满意回答者平分赏金。</view>
+          <view class='tips_text'>为了帮助提问者获得优质答案，黑石智投在免费提问基础上增加了悬赏功能。提问者发布问题的同时支付一笔赏金。悬赏结束后，满意回答者平分赏金。</view>
 
 
 

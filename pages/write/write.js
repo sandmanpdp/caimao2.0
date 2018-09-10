@@ -160,15 +160,9 @@ Page({
   // 预期时间获取方法
   timeChange: function (e) {
     var a = parseInt(e.detail.value) + 1;
-
-    // if (a < 5) {
-    //   this.getRise(3,50)
-    // } 
-
     if (a < 5) {
       this.getRise(3, 10 * parseInt(a));
     }
-
     else if (a >= 5 && a <= 10) {
       this.getRise(5, 50)
     } else {
@@ -176,8 +170,9 @@ Page({
     }
     this.setData({
       timeIndex: a - 1,
-      riseIndex: 0
+      // riseIndex: 0
     })
+   
   },
   // 上涨获取方法
   riseChange: function (e) {

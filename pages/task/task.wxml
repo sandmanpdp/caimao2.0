@@ -1,3 +1,13 @@
+<view class='swiper-box'>
+  <swiper autoplay="true" circular="true" class='swiper' indicator-dots="true" indicator-color="#fff" indicator-active-color="rgba(255,255,255,.5)">
+    <swiper-item>
+      <image src='../images/share-item.png'></image>
+    </swiper-item>
+    <swiper-item>
+      <image src='../images/share-item.png'></image>
+    </swiper-item>
+  </swiper>
+</view>
 <view class='box clearfix'>
   <image class='fl' src='../images/task_1.png'></image>
   <view class='fl'>
