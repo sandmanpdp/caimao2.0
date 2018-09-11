@@ -1,7 +1,7 @@
 
 /* 导航 */
 .nav{padding: 28rpx 0;position: fixed;width: 100%;z-index: 999999;background-color: #fff;border-bottom: 2rpx solid #dcdcdc; }
-.nav view{width: 50%;font-size: 34rpx;line-height: 34rpx;color: #666;text-align: center;font-weight: 500}
+.nav view{width: 50%;font-size: 34rpx;line-height: 34rpx;color: #666;text-align: center;}
 .co3f86ff{color: #3f86ff!important}
 .co93b8ff{color: #93b8ff!important}
 /* 列表 */

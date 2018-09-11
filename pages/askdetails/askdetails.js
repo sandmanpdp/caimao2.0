@@ -49,6 +49,7 @@ Page({
   getAskDetail: function() {
     var that = this;
     var id = that.data.id;
+    var nowDate = new Date();
     wx.request({
       url: 'https://zhitouapi.romawaysz.com/quiz/QuizDetails?token=' + app.union_id,
       data: {
@@ -60,7 +61,7 @@ Page({
         if (error == 0) {
           var limit_date = resData[0].limit_date;
           var created_at = resData[0].created_at
-          var restDay = app.getRestTime(created_at, limit_date);
+          var restDay = app.getRestTime(nowDate, limit_date);
           that.setData({
             askdetail: resData[0],
             askdetail_userId: resData[0].q_user_id,

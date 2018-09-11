@@ -82,7 +82,7 @@
 </view>
 <!-- 悬浮按钮 -->
 <view class='askMask' wx:if="{{isShow}}"></view>
-<view class='write-pen' catchtap='writeFun'>
+<view class='write-pen' catchtap='writeFun' style='bottom:40rpx;'>
   <image src='../images/write.png'></image>
 </view>
 <view class='mask-box' wx:if="{{isShow}}">

@@ -13,7 +13,7 @@ view {
 .news-slice {
   padding: 20rpx 0;
   margin: 0 30rpx;
-  border-bottom: 2rpx solid #ddd;
+  border-bottom: 2rpx solid #eee;
 }
 
 .left-image {
@@ -38,11 +38,11 @@ view {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  width: 85%;
+  width: 100%;
   font-size: 28rpx;
   line-height: 28rpx;
   color: #999;
-  margin-top: 15rpx;
+  margin-top: 20rpx;
 }
 
 .arrow {

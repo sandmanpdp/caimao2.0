@@ -38,15 +38,16 @@
 
 .section text {
   font-size: 28rpx;
-  color: #808080;
+  color: #666;
   line-height: 48rpx;
 }
 
-.section .text {
-  margin: 30rpx 0 40rpx;
+.section>.text {
+  margin: 28rpx 0 48rpx;
   font-size: 32rpx;
-  color: #2e2e2e;
+  color: #333;
   word-break: break-all;
+  text-align: justify;
 }
 
 .section .answer {
@@ -65,7 +66,7 @@
 .section .answer view:nth-child(2) {
   margin: 20rpx 0 29rpx;
   font-size: 28rpx;
-  color: #808080;
+  color: #666;
   line-height: 28rpx;
 }
 
@@ -174,16 +175,16 @@
 }
 
 .list .box .fun text {
-  font-size: 30rpx;
-  color: #b9b9b9;
-  line-height: 30rpx;
+  font-size: 26rpx;
+  color: #999;
+  line-height: 26rpx;
   vertical-align: middle;
 }
 
 /* 下拉提示 */
 
 .drop {
-  margin-bottom: 110rpx;
+  margin-bottom: 0;
 }
 
 /* 评论 */
@@ -321,5 +322,8 @@
 text-align:center;
 font-size:34rpx;
 color:#2772ff;
-
+}
+.cofc7946 {
+  color: #fc7946 !important;
+  line-height: 28rpx !important;
 }

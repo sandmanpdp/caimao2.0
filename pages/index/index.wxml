@@ -34,7 +34,7 @@
   </view>
   <!-- 测试问股 -->
   <view class='nav-swiper-box'>
-    <swiper autoplay='true' interval='4000' circular='true'>
+    <swiper autoplay='true' interval='4000' circular='true' indicator-dots="true" indicator-color="rgba(255,255,255,.5)" indicator-active-color="#fff">
       <swiper-item data-id="{{item.id}}" class='nav-swiper-item' catchtap="swiperGoto" data-gotoUrl='{{item.goto_url}}' wx:for="{{swiperData}}">
         <image src='{{item.img_url}}'></image>
       </swiper-item>
@@ -128,7 +128,7 @@
       <view class='killer_section_icon_line'></view>
       <!-- 购买按钮样式状态：true/false -->
       <!-- 付费 -->
-      <view>
+      <view class='clearfix'>
         <!-- <view class="killer_section_icon_buy buy_true}}" catchtap="{{item.is_look == -1 && item.price != 0?'buyFun':'readFun'}}" id="{{'readBtn_'+item.id}}" data-uid='{{item.user_id}}'>{{item.is_look == -1 && item.price != 0?'付费阅读':'阅 读'}}</view> -->
         <view class="killer_section_icon_buy buy_true}}" catchtap="{{item.readOrbuyFun}}" id="{{'readBtn_'+item.id}}" data-uid='{{item.user_id}}'>{{item.readOrbuyFun == 'buyFun' ?'付费阅读':'阅 读'}}</view>
         <view class="killer_section_icon_trigon trigon_true}}"></view>
@@ -137,7 +137,7 @@
       <view class='killer_section_box_left'>
         <image class='killer_section_box_left_userHead' src='{{item.avatar}}'></image>
         <view class='killer_section_box_left_userName tw1'>{{item.name}}</view>
-        <view class='killer_section_box_left_depict tw1'>累计10篇涨幅{{item.sum}}%</view>
+        <view class='killer_section_box_left_depict tw1'>累计近10篇涨幅{{item.sum}}%</view>
       </view>
       <!-- 右侧内容 -->
       <view class='killer_section_box_right pstRelative'>
@@ -236,14 +236,18 @@
         <view class='title clearfix'>
           <image class='fl' class='avatarImage' src='{{item.avatar}}'></image>
           <text class='fl nickname'>{{item.nickname}}</text>
-          <text class='fr money-text'>{{item.hook_price}}</text>
-          <view class='fr yuanbaoBox'>
-            <image class='yuanbao' src='../images/yuanbaoO.png'></image>
+          <view class='fr'>
+            <!-- <text class='fr money-text'></text> -->
+            <view class='fr money-text'>{{item.hook_price}}</view>
+            <view class='fr yuanbaoBox'>
+              <image class='yuanbao' src='../images/yuanbao30.png'></image>
+            </view>
           </view>
         </view>
         <view class='text tw4'>{{item.content}}</view>
         <view class='fun clearfix'>
-          <view class='fl'>还剩<text class='cofc7946'>{{item.resDay}}</text>结束</view>
+          <view class='fl'>还剩
+            <text class='cofc7946'>{{item.resDay}}</text>结束</view>
           <view class='fr co3f86ff'>我来回答</view>
         </view>
       </view>

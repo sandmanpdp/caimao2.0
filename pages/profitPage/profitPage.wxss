@@ -52,3 +52,6 @@ view {
   display: inline-block;
   padding-left:60rpx;
 }
+.userPortrait image {
+  border: 2rpx solid #eee
+}

@@ -36,23 +36,39 @@ Page({
             unReadSys: res.data[3].total,
             systemContent: '系统消息-' +res.data[3].content,
           })
-        }
-        if (res.data[1]) {
+        }else {
           that.setData({
-            unReadView: res.data[1].total,
-            noteContent: '笔记-' +res.data[1].content,
+            unReadSys : 0
           })
         }
-        if (res.data[2]) {
+        if (res.data[2]) {  //2笔记
           that.setData({
             unReadNote: res.data[2].total,
-            viewContent: '观点-' +res.data[2].content,
+            noteContent: '笔记-' +res.data[2].content,
+          })
+        } else {
+          that.setData({
+            unReadNote: 0,
+          })
+        }
+        if (res.data[1]) {  //1观点
+          that.setData({
+            unReadView: res.data[1].total,
+            viewContent: '观点-' +res.data[1].content,
+          })
+        } else {
+          that.setData({
+            unReadView : 0
           })
         }
         if (res.data[6]) {
           that.setData({
             unReadAsk: res.data[6].total,
             askContent: '问股诊股-'+res.data[6].content
+          })
+        } else {
+          that.setData({
+            unReadAsk : 0
           })
         }
         that.setData({
@@ -86,7 +102,7 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function() {
-
+    this.getUnreadFun();
   },
 
   /**
@@ -100,7 +116,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function() {
-
+    this.getUnreadFun();
   },
 
   /**

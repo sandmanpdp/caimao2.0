@@ -43,7 +43,7 @@ view {
 .read{padding: 34rpx 30rpx 30rpx;background-color: #fff}
 .read>view:nth-child(1){margin-bottom: 30rpx;font-size: 34rpx;color: #2e2e2e;line-height: 34rpx;text-align: left}
 .read>view:nth-child(1) text{font-size: 28rpx;color: #b9b9b9;}
-.read>view:nth-child(2) image{width: 82rpx;height: 82rpx;border-radius: 50%;border: 2px solid #eee}
+.read>view:nth-child(2) image{width: 82rpx;height: 82rpx;border-radius: 50%;border: 2rpx solid #eee}
 .read>view:nth-child(2) image:nth-child(2){margin-left: -22rpx}
 .read>view:nth-child(2) image:nth-child(3){margin-left: -22rpx}
 .read>view:nth-child(2) image:nth-child(4){margin-left: -22rpx}

@@ -1,6 +1,6 @@
-.list_box{box-sizing: border-box;padding: 30rpx 30rpx 40rpx;background-color: #fff;border-top: 1px solid #dddddd}
+.list_box{box-sizing: border-box;padding: 30rpx 30rpx 40rpx;background-color: #fff;border-top: 2rpx solid #eee}
 .list_box_top_authorHead{position: relative;width: 82rpx;height: 82rpx}
-.list_box_top_authorHead_img{width: 100%;height: 100%;border-radius: 50%}
+.list_box_top_authorHead_img{width: 100%;height: 100%;border-radius: 50%;border:2rpx solid #eee;}
 .list_box_top_authorHead_vip{position: absolute;bottom: -10rpx;right: -10rpx;width: 34rpx;height: 34rpx}
 .list_box_top_authorInfo{margin: 0 0 0 32rpx}
 .list_box_top_authorInfo_name{margin: 6rpx 0 8rpx;line-height: 34rpx;font-size: 34rpx;color: #141414}
@@ -51,8 +51,8 @@
   text-align: center;
 }
 /* 导航 */
-.nav{padding: 30rpx;z-index: 99999999;background-color: #fff;border-bottom: 2rpx solid #dcdcdc;position: fixed;width: 100%;}
-.nav view{width: 30%;font-size: 34rpx;line-height: 34rpx;color: #666;font-weight: 500}
+.nav{padding: 30rpx;z-index: 99999999;background-color: #fff;border-bottom: 2rpx solid #eee;position: fixed;width: 100%;}
+.nav view{width: 30%;font-size: 34rpx;line-height: 34rpx;color: #666;}
 .co3f86ff{color: #3f86ff!important}
 .co93b8ff{color: #93b8ff!important}
 .selectedBar {

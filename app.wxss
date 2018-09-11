@@ -314,7 +314,7 @@ page {
   text-align: center;
   line-height: 80rpx;
   height: 80rpx;
-  border-top: 1rpx solid #eee;
+  border-top: 2rpx solid #eee;
 }
 .write-item-text {
   color: #333;
@@ -342,6 +342,7 @@ page {
   color: #666;
   font-size: 26rpx;
   line-height: auto;
+  text-align: justify;
 }
 .iKonw {
   padding-bottom:30rpx;

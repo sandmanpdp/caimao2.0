@@ -47,7 +47,7 @@
       <view class='killer_section_box_left'>
         <image class='killer_section_box_left_userHead' src='{{item.avatar}}'></image>
         <view class='killer_section_box_left_userName tw1'>{{item.name}}</view>
-        <view class='killer_section_box_left_depict tw1'>累计涨幅{{item.sum}}%</view>
+        <view class='killer_section_box_left_depict tw1'>累计近10篇涨幅{{item.sum}}%</view>
       </view>
       <!-- 右侧内容 -->
       <view class='killer_section_box_right pstRelative'>

@@ -8,7 +8,7 @@
     <view class='text'>{{askdetail.content}}</view>
     <view class='answer'>
       <view>悬赏{{askdetail.hook_price}}</view>
-      <view>离悬赏结束时间还有{{restDay}}</view>
+      <view>离悬赏结束时间还有<text class='cofc7946'>{{restDay}}</text></view>
       <view class="answer_btn {{askdetail.state == 1 ? 'answered':'not_answer'}}" catchtap="{{askdetail.state == 1 ? '':'setInputFocus'}}">{{askdetail.state == 1 ? '我已回答':'我来回答'}}</view>
       <image src='../images/icon_cue.png' catchtap='showMask'></image>
     </view>

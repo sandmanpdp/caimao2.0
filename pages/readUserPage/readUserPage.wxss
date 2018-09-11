@@ -5,7 +5,7 @@
   height: 82rpx;
   border-radius: 50%;
   margin: 0 18rpx 30rpx 0;
-  border: 2rpx solid #fff;
+  border: 2rpx solid #eee;
   box-sizing: border-box;
 }
 
@@ -17,5 +17,7 @@
   margin: 50rpx 30rpx;
   margin-bottom: 0;
 }
-
+.portraitBox image {
+  border:2rpx solid #eee;
+}
 
