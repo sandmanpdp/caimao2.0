@@ -19,6 +19,7 @@ Page({
     nullIndex: -1,
     maxPage: -1,
     maxIndex: -1,
+    defaultOpt : '1',
     label: '',
     mask: false, //显示选项列表
     opt: true, //选择默认操作
@@ -42,18 +43,49 @@ Page({
   // 默认选项选择方法
   defaultOptFun: function (e) {
     var id = e.currentTarget.id;
-    if (id == 'headOne'){
-      this.setData({
-        mask: !this.data.mask,
-        opt: true
-      })
-    }else{
-      this.setData({
-        mask: !this.data.mask,
-        opt: false
-      })
+    var defaultOpt = this.data.defaultOpt;
+    if (defaultOpt == id) {
+      if (id == 'headOne') {
+        this.setData({
+          mask: !this.data.mask,
+          opt: true,
+          defaultOpt : id
+        })
+      }else {
+        this.setData({
+          mask: !this.data.mask,
+          opt: false,
+          defaultOpt: id
+        })
+      }
+    }else {
+      if (id == 'headOne') {
+        this.setData({
+          mask: true,
+          opt: true,
+          defaultOpt: id
+        })
+      } else {
+        this.setData({
+          mask: true,
+          opt: false,
+          defaultOpt: id
+        })
+      }
     }
+    // if (id == 'headOne'){
+    //   this.setData({
+    //     mask: !this.data.mask,
+    //     opt: true
+    //   })
+    // }else{
+    //   this.setData({
+    //     mask: !this.data.mask,
+    //     opt: false
+    //   })
+    // }
   },
+  
   //关闭模态框
   closeMask : function () {
     this.setData({

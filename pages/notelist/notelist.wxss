@@ -1,6 +1,6 @@
 /* pages/oxnotes/oxnotes.wxss */
 /* 头部 */
-.head{box-sizing: border-box;margin-bottom: 30rpx;position: relative;padding: 29rpx 0;height: 88rpx;background-color: #fff;border-bottom: 2rpx solid #dddddd;z-index: 9999}
+.head{box-sizing: border-box;margin-bottom: 20rpx;position: relative;padding: 29rpx 0;height: 88rpx;background-color: #fff;border-bottom: 2rpx solid #dddddd;z-index: 9999}
 .head_condition_noe,.head_condition_two{box-sizing: border-box;position: relative;width: 50%}
 .head_condition_noe{padding-left: 126rpx;}
 .head_condition_two{padding-left: 106rpx;}
