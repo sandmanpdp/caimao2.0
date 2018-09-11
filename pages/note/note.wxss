@@ -1,6 +1,6 @@
 
 /* 导航 */
-.nav{padding: 28rpx 0;position: fixed;width: 100%;z-index: 999999;background-color: #fff;border-bottom: 2rpx solid #dcdcdc; }
+.nav{padding: 28rpx 0;position: fixed;width: 100%;z-index: 999999;background-color: #fff;border-bottom: 2rpx solid #eee; }
 .nav view{width: 50%;font-size: 34rpx;line-height: 34rpx;color: #666;text-align: center;}
 .co3f86ff{color: #3f86ff!important}
 .co93b8ff{color: #93b8ff!important}
@@ -9,13 +9,13 @@
 .list .box{margin-top: 20rpx;background-color: #fff;font-size: 0}
 .list .box:first-child{margin: 0}
 .list .box .one{margin-bottom: 30rpx}
-.list .box .one .left text{font-weight: 400}
-.list .box .one .left text:nth-child(1){margin-right: 10rpx;font-size: 36rpx;color: #333333;font-weight: bold;line-height: 0}
+/* .list .box .one .left text{font-weight: 400} */
+.share_text_box{margin-right: 10rpx;font-size: 36rpx;color: #333333;font-weight: bold;line-height: 0}
 .list .box .one .left text:nth-child(2){font-size: 32rpx;color: #fc7946;line-height: 36rpx}
 .list .box .one .right{font-size: 26rpx;color: #999;height: 36rpx;line-height: 36rpx}
 .list .box .two{margin-bottom: 30rpx}
 .list .box .two>view{width: 49.8%;text-align: center}
-.list .box .two>view:first-child{border-right: 1px solid #dddddd}
+.list .box .two>view:first-child{border-right: 1px solid #eee}
 .list .box .two>view>view:nth-child(1){margin-bottom: 20rpx;font-size: 40rpx;color: #e32f37;line-height: 40rpx;font-weight: 600}
 .list .box .two>view>view:nth-child(2){font-size: 26rpx;color: #666;line-height: 26rpx}
 .list .box .three{font-size: 26rpx;line-height: 26rpx;padding: 0 30rpx 30rpx 30rpx;}
@@ -35,7 +35,7 @@
   width: 40rpx;
   height: 40rpx;
   position: absolute;
-  top: 47%;
+  top:50%;
   transform: translateY(-50%);
 }
 .needPriceText {
@@ -75,4 +75,10 @@
   position: absolute;
   bottom: -30rpx;
   left: 152rpx;
+}
+.title_box {
+  width: 100%;
+}
+.money_box {
+  display: inline-block;
 }

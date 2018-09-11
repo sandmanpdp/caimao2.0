@@ -27,7 +27,7 @@
 .section_show_box:first-child{margin-top: 0}
 .section_show_notes_title{padding: 0 30rpx;height: 88rpx;line-height: 88rpx;border-bottom: 2rpx solid #dddddd}
 .section_show_notes_title_text{margin-right: 30rpx;font-size: 34rpx;color: #141414;font-weight: 400}
-.section_show_notes_title_price{font-size: 34rpx;color: #fc7946}
+.section_show_notes_title_price{font-size: 34rpx;color: #fc7946;float: right}
 .section_show_notes_title_state{font-size: 26rpx;color: #2772ff}
 .section_show_bottom_top{margin: 34rpx 0;width: 50%;height: 82rpx;text-align: center}
 .section_show_bottom_top:first-child{box-sizing: border-box;border-right: 2rpx solid #dddddd}

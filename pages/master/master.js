@@ -231,7 +231,7 @@ Page({
               b[b.length - 1]['readOrbuyFun'] = 'readFun'
             }
           }
-          app.getSharePricesFun(a, function(data) {
+          that.getSharePricesFun(a, function(data) {
             for (var i = 0; i < data.length; i++) {
               if (a[i].is_reach != -1) { //笔记结束
                 a[c]['actualTop'] = ((a[i].out_price - a[i].in_price) / a[i].in_price * 100).toFixed(2);
@@ -378,6 +378,56 @@ Page({
       url: '/pages/notedetails/notedetails?id=' + e.currentTarget.id + '&uid=' + e.currentTarget.dataset.uid
     })
   },
+
+  getSharePricesFun: function (a, callback) {  //获取股票现价
+    var scodeArray = [];
+    var priceArray = [];
+    for (var i = 0; i < a.length; i++) {
+      scodeArray.push(a[i].scode)
+    }
+
+    wx.request({
+      url: 'https://zhitouapi.romawaysz.com/note/getSharePrices?token=' + app.union_id,
+      method: 'POST',
+      header: { "Content-Type": "application/x-www-form-urlencoded" },
+      data: {
+        code: scodeArray
+      },
+      success: function (res) {
+        var price_data = res.data.data;
+        var hundredArray = [];
+
+        for (var i in a) {
+          var in_price = parseFloat(a[i]['in_price'])
+          var now_price = 0;
+
+          if (a[i]['is_reach'] != -1)  //结束
+          {
+            now_price = ((parseFloat(a[i].out_price) - in_price) / in_price * 100).toFixed(2);
+          }
+          else {
+            for (var r in price_data) {
+              if (price_data[r] != undefined && price_data[r]['S_No'] == a[i].scode) {
+                now_price = ((parseFloat(price_data[r]['S_Price']) - in_price) / in_price * 100).toFixed(2); //笔记未结束 & 笔记结束
+                break;
+              }
+            }
+          }
+          a[i]['actualTop'] = now_price;
+          hundredArray[scodeArray[i]] = now_price;
+          // else {
+          //   for (var r = 0; r < a.length; r++) {
+          //     if (scodeArray[i] == a[r].S_No) {
+          //       hundredArray.push(((parseFloat(a[r].S_Price) - b) / b * 100).toFixed(2))
+          //     }
+          //   }
+          // }
+        }
+        callback(a)
+      }
+    })
+  },
+
   /* 生命周期函数--监听页面加载 */
   onLoad: function (options) {
     app.globalData.page = true

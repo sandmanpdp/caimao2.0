@@ -14,15 +14,17 @@
 <view class='list read' wx:if="{{navIndex}}">
   <view wx:for="{{readArray}}" class='box' id='{{item.note_id}}' wx:key="{{item.note_id}}" data-uid='{{item.user_id}}' catchtap='readLinkFun'>
     <view class='clearfix one oneTitle' style='position:relative'>
-      <view class='fl left'>
-        <text>{{item.share}}</text>
+      <view class='fl left title_box'>
+        <text class='share_text_box'>{{item.share}}</text>
         <text class='oneCode'> {{item.code}}</text>
-        <image src='../images/yuanbaoO.png' class='needPriceYuanbao' wx:if='{{item.need_price!=0}}'></image> 
-        <text class="{{item.need_price==0?'freePriceText':'needPriceText'}}">{{item.need_price==0?'免费':item.need_price}}</text>
+        <view class='money_box fr'>
+          <image src='../images/yuanbaoO.png' class='needPriceYuanbao' wx:if='{{item.need_price!=0}}'></image> 
+          <text class="{{item.need_price==0?'freePriceText':'needPriceText'}}">{{item.need_price==0?'免费':item.need_price}}</text>
+        </view>
       </view>
-      <view class='fr right' wx:if="{{item.is_reach==0}}">未达标</view>
+      <!-- <view class='fr right' wx:if="{{item.is_reach==0}}">未达标</view>
       <view class='fr right co93b8ff' wx:if="{{item.is_reach==1}}">达标</view>
-      <view class='fr right co93b8ff' wx:if="{{item.is_reach==-1}}">进行中</view>
+      <view class='fr right co93b8ff' wx:if="{{item.is_reach==-1}}">进行中</view> -->
     </view>
     <view class='clearfix two '>
       <view class='fl'>
@@ -49,15 +51,17 @@
 <view class='list note' wx:if="{{!navIndex}}">
   <view class='box' wx:for="{{noteArray}}" id='{{item.id}}' data-uid='{{item.user_id}}' catchtap='readLinkFun'>
     <view class='clearfix one oneTitle'>
-      <view class='fl left' style='position:relative'>
-        <text>{{item.share}}</text>
+      <view class='fl left title_box' style='position:relative'>
+        <text class='share_text_box'>{{item.share}}</text>
         <text class='oneCode'> {{item.code}}</text>
-        <image src='../images/yuanbaoO.png' class='needPriceYuanbao' wx:if='{{item.price!=0}}'></image> 
-        <text class="{{item.price==0?'freePriceText':'needPriceText'}}">{{item.price==0?'免费':item.price}}</text>
+         <view class='money_box fr'>
+          <image src='../images/yuanbaoO.png' class='needPriceYuanbao' wx:if='{{item.price!=0}}'></image>
+          <text class="{{item.price==0?'freePriceText':'needPriceText'}}">{{item.price==0?'免费':item.price}}</text>
+        </view>
       </view>
-      <view class='fr right' wx:if="{{item.is_reach==0}}">未达标</view>
+      <!-- <view class='fr right' wx:if="{{item.is_reach==0}}">未达标</view>
       <view class='fr right co93b8ff' wx:if="{{item.is_reach==1}}">达标</view>
-      <view class='fr right co93b8ff' wx:if="{{item.is_reach==-1}}">进行中</view>
+      <view class='fr right co93b8ff' wx:if="{{item.is_reach==-1}}">进行中</view> -->
     </view>
     <view class='clearfix two'>
       <view class='fl'>

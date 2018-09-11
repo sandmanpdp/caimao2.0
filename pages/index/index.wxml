@@ -246,8 +246,7 @@
         </view>
         <view class='text tw4'>{{item.content}}</view>
         <view class='fun clearfix'>
-          <view class='fl'>还剩
-            <text class='cofc7946'>{{item.resDay}}</text>结束</view>
+          <view class='fl'>还剩<text class='cofc7946'>{{item.resDay}}</text>结束</view>
           <view class='fr co3f86ff'>我来回答</view>
         </view>
       </view>

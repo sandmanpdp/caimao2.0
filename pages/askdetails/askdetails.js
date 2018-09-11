@@ -38,6 +38,11 @@ Page({
         noComment: false
       })
     }
+    // if (this.data.navIndex == 1){
+    //   this.getSatistyAnswer();
+    // }
+    
+
   },
 
   setInputFocus:function(){
@@ -119,7 +124,7 @@ Page({
       })
     }
   },
-  //获取观点列表
+  //获取评论列表
   getCommetList: function() {
     var that = this;
     wx.request({
@@ -196,8 +201,8 @@ Page({
           wx.showToast({
             title: '采纳答案成功',
           })
-          that.getCommetList();
           that.getSatistyAnswer();
+          that.getCommetList();
         }
       }
     })
@@ -219,13 +224,13 @@ Page({
             that.setData({
               satistyAnswer: resData,
               hasSatistyAnswer: true,
-              noComment: false
+             
             })
           }else if(resData == ''){
             //noComment 
             that.setData({
               satistyAnswer: resData,
-              noComment : true
+            
             })
           }
         }
@@ -251,11 +256,12 @@ Page({
     var id = options.id;
     this.setData({
       id: id,
-      userId: app.localUserData.user_id
+      userId: app.localUserData.user_id,
+      noComment: true
     });
+    this.getSatistyAnswer();
     this.getAskDetail();
     this.getCommetList();
-    this.getSatistyAnswer();
   },
 
   /**
@@ -269,7 +275,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-
+    this.setData({
+      noComment: true
+    })
   },
 
   /**

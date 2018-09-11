@@ -23,7 +23,7 @@ view {
 .head_bottom_box_number{margin-bottom: 16rpx;line-height: 44rpx;font-size: 44rpx;font-weight: 500;color: #fff}
 .head_bottom_box_depict{font-size: 26rpx;color: rgba(255, 255, 255, .5)}
 /* 标题 */
-.title{border-bottom: 1px solid #ddd;background-color: #fff}
+.title{border-bottom: 1px solid #eee;background-color: #fff}
 .title>view{padding: 30rpx 0 30rpx;width: 33.3%;text-align: center}
 .title>view>view:nth-child(2){margin-top: 20rpx;font-size: 30rpx;color: #666;line-height: 30rpx}
 .title>view>view:nth-child(1){font-size: 36rpx;color: #666;line-height: 36rpx}

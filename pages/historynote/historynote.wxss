@@ -1,9 +1,9 @@
 /* 列表 */
-.list .box{margin-top: 10rpx;background-color: #fff;font-size: 0}
+.list .box{margin-top: 20rpx;background-color: #fff;font-size: 0}
 .list .box:first-child{margin: 0}
 .list .box .one{margin-bottom: 30rpx;padding:20rpx 30rpx;border-bottom: 2rpx solid #eeeeee}
-.list .box .one .left text{font-weight: 400}
-.list .box .one .left text:nth-child(1){margin-right: 10rpx;font-size: 36rpx;color: #3e3e3e;line-height: 0;font-weight: bold}
+/* .list .box .one .left text{font-weight: 400} */
+.share_text_box{margin-right: 10rpx;font-size: 36rpx;color: #333;line-height: 0;font-weight: bold}
 .list .box .one .left text:nth-child(2){font-size: 32rpx;color: #fc7946;line-height: 36rpx}
 .list .box .one .right{font-size: 26rpx;color: #b9b9b9;height: 36rpx;line-height: 36rpx}
 .list .box .two{margin-bottom: 30rpx}
@@ -56,4 +56,10 @@
 }
 .pstRel {
   position: relative;
+}
+.money_box {
+  display: inline-block;
+}
+.title_box {
+  width: 100%;
 }

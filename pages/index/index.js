@@ -16,7 +16,7 @@ Page({
   },
 
   openMsk: function(e) {
-    console.log('#####')
+  
   },
   onGotUserInfo: function(e) {
     var that = this;
