@@ -7,6 +7,8 @@ Page({
    */
   data: {
     maskIndex: 0, //遮罩下标
+    problemValueBox : false,//虚拟提问框
+    isMask : false,//遮罩层
     sumIndex: 0, //金额下标
     sumValue: 20, //当前选中的金额值 
     sumOther: '其他金额', //其他金额页面显示
@@ -33,10 +35,21 @@ Page({
     })
   },
   setMaskIndexFun: function(e) { //遮罩选择
+    var maskIndex = (e.currentTarget.id.split('m'))[1];
+    var isMask;
+    if (maskIndex == '0') {
+      isMask = false;
+    } else {
+      isMask = true;
+    }
     this.setData({
-      maskIndex: (e.currentTarget.id.split('m'))[1]
+      maskIndex: maskIndex,
+      isMask: isMask
     })
   },
+
+
+
   setSumIndexFun: function(e) { //悬赏金额选择
     var a = (e.currentTarget.id.split('s'))[1]
     var b
@@ -65,7 +78,8 @@ Page({
       sumIndex: 3,
       sumValue: a,
       sumOther: a + '元宝',
-      maskIndex: 0
+      maskIndex: 0,
+      problemValueBox : false
     })
   },
   sumOtherDateChange: function(e) { // 其他金额获取

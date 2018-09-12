@@ -108,7 +108,7 @@
 .killer_section{padding: 0 30rpx}
 .killer_section_box{box-sizing: border-box;position: relative;margin-top: 20rpx;padding: 30rpx 30rpx 30rpx 0;width: 680rpx;height: 255rpx;border: 3rpx solid #dddddd;border-top-left-radius: 30rpx;border-top-right-radius: 30rpx}
 .killer_section_box:first-child{margin-top: 0}
-.killer_section_icon_line{position: absolute;top: 50%;left: 260rpx;margin-top: -75rpx;width: 2rpx;height: 150rpx;background-color: #dddddd}
+.killer_section_icon_line{position: absolute;top: 50%;left: 260rpx;margin-top: -75rpx;width: 2rpx;height: 150rpx;background-color: #eee}
 .killer_section_icon_buy{position: absolute;top:30rpx;right: -12rpx;width: 140rpx;height: 50rpx;line-height: 50rpx;border-top-left-radius: 25rpx;border-bottom-left-radius: 25rpx;font-size: 24rpx;text-align: center;color: #fff}
 .killer_section_icon_trigon{position: absolute;top: 78rpx;right: -12rpx;width: 0;height: 0;border-right: 12rpx solid #fff}
 .buy_false{background-color: #dddddd}
@@ -236,7 +236,7 @@
 }
 .yuanbaoBox {
   display: inline-block;
-  width:44rpx;
+  width:38rpx;
   height:56rpx;
   margin-right: 10rpx;
   position: relative;
@@ -245,6 +245,6 @@
   width: 38rpx !important;
   height: 30rpx !important;
   position: absolute;
-  top: 41%;
+  top: 40.5%;
   transform: translateY(-50%);
 }

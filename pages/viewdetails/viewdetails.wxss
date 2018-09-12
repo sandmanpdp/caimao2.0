@@ -22,7 +22,6 @@ page {
 
 .bgWhite {
   background: #fff;
-
 }
 .bgBlue {
   background: #2772FF;

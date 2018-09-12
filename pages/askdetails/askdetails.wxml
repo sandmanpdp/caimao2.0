@@ -7,9 +7,12 @@
     </view>
     <view class='text'>{{askdetail.content}}</view>
     <view class='answer'>
-      <view>悬赏{{askdetail.hook_price}}</view>
-      <view>离悬赏结束时间还有<text class='cofc7946'>{{restDay}}</text></view>
-      <view class="answer_btn {{askdetail.state == 1 ? 'answered':'not_answer'}}" catchtap="{{askdetail.state == 1 ? '':'setInputFocus'}}">{{askdetail.state == 1 ? '我已回答':'我来回答'}}</view>
+      <view class="money_box {{askdetail.status == -1 ? '' : 'mt30'}}">悬赏{{askdetail.hook_price}}</view>
+      <view wx:if="{{askdetail.status == -1}}" class='limit_date'>离悬赏结束时间还有
+        <text class='cofc7946'>{{restDay}}</text>
+      </view>
+      <view wx:if="{{askdetail.status == -1}}" class="answer_btn {{askdetail.state == 1 ? 'answered':'not_answer'}}" catchtap="{{askdetail.state == 1 ? '':'setInputFocus'}}">{{askdetail.state == 1 ? '我已回答':'我来回答'}}</view>
+      <view wx:if="{{askdetail.status != -1}}" class="answer_btn {{askdetail.state == 1 ? 'answered':'not_answer'}}" catchtap="{{askdetail.state == 1 ? '':'setInputFocus'}}">已结束</view>
       <image src='../images/icon_cue.png' catchtap='showMask'></image>
     </view>
   </view>
@@ -21,8 +24,8 @@
         <view wx:if='{{navIndex==0}}' class='selectedBar'></view>
       </view>
       <view id='n1' class="fl pstRel {{navIndex==1? 'bb' : ''}}" catch:tap='setNavIndexFun'>
-      满意回答
-      <view wx:if='{{navIndex==1}}' class='selectedBar'></view>
+        满意回答
+        <view wx:if='{{navIndex==1}}' class='selectedBar'></view>
       </view>
     </view>
     <view wx:if="{{navIndex==0?true:false}}">
@@ -54,7 +57,7 @@
         <view class='fun clearfix'>
           <text class='fl'>{{item.created_at}}</text>
           <view class='fr'>
-             <image catchtap='createPraise' data-id="{{item.id}}" wx:if='{{item.is_praise==0}}' src='../images/icon_laud2.png'></image>
+            <image catchtap='createPraise' data-id="{{item.id}}" wx:if='{{item.is_praise==0}}' src='../images/icon_laud2.png'></image>
             <image catchtap='createPraise' data-id="{{item.id}}" wx:if='{{item.is_praise==1}}' src='../images/icon_laudRed4.png'></image>
             <text>{{item.praise}}</text>
           </view>
@@ -109,7 +112,7 @@
   </view>
   <!-- 评论 -->
   <view class='pf comment clearfix'>
-    <input focus="{{isfocus}}" placeholder-style="color:#999" bindinput='getComment' value='{{comment}}' class='fl input' placeholder='回答问股...'></input>
+    <input focus="{{isfocus}}" cursor-spacing='20' placeholder-style="color:#999" bindinput='getComment' value='{{comment}}' class='fl input' placeholder='回答问股...'></input>
     <view catchtap='addComment' class='fr submit'>发表</view>
   </view>
 </view>

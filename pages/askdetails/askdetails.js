@@ -15,25 +15,26 @@ Page({
     userId: '',
     hasSatistyAnswer: false,
     askdetail_userId: '',
-    restDay : '',
-    isfocus : false,
-    noComment : true,
-    satistyAnswer : "",
-    isShowMask : false
+    restDay: '',
+    isfocus: false,
+    noComment: true,
+    satistyAnswer: "",
+    askStatus: '',
+    isShowMask: false
   },
   setNavIndexFun: function(e) {
     this.setData({
       navIndex: (e.currentTarget.id.split('n'))[1],
     })
-    if (this.data.navIndex == 0 && this.data.commentList.length == 0){
+    if (this.data.navIndex == 0 && this.data.commentList.length == 0) {
       this.setData({
-        noComment : true
+        noComment: true
       })
     } else if (this.data.navIndex == 1 && this.data.satistyAnswer.length == 0) {
       this.setData({
         noComment: true
       })
-    }else {
+    } else {
       this.setData({
         noComment: false
       })
@@ -41,13 +42,13 @@ Page({
     // if (this.data.navIndex == 1){
     //   this.getSatistyAnswer();
     // }
-    
+
 
   },
 
-  setInputFocus:function(){
+  setInputFocus: function() {
     this.setData({
-      isfocus : true
+      isfocus: true
     })
   },
 
@@ -70,7 +71,8 @@ Page({
           that.setData({
             askdetail: resData[0],
             askdetail_userId: resData[0].q_user_id,
-            restDay: restDay
+            restDay: restDay,
+            askStatus: resData[0].status,
           })
         }
       }
@@ -91,7 +93,18 @@ Page({
       if (that.data.userId == that.data.askdetail_userId) {
         wx.showToast({
           title: '亲，您不能回答自己的问股',
-          icon : 'none'
+          icon: 'none'
+        })
+        that.setData({
+          comment: ''
+        })
+      } else if (that.data.askStatus != '-1') {
+        wx.showToast({
+          title: '亲，该问股已结束，不能提交回答',
+          icon: 'none'
+        })
+        that.setData({
+          comment : ''
         })
       } else {
         wx.request({
@@ -108,7 +121,7 @@ Page({
                 title: '回答成功',
               })
               that.setData({
-                comment : ''
+                comment: ''
               })
               that.getCommetList();
               that.getAskDetail();
@@ -139,7 +152,7 @@ Page({
       success: function(res) {
         var resData = res.data.data;
         var error = res.data.error;
-        if (error==0){
+        if (error == 0) {
           var noComment;
           if (resData.length == 0) {
             noComment = true;
@@ -224,13 +237,13 @@ Page({
             that.setData({
               satistyAnswer: resData,
               hasSatistyAnswer: true,
-             
+
             })
-          }else if(resData == ''){
+          } else if (resData == '') {
             //noComment 
             that.setData({
               satistyAnswer: resData,
-            
+
             })
           }
         }
@@ -238,12 +251,12 @@ Page({
     })
   },
 
-  setMaskIndexFun : function () {
+  setMaskIndexFun: function() {
     this.setData({
-      isShowMask : false
+      isShowMask: false
     })
   },
-  showMask : function (){
+  showMask: function() {
     this.setData({
       isShowMask: true
     })

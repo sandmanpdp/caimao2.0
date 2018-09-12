@@ -116,7 +116,6 @@ view {
   font-size: 34rpx;
   line-height: 34rpx;
   color: #666;
-  font-weight: 500;
   padding: 30rpx 0;
 }
 

@@ -1,4 +1,5 @@
 .list_box{box-sizing: border-box;padding: 30rpx 30rpx 40rpx;background-color: #fff;border-top: 2rpx solid #eee}
+.list_box:first-child {border-top: 0}
 .list_box_top_authorHead{position: relative;width: 82rpx;height: 82rpx}
 .list_box_top_authorHead_img{width: 100%;height: 100%;border-radius: 50%;border:2rpx solid #eee;}
 .list_box_top_authorHead_vip{position: absolute;bottom: -10rpx;right: -10rpx;width: 34rpx;height: 34rpx}

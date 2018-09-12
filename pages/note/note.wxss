@@ -73,7 +73,7 @@
   width: 70rpx !important;
   border-bottom: 6rpx solid #3f86ff;
   position: absolute;
-  bottom: -30rpx;
+  bottom: -27rpx;
   left: 152rpx;
 }
 .title_box {

@@ -82,7 +82,7 @@
   <!-- 输入框 -->
   <view class='pf input clearfix'>
     <!-- <view class='fl' catchtap='setMaskTrueFun'>发表评论...</view> -->
-    <input class='fl'placeholder-style="color:#999" placeholder='发表评论...' maxlength='300' bindinput="bindCommentInput" value='{{commentValue}}'></input>
+    <input class='fl'placeholder-style="color:#999" placeholder='发表评论...' maxlength='300' bindinput="bindCommentInput" cursor-spacing='20' value='{{commentValue}}'></input>
     <view class='fl' catchtap='getCommentFun'>发表</view>
     
   </view>
