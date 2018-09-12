@@ -232,16 +232,16 @@ Page({
             }
           }
           that.getSharePricesFun(a, function(data) {
-            for (var i = 0; i < data.length; i++) {
-              if (a[i].is_reach != -1) { //笔记结束
-                a[c]['actualTop'] = ((a[i].out_price - a[i].in_price) / a[i].in_price * 100).toFixed(2);
-              } else if (a[i].is_reach == -1 && a[i].price != 0 && a[i].is_look < 0) {
-                a[c]['actualTop'] = "****" // 笔记未结束&&不是免费&&没看过
-              } else {
-                a[c]['actualTop'] = data[i]
-              }
-              c++
-            }
+            // for (var i = 0; i < data.length; i++) {
+            //   if (a[i].is_reach != -1) { //笔记结束
+            //     a[c]['actualTop'] = ((a[i].out_price - a[i].in_price) / a[i].in_price * 100).toFixed(2);
+            //   } else if (a[i].is_reach == -1 && a[i].price != 0 && a[i].is_look < 0) {
+            //     a[c]['actualTop'] = "****" // 笔记未结束&&不是免费&&没看过
+            //   } else {
+            //     a[c]['actualTop'] = data[i]
+            //   }
+            //   c++
+            // }
 
             that.setData({
               noteNull: d,

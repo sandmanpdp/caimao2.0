@@ -3,9 +3,11 @@
 view {
   box-sizing: border-box;
 }
+
 .news-slice-box {
   background: #fff;
 }
+
 .news-slice-box .news-slice:last-child {
   border-bottom: none;
 }
@@ -46,12 +48,13 @@ view {
 }
 
 .arrow {
-  margin-top: 28rpx;
+  height: 100rpx;
 }
 
-.arrow, .arrow image {
+.arrow image {
   width: 19rpx;
   height: 34rpx;
+  padding-top: 33rpx;
 }
 
 .list_box_number {

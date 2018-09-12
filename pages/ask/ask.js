@@ -92,7 +92,7 @@ Page({
       url: 'https://zhitouapi.romawaysz.com/quiz/list',
       data: {
         page: page,
-        size: 4,
+        size: 10,
         token: app.union_id,
         state: state
       },

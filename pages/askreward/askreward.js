@@ -11,7 +11,7 @@ Page({
     isMask : false,//遮罩层
     sumIndex: 0, //金额下标
     sumValue: 20, //当前选中的金额值 
-    sumOther: '其他金额', //其他金额页面显示
+    sumOther: 0, //其他金额页面显示
     sumOtherValue: 0, //其他金额值
     problemValue: '', //提问值
     sharesValue: null, //股票值
@@ -48,8 +48,6 @@ Page({
     })
   },
 
-
-
   setSumIndexFun: function(e) { //悬赏金额选择
     var a = (e.currentTarget.id.split('s'))[1]
     var b
@@ -61,25 +59,41 @@ Page({
         b = 50;
         break;
       case '2':
-        b = 88;
+        b = 100;
         break
     }
     this.setData({
       sumIndex: a,
       sumValue: b,
-      sumOther: '其他金额'
+      sumOther: 0
     })
   },
 
   setOtherSumFun: function(e) { //其他金额确认
-    var that = this
-    var a = that.data.sumOtherValue
+    var that = this;
+    var a = (Math.round(that.data.sumOtherValue / 20)) * 20;
+    if (a == 0) {
+      wx.showToast({
+        title: '输入金额不能为空',
+        icon: 'none'
+      })
+      return
+    }
+    if (that.data.sumOtherValue % 20 != 0) {
+      wx.showToast({
+        title: '输入的值必须是20的倍数',
+        icon : 'none',
+        duration : 2000
+      })
+    }
+
     this.setData({
       sumIndex: 3,
       sumValue: a,
-      sumOther: a + '元宝',
+      sumOther: a,
       maskIndex: 0,
-      problemValueBox : false
+      problemValueBox : false,
+      isMask : false
     })
   },
   sumOtherDateChange: function(e) { // 其他金额获取
@@ -87,6 +101,7 @@ Page({
       sumOtherValue: e.detail.value
     })
   },
+
   problemDateChange: function(e) { // 问题获取
     this.setData({
       problemValue: e.detail.value

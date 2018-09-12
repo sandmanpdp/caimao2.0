@@ -132,7 +132,9 @@
 <!-- 其他 -->
 <view wx:if="{{navIndex==2?true:false}}">
   <view class='other' wx:for="{{otherArray}}" id='{{item.url}}' data-type="{{item.type}}" catchtap='linkFun'>
-    <view class='time'>{{item.created_at}}</view>
+    <view class='time_box'>
+      <view class='time'>{{item.created_at}}</view>
+    </view>
     <!-- <view class='talk clearfix'>
       <image class='fl' src='../images/robot.png'></image>
       <view class='fr'>神奇牛股关注了您<image src='../images/icon_talk.png'></image></view>

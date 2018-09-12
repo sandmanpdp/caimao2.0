@@ -3,13 +3,14 @@
   <view class='input'>
     <textarea auto-height="true" bindinput='problemDateChange' placeholder='欢迎向我提问:)' placeholder-class='co999' maxlength='300' wx:if="{{!isMask}}" value='{{problemValue}}'></textarea>
     <view class='problemValue' wx:if="{{isMask}}">{{problemValue ==''?'欢迎向我提问:)':problemValue}}</view>
-    <view class='money_tips'>悬赏<text class='cofc7946'>{{sumValue}}</text>元宝</view>
+    <view class='money_tips'>悬赏
+      <text class='cofc7946'>{{sumValue}}</text>元宝</view>
   </view>
   <!-- 关联股票 -->
   <view class='shares pr'>
     <view class='clearfix'>
       <text class='fl'>关联股票</text>
-      <input bindinput='bindKeyInput' value='{{shareValue}}' class='fl' placeholder='输入股票名称/代码' placeholder-class='cob9b9b9' bindblur="shareMaskEnd" bindconfirm='confirmShare'></input>
+      <input bindinput='bindKeyInput' value='{{shareValue}}' class='fl' placeholder='输入股票名称/代码' placeholder-class='co999' bindblur="shareMaskEnd" bindconfirm='confirmShare'></input>
       <!-- 修改 matchingState 状态 -->
       <view wx:if="{{matchingState}}" class='codeMask codeMaskTop'>
         <view wx:for="{{showStockCodeArray}}" id="{{item.code}}" data-text='{{item.name}}' catchtap='setCodeFun'>{{item.name}}</view>
@@ -18,7 +19,7 @@
 
     <view class='clearfix' wx:if="{{atniuren}}">
       <text class='fl'>指定牛人</text>
-      <input class='fl' placeholder='最多可选3人或不选' placeholder-class='cob9b9b9'></input>
+      <input class='fl' placeholder='最多可选3人或不选' placeholder-class='co999'></input>
       <text class='fr'>@</text>
     </view>
     <!-- <view class='clearfix endDatePicker'>
@@ -63,9 +64,14 @@
         <view class='yuanbao'>
           <image src="{{sumIndex==2?'../images/yuanbao30w.png':'../images/yuanbao30.png'}}"></image>
         </view>
-        88
+        100
       </view>
-      <view id='m2' class="moneyBox fl {{sumIndex==3?'bgfc7946':''}}" catchtap='setMaskIndexFun'>{{sumOther}}</view>
+      <view id='m2' class="moneyBox fl {{sumIndex==3?'bgfc7946':''}}" catchtap='setMaskIndexFun'>
+        <view class='yuanbao' wx:if="{{sumOther !=0 }}">
+          <image src="../images/yuanbao30w.png"></image>
+        </view>
+        {{sumOther == '0' ? '其他':sumOther}}
+      </view>
     </view>
     <view class='depict'>赏金越高，越能吸引高手回答哦</view>
   </view>
@@ -107,10 +113,9 @@
       <view class='iKonw' id='m0' catch:tap='setMaskIndexFun'>知道了</view>
       <!-- <image id='m0' src='../images/icon_close.png' catch:tap='setMaskIndexFun'></image> -->
     </view>
-
     <view class='two' wx:if="{{maskIndex==2?true:false}}">
       <view>输入其他金额</view>
-      <input type='number' placeholder='输入20的倍数金额' placeholder-class='cob9b9b9' bindinput='sumOtherDateChange'></input>
+      <input type='number' placeholder='输入20的倍数金额' placeholder-class='co999' bindinput='sumOtherDateChange'></input>
       <view catchtap='setOtherSumFun'>确定</view>
       <view id='m0' catch:tap='setMaskIndexFun'>取消</view>
     </view>

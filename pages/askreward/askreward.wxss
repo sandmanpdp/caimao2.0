@@ -1,4 +1,5 @@
 .cob9b9b9{color: #b9b9b9}
+.co999 {color: #999}
 .bgfc7946{background-color: #fc7946;color: #fff!important}
 /* 输入框 */
 .input{margin-bottom: 20rpx;padding: 30rpx;background-color: #fff;font-size: 30rpx;color: #666}

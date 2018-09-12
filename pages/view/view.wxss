@@ -59,7 +59,7 @@ view {
 .section .box .info .name {
   display: inline-block;
   font-size: 26rpx;
-  color: #808080;
+  color: #999;
 }
 
 .section .box .info .data .icon {
@@ -71,7 +71,7 @@ view {
 
 .section .box .info .data .number {
   font-size: 24rpx;
-  color: #808080;
+  color: #999;
 }
 
 .section .box .info .data .number:nth-child(2) {
@@ -161,7 +161,7 @@ view {
 }
 
 .searchInputBox {
-  border-bottom: 1rpx solid #eee;
+  border-bottom: 2rpx solid #eee;
   padding: 20rpx 30rpx;
 }
 
@@ -179,13 +179,14 @@ view {
 }
 
 .right_arrow_box {
-  height: 80rpx !important;
+  height: 82rpx !important;
+  width: 19rpx;
 }
 
 .right_arrow {
-  width: 19rpx;
   height: 34rpx;
-  line-height: 80rpx;
+  width: 19rpx;
+  padding-top: 24rpx;
 }
 
 .searchContentBox {
@@ -196,16 +197,18 @@ view {
 }
 
 .searchContent-item {
-  border-bottom: 1rpx solid #eee;
+  border-bottom: 2rpx solid #eee;
+  box-sizing: border-box;
 }
-
+.searchContent-item:last-child {
+  border: none;
+}
 .searchContent {
   color: #666;
   font-size: 30rpx;
   width: 80%;
   height: 80rpx;
-  line-height: 50prx;
-  padding: 40rpx 0;
+  line-height: 82rpx;
 }
 
 .cancelBtn {

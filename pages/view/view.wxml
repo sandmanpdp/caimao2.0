@@ -34,7 +34,7 @@
       <view class='fl searchContent'>
         {{item.title}}
       </view>
-      <view class='fr right_arrow right_arrow_box'>
+      <view class='fr right_arrow_box'>
         <image class='right_arrow' src='../images/icon_right_arrow.png'></image>
       </view>
     </view>
@@ -82,7 +82,7 @@
 </view>
 <!-- 悬浮按钮 -->
 <view class='askMask' wx:if="{{isShow}}"></view>
-<view class='write-pen' catchtap='writeFun' style='bottom:40rpx;'>
+<view wx:if="{{!searchBox}}" class='write-pen' catchtap='writeFun' style='bottom:40rpx;'>
   <image src='../images/write.png'></image>
 </view>
 <view class='mask-box' wx:if="{{isShow}}">

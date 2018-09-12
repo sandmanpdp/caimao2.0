@@ -7,6 +7,6 @@
 .section{padding: 0 30rpx 20rpx;background-color: #fff}
 .section>view{padding: 30rpx 0;border-bottom: 1rpx solid #eeeeee}
 .section>view:last-child{border: 0}
-.section>view>image{margin-right: 31rpx;width: 82rpx;height: 82rpx;border-radius: 6rpx}
+.section>view>image{margin-right: 31rpx;width: 82rpx;height: 82rpx;border-radius:50%;border: 2rpx solid #eee;}
 .section>view>view>view:nth-child(1){margin: 10rpx 0 16rpx;font-size: 28rpx;color: #2e2e2e;line-height: 28rpx}
 .section>view>view>view:nth-child(2){font-size: 24rpx;color: #b9b9b9;line-height: 24rpx}

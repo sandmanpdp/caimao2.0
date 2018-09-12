@@ -107,8 +107,17 @@ Page({
             b[b.length - 1].url = c
           }
           var d = that.data.otherPage+1;
+          var newb = b.map(function(item){
+            var dayDiff = app.isToday(item.created_at);
+            if (dayDiff <= 0) {
+              item.created_at = item.created_at.split(' ')[1]
+            }else {
+              item.created_at = item.created_at;
+            }
+            return item;
+          })
           that.setData({
-            otherArray: b,
+            otherArray: newb,
             otherPage: d,
             bottomState: !c,
             notesNull: c
@@ -135,6 +144,8 @@ Page({
     // })
   },
   
+
+
   linkFun: function(e){  //详情跳转方法
     var linkId = e.currentTarget.id
     var linkType = e.currentTarget.dataset.type

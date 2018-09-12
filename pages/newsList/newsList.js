@@ -31,40 +31,40 @@ Page({
         type: 0
       },
       success: function(res) {
-        if (res.data[3]) {
+        if (res.data.system) {
           that.setData({
-            unReadSys: res.data[3].total,
-            systemContent: '系统消息-' +res.data[3].content,
+            unReadSys: res.data.system.total,
+            systemContent: '系统消息-' + res.data.system.content,
           })
         }else {
           that.setData({
             unReadSys : 0
           })
         }
-        if (res.data[2]) {  //2笔记
+        if (res.data.note) {  //2笔记
           that.setData({
-            unReadNote: res.data[2].total,
-            noteContent: '笔记-' +res.data[2].content,
+            unReadNote: res.data.note.total,
+            noteContent: '笔记-' + res.data.note.content,
           })
         } else {
           that.setData({
             unReadNote: 0,
           })
         }
-        if (res.data[1]) {  //1观点
+        if (res.data.view) {  //1观点
           that.setData({
-            unReadView: res.data[1].total,
-            viewContent: '观点-' +res.data[1].content,
+            unReadView: res.data.view.total,
+            viewContent: '观点-' + res.data.view.content,
           })
         } else {
           that.setData({
             unReadView : 0
           })
         }
-        if (res.data[6]) {
+        if (res.data.quiz) {
           that.setData({
-            unReadAsk: res.data[6].total,
-            askContent: '问股诊股-'+res.data[6].content
+            unReadAsk: res.data.quiz.total,
+            askContent: '问股诊股-' + res.data.quiz.content
           })
         } else {
           that.setData({

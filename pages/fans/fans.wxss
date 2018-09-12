@@ -1,7 +1,7 @@
 
 .list_box{box-sizing: border-box;margin-top: 20rpx;padding: 30rpx 30rpx 36rpx;height: 260rpx;background-color: #fff}
 .list_box_top_authorHead{position: relative;width: 82rpx;height: 82rpx}
-.list_box_top_authorHead_img{width: 100%;height: 100%;border-radius: 10rpx}
+.list_box_top_authorHead_img{width: 100%;height: 100%;border-radius: 50%;border: 2rpx solid #eee;}
 .list_box_top_authorHead_vip{position: absolute;bottom: -10rpx;right: -10rpx;width: 34rpx;height: 34rpx}
 .list_box_top_authorInfo{margin: 0 0 0 32rpx}
 .list_box_top_authorInfo_name{margin: 6rpx 0 8rpx;line-height: 34rpx;font-size: 34rpx;color: #141414}

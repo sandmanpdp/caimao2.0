@@ -32,17 +32,16 @@ Page({
     var a;
     if (e.currentTarget.id == '0') {
       a = '0'
-      // this.getReadFun()；
       this.setData({
         sortBy : 0
       })
     } else if (e.currentTarget.id == '1'){
       a = '1'
-      // this.getNoteFun();
       this.setData({
         sortBy: 1
       })
     } else if (e.currentTarget.id == '2') {
+      this.getConcernView()
       a = '2'
     }
     this.onPullDownRefresh();
@@ -115,8 +114,6 @@ Page({
     }
   },
 
-
-
   viewReadFun: function (e) {// 观点阅读方法
     wx.navigateTo({
       url: '/pages/viewdetails/viewdetails?id=' + e.currentTarget.id
@@ -169,25 +166,7 @@ Page({
           var d= that.data.viewArray || []
           for(var i=0;i<b.length;i++){
             d.push(b[i])
-          }
-          
-          //获取每个观点（b数组）comment的数量 by pdp
-          // for (var j = 0; j < b.length; j++) {
-          //   var commentTotals = 0,
-          //       lookTotals = 0,
-          //       praiseTotals = 0;
-          //       console.log(b[j]);
-          //   commentTotals = commentTotals + parseInt(b[j].comment);
-          //   console.log(commentTotals);
-            // wx.setStorageSync("commentId"+b[j].id, b[j].comment);
-            // wx.getStorage({
-            //   key: "commentId" + b[j].id,
-            //   success: function (res) {
-            //     console.log(res.data);
-            //   },
-            // })
-          //}
-          
+          }      
           that.setData({
             viewArray: d,
             viewPage: res.data.page,
