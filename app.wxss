@@ -278,6 +278,7 @@ page {
   position: fixed;
   bottom: 30rpx;
   right: 50rpx;
+  z-index: 9
 }
 .write-pen image {
   width: 118rpx;

@@ -39,7 +39,7 @@
 .section text {
   font-size: 28rpx;
   color: #666;
-  line-height: 48rpx;
+  line-height: 52rpx;
 }
 
 .section>.text {
@@ -141,7 +141,7 @@
 .list .box .title text {
   font-size: 28rpx;
   color: #808080;
-  line-height: 48rpx;
+  line-height: 52rpx;
 }
 
 .list .box .title view {
@@ -159,7 +159,7 @@
 .list .box .text {
   margin: 28rpx 0;
   font-size: 30rpx;
-  color: #2e2e2e;
+  color: #333;
   word-break: break-all;
   text-align: justify;
 }
@@ -330,4 +330,8 @@ color:#2772ff;
 }
 .mt30 {
   margin-bottom: 30rpx;
+}
+.header_time {
+  color: #999 !important;
+  font-size: 26rpx !important;
 }

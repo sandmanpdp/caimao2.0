@@ -19,6 +19,7 @@ view {
 }
 
 .section .box:first-child {
+  
 }
 
 .data {
@@ -34,7 +35,7 @@ view {
   font-size: 36rpx;
   color: #333;
   font-weight: 600;
-  line-height: 38rpx;
+  line-height: 36rpx;
 }
 
 .section .box .text {

@@ -4,6 +4,7 @@
     <view class='clearfix'>
       <image class='fl' src="{{askdetail.avatar}}"></image>
       <text class='fl'>{{askdetail.nickname}}</text>
+      <text class='fr header_time'>{{created_at}}</text>
     </view>
     <view class='text'>{{askdetail.content}}</view>
     <view class='answer'>
@@ -12,7 +13,7 @@
         <text class='cofc7946'>{{restDay}}</text>
       </view>
       <view wx:if="{{askdetail.status == -1}}" class="answer_btn {{askdetail.state == 1 ? 'answered':'not_answer'}}" catchtap="{{askdetail.state == 1 ? '':'setInputFocus'}}">{{askdetail.state == 1 ? '我已回答':'我来回答'}}</view>
-      <view wx:if="{{askdetail.status != -1}}" class="answer_btn {{askdetail.state == 1 ? 'answered':'not_answer'}}" catchtap="{{askdetail.state == 1 ? '':'setInputFocus'}}">已结束</view>
+      <view wx:if="{{askdetail.status != -1}}" class="answer_btn answered">已结束</view>
       <image src='../images/icon_cue.png' catchtap='showMask'></image>
     </view>
   </view>

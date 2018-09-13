@@ -233,7 +233,8 @@ Page({
   onPullDownRefresh: function() {
     var that = this
     success: {
-      that.getUserData()
+      that.getUserData();
+      that.getQuizList();
       setTimeout(function() {
         wx.stopPullDownRefresh()
       }, 500)
@@ -300,7 +301,7 @@ Page({
       mask: true
     })
   },
-
+  //问股
   getQuizList: function() {
     var that = this;
     var nowDate = new Date();
@@ -395,6 +396,7 @@ Page({
   // 生命周期函数--监听页面显示
   onShow: function() {
     var that = this;
+    that.getQuizList();
     if (app.globalData.scene == 0) {
       app.globalData.scene = 1
       that.onLoad

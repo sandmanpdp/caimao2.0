@@ -66,14 +66,20 @@ Page({
         var error = res.data.error;
         if (error == 0) {
           var limit_date = resData[0].limit_date;
-          var created_at = resData[0].created_at
+          var created_at = resData[0].created_at;
           var restDay = app.getRestTime(nowDate, limit_date);
+          if (app.isToday(created_at)<=0) {
+            created_at = created_at.split(' ')[1];
+          }
+
           that.setData({
             askdetail: resData[0],
             askdetail_userId: resData[0].q_user_id,
             restDay: restDay,
+            created_at: created_at,
             askStatus: resData[0].status,
           })
+          
         }
       }
     })
@@ -159,6 +165,7 @@ Page({
           } else {
             noComment = false
           }
+          
           that.setData({
             commentList: resData,
             noComment: noComment
@@ -216,6 +223,7 @@ Page({
           })
           that.getSatistyAnswer();
           that.getCommetList();
+          that.getAskDetail();
         }
       }
     })

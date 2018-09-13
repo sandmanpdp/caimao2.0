@@ -95,7 +95,7 @@
 .view .section{padding: 0 30rpx}
 .view .section .box:last-child{border: 0}
 .view .section .box .title{font-size: 36rpx;color: #2e2e2e;font-weight: 500;line-height: 40rpx;}
-.view .section .box .text{margin: 26rpx 0;line-height: normal;font-size: 28rpx;color: #666}
+.view .section .box .text{margin:23rpx 0 26rpx ;line-height: normal;font-size: 28rpx;color: #666}
 .view .section .box .info{height:52rpx}
 .view .section .box .info .headimg{margin:0 20rpx 0 0;width:49rpx;height:49rpx;border-radius:50%;vertical-align: middle}
 .view .section .box .info .name{display: inline-block;font-size: 26rpx;color: #666}

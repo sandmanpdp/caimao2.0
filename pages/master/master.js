@@ -191,14 +191,14 @@ Page({
       }
     })
   },
-  getNoteFun: function(a) { // 获取作者笔记信息   
+  getNoteFun: function(a) { // 获取作者笔记列表
     var that = this
     wx.request({
       url: 'https://zhitouapi.romawaysz.com/note/noteList',
       data: {
         id: a.id,
         size: that.data.size,
-        next: '-1',
+        next: that.data.notePage,
         order: 'new',
         area: 0,
         index: that.data.notePage,

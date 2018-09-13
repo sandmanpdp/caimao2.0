@@ -313,6 +313,14 @@ App({
     })
   },
 
+  isToday :function (date) {
+    var date = new Date(date.replace(/-/g, "/"));
+    var now = new Date();
+    var dateDiff = now.getTime() - date.getTime();//时间差的毫秒数
+    var dayDiff = Math.floor(dateDiff / (24 * 3600 * 1000));//计算出相差天数
+    return dayDiff;
+  },
+
   getRestTime: function (d1, dateEnd) {
     //var dateBegin = new Date(d1.replace(/-/g, "/"));//将-转化为/，使用new Date
     // var dateEnd = dateEnd;//获取当前时间
@@ -332,9 +340,9 @@ App({
     // console.log(dateDiff + "时间差的毫秒数", dayDiff + "计算出相差天数", leave1 + "计算天数后剩余的毫秒数"
     //   , hours + "计算出小时数", minutes + "计算相差分钟数", seconds + "计算相差秒数");
     var result = '';
-    if (dayDiff <= 1 ){
+    if (dayDiff < 1 ){
       result = hours + "个小时"
-    }else if(dayDiff >1){
+    }else if(dayDiff >= 1){
       // result = dayDiff + "天" + hours + "小时" + minutes + "分"
       result = dayDiff + "天"
     }
