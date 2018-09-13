@@ -157,7 +157,7 @@
 }
 
 .list .box .text {
-  margin: 28rpx 0;
+  margin: 25rpx 0;
   font-size: 30rpx;
   color: #333;
   word-break: break-all;

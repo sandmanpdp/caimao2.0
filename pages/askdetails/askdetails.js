@@ -20,7 +20,8 @@ Page({
     noComment: true,
     satistyAnswer: "",
     askStatus: '',
-    isShowMask: false
+    isShowMask: false,
+    satistyAnswerId: ''
   },
   setNavIndexFun: function(e) {
     this.setData({
@@ -67,11 +68,23 @@ Page({
         if (error == 0) {
           var limit_date = resData[0].limit_date;
           var created_at = resData[0].created_at;
+          var date = new Date(created_at.replace(/-/g, "/"));
           var restDay = app.getRestTime(nowDate, limit_date);
-          if (app.isToday(created_at)<=0) {
-            created_at = created_at.split(' ')[1];
-          }
-
+          // if (app.isToday(created_at)) {
+          //   if (date.getMinutes()<10){
+          //     created_at = date.getHours() + ':' + '0' + date.getMinutes();
+          //   }else {
+          //     created_at = date.getHours() + ':' + date.getMinutes();
+          //   }
+          // } else {
+          //   if (date.getMinutes() < 10){
+          //     created_at = date.getMonth() + 1 + '-' + date.getDate() + ' ' + date.getHours() + ':' + '0' + date.getMinutes();
+          //   }else {
+          //     created_at = date.getMonth() + 1 + '-' + date.getDate() + ' ' + date.getHours() + ':' + date.getMinutes();
+          //   }
+            
+          // }
+          created_at = app.getSimplyTime(created_at);
           that.setData({
             askdetail: resData[0],
             askdetail_userId: resData[0].q_user_id,
@@ -79,7 +92,7 @@ Page({
             created_at: created_at,
             askStatus: resData[0].status,
           })
-          
+
         }
       }
     })
@@ -110,7 +123,7 @@ Page({
           icon: 'none'
         })
         that.setData({
-          comment : ''
+          comment: ''
         })
       } else {
         wx.request({
@@ -165,7 +178,27 @@ Page({
           } else {
             noComment = false
           }
-          
+          var commentList;
+          commentList = resData.map(function(item) {
+            // var date = new Date((item.created_at.replace(/-/g, "/")))
+            // if (app.isToday(item.created_at)) {
+            //   if (date.getMinutes() < 10) {
+            //     item.newCreated_at = date.getHours() + ':' + '0' + date.getMinutes();
+            //   }else{
+            //     item.newCreated_at = date.getHours() + ':' + date.getMinutes();
+            //   }
+            // } else {
+            //   if (date.getMinutes() < 10) {
+            //     item.newCreated_at = date.getMonth() + 1 + '-' + date.getDate() + ' ' + date.getHours() + ':' + '0'+ date.getMinutes();
+            //   }else{
+            //     item.newCreated_at = date.getMonth() + 1 + '-' + date.getDate() + ' ' + date.getHours() + ':' + date.getMinutes();
+            //   }
+              
+            // }
+            item.newCreated_at = app.getSimplyTime(item.created_at);
+            return item;
+          })
+
           that.setData({
             commentList: resData,
             noComment: noComment
@@ -240,18 +273,33 @@ Page({
       success: function(res) {
         var resData = res.data.data;
         var error = res.data.error;
+        var satistyAnswer;
         if (error == 0) {
           if (resData != '') {
+            // var date = new Date(resData[0].created_at.replace(/-/g, "/"))
+            // if (app.isToday(resData[0].created_at)) {
+            //   if (date.getMinutes() < 10) {
+            //     resData[0].created_at = date.getHours() + ':' + '0' + date.getMinutes();
+            //   } else {
+            //     resData[0].created_at = date.getHours() + ':' + date.getMinutes();
+            //   }
+            // } else {
+            //   if (date.getMinutes() < 10) {
+            //     resData[0].created_at = date.getMonth() + 1 + '-' + date.getDate() + ' ' + date.getHours() + ':' + '0' + date.getMinutes();
+            //   } else {
+            //     resData[0].created_at = date.getMonth() + 1 + '-' + date.getDate() + ' ' + date.getHours() + ':' + date.getMinutes();
+            //   }
+            // }
+            resData[0].created_at = app.getSimplyTime(resData[0].created_at);
             that.setData({
               satistyAnswer: resData,
+              satistyAnswerId: resData[0].c_id,
               hasSatistyAnswer: true,
-
             })
           } else if (resData == '') {
-            //noComment 
+            //noComment
             that.setData({
               satistyAnswer: resData,
-
             })
           }
         }

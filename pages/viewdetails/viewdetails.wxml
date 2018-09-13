@@ -8,7 +8,7 @@
         <view class='fl'>{{viewArray.nickname}}</view>
         <image class='fl' src='../images/icon_master.png'></image>
       </view>
-      <view>{{viewArray.created_at}}</view>
+      <view>{{created_at}}</view>
     </view>
     <view class='fr' wx:if="{{viewArray.is_concern==-1?false:true}}" id="{{viewArray.user_id}}" catchtap="{{followState?'':'followFun'}}">{{followState?'已关注':'关注'}}</view>
   </view>
@@ -67,7 +67,7 @@
           </view>
         </view>
         <view>{{item.content}}</view>
-        <view>{{item.created_at}}</view>
+        <view>{{item.newCreated_at}}</view>
       </view>
     </view>
   </view>

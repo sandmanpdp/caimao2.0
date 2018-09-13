@@ -52,6 +52,7 @@ Page({
           setTimeout(function() {
             that.getUserData()
             that.getActivity()
+            that.getUnreadFun();
           }, 500)
           clearInterval(time)
         }
@@ -361,6 +362,29 @@ Page({
     })
   },
 
+  //获取未读数量
+  getUnreadFun: function () {
+    var that = this;
+    wx.request({
+      url: 'https://zhitouapi.romawaysz.com/msg/unreadNum',
+      data: {
+        token: app.union_id,
+        type: 0
+      },
+      success: function (res) {
+        var resData = res.data;
+        var total;
+        total = parseInt(resData.quiz.total) + parseInt(resData.view.total) +parseInt( resData.note.total) + parseInt(resData.system.total);
+        totalStr = String(total);
+        wx.setTabBarBadge({
+          index: 3,
+          text: totalStr
+        })
+      }
+    })
+  },
+
+
   //监听页面加载
   onLoad: function() {
     var that = this
@@ -426,7 +450,7 @@ Page({
     that.setData({
       isShow: false
     })
-
+    
   },
 
   // 生命周期函数--监听页面隐藏

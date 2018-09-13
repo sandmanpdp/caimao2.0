@@ -50,10 +50,10 @@
 .other .talk>image{width: 74rpx;height: 74rpx}
 .other .talk view{box-sizing: border-box;position: relative;padding: 30rpx;width: 574rpx;background-color: #fff;border: 1px solid #e2e2e2;border-radius: 20rpx;font-size: 30rpx;color: #2e2e2e}
 .other .talk view image{position: absolute;top: 25rpx;left: -19rpx;width: 20rpx;height: 21rpx}
-.other .ordinary{box-sizing: border-box;padding: 30rpx;width: 100%;background-color: #fff;border-radius: 10rpx;}
+.other .ordinary{box-sizing: border-box;padding:25rpx 30rpx 30rpx;width: 100%;background-color: #fff;border-radius: 10rpx;}
 .other .ordinary>view:nth-child(1){box-sizing: border-box;border-bottom: 1px solid #eeeeee}
 .other .ordinary>view>view{margin-bottom: 28rpx}
-.other .ordinary>view>view:nth-child(1){font-size: 36rpx;color: #3F86FF;line-height: auto;margin-bottom: 19rpx;}
+.other .ordinary>view>view:nth-child(1){font-size: 36rpx;color: #3F86FF;line-height: auto;margin-bottom: 12rpx;}
 .other .ordinary>view>view:nth-child(2){font-size: 28rpx;color: #999;line-height:auto}
 .other .ordinary>view:nth-child(2){margin-top: 30rpx;font-size: 28rpx;color: #666;line-height: 28rpx}
 /* 遮罩 */

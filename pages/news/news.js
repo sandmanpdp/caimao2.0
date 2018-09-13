@@ -108,12 +108,23 @@ Page({
           }
           var d = that.data.otherPage+1;
           var newb = b.map(function(item){
-            var dayDiff = app.isToday(item.created_at);
-            if (dayDiff <= 0) {
-              item.created_at = item.created_at.split(' ')[1]
-            }else {
-              item.created_at = item.created_at;
-            }
+            // var dayDiff = app.isToday(item.created_at);
+            // var date = new Date((item.created_at.replace(/-/g, "/")))
+            // if (dayDiff) {
+            //   if (date.getMinutes() < 10){
+            //     item.newCreated_at = date.getHours() + ':' + '0'+ date.getMinutes();
+            //   } else {
+            //     item.newCreated_at = date.getHours() + ':' + date.getMinutes();
+            //   }
+            // }else {
+            //   if (date.getMinutes() < 10) {
+            //     item.newCreated_at = date.getMonth() + 1 + '-' + date.getDate() + ' ' + date.getHours() + ':' + '0' +date.getMinutes();
+            //   }else {
+            //     item.newCreated_at = date.getMonth() + 1 + '-' + date.getDate() + ' ' + date.getHours() + ':' + date.getMinutes();
+            //   }
+              
+            // }
+            item.newCreated_at = app.getSimplyTime(item.created_at);
             return item;
           })
           that.setData({

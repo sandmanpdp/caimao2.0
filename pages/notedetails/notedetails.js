@@ -278,7 +278,6 @@ Page({
           }else {
             var j = app.getThisDay(a.created_at, a.work_date);
           }
-         
         }
         if (a.user_id == app.localUserData.user_id) {
           m = true

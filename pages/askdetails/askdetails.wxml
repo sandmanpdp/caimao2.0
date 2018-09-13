@@ -35,10 +35,11 @@
           <image class='fl' src='{{item.avatar}}'></image>
           <text class='fl'>{{item.name}}</text>
           <view class='fr' wx:if='{{userId == askdetail_userId && !hasSatistyAnswer}}' data-aid="{{item.id}}" catchtap='setSatistyAnswer'>采纳答案</view>
+          <view class='fr' wx:if='{{satistyAnswerId == item.id}}' data-aid="{{item.id}}">满意答案</view>
         </view>
         <view class='text'>{{item.content}}</view>
         <view class='fun clearfix'>
-          <text class='fl'>{{item.created_at}}</text>
+          <text class='fl'>{{item.newCreated_at}}</text>
           <view class='fr' catchtap='createPraise' data-id="{{item.id}}">
             <image wx:if='{{item.is_praise==0}}' src='../images/icon_laud2.png'></image>
             <image wx:if='{{item.is_praise==1}}' src='../images/icon_laudRed4.png'></image>

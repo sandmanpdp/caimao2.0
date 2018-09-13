@@ -36,7 +36,8 @@ Page({
     relatedShareName:'',
     relatedShareId:0,
     isRelated : false,
-    user_id : 0
+    user_id : 0,
+    created_at:''
   },
   getViewDataFun: function () {  //获取观点数据
     var that = this
@@ -59,12 +60,29 @@ Page({
         if (a.is_concern==1){
           c=true
         }
+        var created_at = a.created_at;
+        var date = new Date(created_at.replace(/-/g, "/"))
+        // if (app.isToday(created_at)) {
+        //   if (date.getMinutes() < 10) {
+        //     created_at = date.getHours() + ':' + '0' + date.getMinutes();
+        //   } else {
+        //     created_at = date.getHours() + ':' + date.getMinutes();
+        //   }
+        // } else {
+        //   if (date.getMinutes() < 10) {
+        //     created_at = date.getMonth() + 1 + '-' + date.getDate() + ' ' + date.getHours() + ':' + '0' + date.getMinutes();
+        //   } else {
+        //     created_at = date.getMonth() + 1 + '-' + date.getDate() + ' ' + date.getHours() + ':' + date.getMinutes();
+        //   }
+        // }
+        created_at = app.getSimplyTime(created_at);
         that.setData({
           viewArray: a,
           buyState: b,
           followState: c,
           priceArray: d,
-          viewId : res.data.data.id
+          viewId : res.data.data.id,
+          created_at: created_at
         })
         that.getRelatedNote();
       }
@@ -119,8 +137,28 @@ Page({
           for(var i=0;i<a.length;i++){
             c.push(a[i])
           }
+          var newc = c.map(function (item) {
+            var dayDiff = app.isToday(item.created_at);
+            var date = new Date((item.created_at.replace(/-/g, "/")))
+            // if (dayDiff) {
+            //   if (date.getMinutes() < 10) {
+            //     item.newCreated_at = date.getHours() + ':' + '0' + date.getMinutes();
+            //   } else {
+            //     item.newCreated_at = date.getHours() + ':' + date.getMinutes();
+            //   }
+            // } else {
+            //   if (date.getMinutes() < 10) {
+            //     item.newCreated_at = date.getMonth() + 1 + '-' + date.getDate() + ' ' + date.getHours() + ':' + '0' + date.getMinutes();
+            //   } else {
+            //     item.newCreated_at = date.getMonth() + 1 + '-' + date.getDate() + ' ' + date.getHours() + ':' + date.getMinutes();
+            //   }
+            // }
+            item.newCreated_at = app.getSimplyTime(item.created_at);
+            return item;
+          })
+
           that.setData({
-            commentArray: c,
+            commentArray: newc,
             commentNull: b,
             commentPage: res.data.next
           })

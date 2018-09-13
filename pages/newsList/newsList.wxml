@@ -7,11 +7,11 @@
         <view class='title'>笔记</view>
         <view class='detail'>{{unReadNote == 0 ? '暂无新消息':noteContent}}</view>
       </view>
-      <view wx:if="{{unReadNote != 0}}" class='list_box_number fl'>
-        {{unReadNote}}
-      </view>
       <view class='arrow fr'>
         <image src='../images/icon_right_arrow.png'></image>
+      </view>
+      <view wx:if="{{unReadNote != 0}}" class='list_box_number fr'>
+        {{unReadNote}}
       </view>
     </view>
   </view>
@@ -22,12 +22,13 @@
         <view class='title'>观点</view>
         <view class='detail'>{{unReadView ==0 ? '暂无新消息':viewContent}}</view>
       </view>
-      <view wx:if="{{unReadView != 0}}" class='list_box_number fl'>
-         {{unReadView}}
-      </view>
       <view class='arrow fr'>
         <image src='../images/icon_right_arrow.png'></image>
       </view>
+      <view wx:if="{{unReadView != 0}}" class='list_box_number fr'>
+         {{unReadView}}
+      </view>
+      
     </view>
   </view>
   <view class='news-slice' catchtap='getNews' data-type='6'>
@@ -37,12 +38,13 @@
         <view class='title'>问股诊股</view>
         <view class='detail'>{{unReadAsk == 0? '暂无新消息':askContent}}</view>
       </view>
-      <view wx:if="{{unReadAsk != 0}}" class='list_box_number fl'>
-         {{unReadAsk}}
-      </view>
       <view class='arrow fr'>
         <image src='../images/icon_right_arrow.png'></image>
       </view>
+      <view wx:if="{{unReadAsk != 0}}" class='list_box_number fr'>
+         {{unReadAsk}}
+      </view>
+      
     </view>
   </view>
   <view class='news-slice' catchtap='getNews' data-type='3'>
@@ -52,12 +54,13 @@
         <view class='title'>系统消息</view>
         <view class='detail'>{{unReadSys == 0? '暂无新消息':systemContent}}</view>
       </view>
-      <view wx:if="{{unReadSys != 0}}" class='list_box_number fl'>
-         {{unReadSys}}
-      </view>
       <view class='arrow fr'>
         <image src='../images/icon_right_arrow.png'></image>
       </view>
+      <view wx:if="{{unReadSys != 0}}" class='list_box_number fr'>
+         {{unReadSys}}
+      </view>
+      
     </view>
   </view>
 </view>
