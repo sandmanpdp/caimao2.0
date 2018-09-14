@@ -328,6 +328,7 @@ Page({
     return {
       title: '黑石笔记',
       path: '/pages/index/index',
+      imageUrl: '../images/shareImg.png',
       success: function (res) {
         // 转发成功
       },

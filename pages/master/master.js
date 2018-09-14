@@ -24,6 +24,7 @@ Page({
     options:'',
     askArray : '',
     askNextPage:1,
+    followState: false,
     askTheStock: [ //问股数据
       {
         id: 334,
@@ -43,7 +44,7 @@ Page({
     var that = this;
     var id = e.currentTarget.id;
     wx.request({
-      url: 'https://zhitouapi.romawaysz.com/account/Concern?open=1&debug=1',
+      url: 'https://zhitouapi.romawaysz.com/account/Concern',
       data: {
         id: id,
         type: '1',
@@ -71,6 +72,23 @@ Page({
       complete: function() { //请求完成后执行的函数 
       }
     })
+    // wx.request({
+    //   url: 'https://zhitouapi.romawaysz.com/account/Concern',
+    //   data: {
+    //     id: id,
+    //     type: '1',
+    //     token: that.union_id
+    //   },
+    //   success: function (res) {
+    //     wx.showToast({
+    //       title: '关注成功',
+    //       icon: 'success',
+    //       duration: 1000,
+    //       mask: true
+    //     })
+    //     that.getUserNote();
+    //   }
+    // })
   },
   // 取消关注方法
   followClearFun: function(e) {
@@ -499,6 +517,7 @@ Page({
     return {
       title: '黑石笔记',
       path: '/pages/index/index',
+      imageUrl: '../images/shareImg.png',
       success: function(res) {
         // 转发成功
       },

@@ -42,11 +42,11 @@
 .viewpoint .info image{margin-right: 20rpx;width: 40rpx;height: 32rpx;vertical-align: middle}
 .viewpoint .info text{font-size: 26rpx;color: #808080;vertical-align: middle}
 /* 其他 */
-.other{margin-top: 30rpx;padding: 0 30rpx 0}
-.other:first-child{padding:30rpx 0;padding-bottom: 0}
+.other{padding: 0 30rpx;}
+.other:first-child{padding-bottom: 0}
 .other:last-child{padding: 0 30rpx}
-.other:first-child{margin: 0 30rpx}
-.other .time{margin: 0 auto 30rpx;height: 54rpx;line-height: 54rpx;font-size: 26rpx;color: #ffffff;background-color: #e2e2e2;text-align: center;border-radius: 8rpx;display: inline-block;padding: 0 20rpx;}
+/* .other:first-child{margin: 0 30rpx} */
+.other .time{margin: 30rpx auto;height: 54rpx;line-height: 54rpx;font-size: 26rpx;color: #ffffff;background-color: #e2e2e2;text-align: center;border-radius: 8rpx;display: inline-block;padding: 0 20rpx;}
 .other .talk>image{width: 74rpx;height: 74rpx}
 .other .talk view{box-sizing: border-box;position: relative;padding: 30rpx;width: 574rpx;background-color: #fff;border: 1px solid #e2e2e2;border-radius: 20rpx;font-size: 30rpx;color: #2e2e2e}
 .other .talk view image{position: absolute;top: 25rpx;left: -19rpx;width: 20rpx;height: 21rpx}

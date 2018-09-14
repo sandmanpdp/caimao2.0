@@ -5,8 +5,8 @@
 .lht45{line-height: 45rpx!important}
 /* 头部 */
 .head_top{box-sizing: border-box;padding: 40rpx 48rpx 38rpx;height: 184rpx;background-color: #2772ff}
-.head_top_userHead{position: relative;width: 102rpx;height: 102rpx;border-radius: 10rpx;background-color: #fff;border: 2rpx solid #fff}
-.head_top_userHead_img{width: 100%;height: 100%;border-radius: 10rpx}
+.head_top_userHead{position: relative;width: 102rpx;height: 102rpx;border-radius: 50%;background-color: #fff;border: 2rpx solid #fff}
+.head_top_userHead_img{width: 100%;height: 100%;border-radius: 50%}
 .head_top_userHead_vip{position: absolute;bottom: -10rpx;right: -10rpx;width: 34rpx;height: 34rpx;}
 .head_top_userName{margin-left: 36rpx}
 .head_top_userName_name{width: 330rpx;line-height: 62rpx;font-size: 32rpx;color: #fff}

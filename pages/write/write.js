@@ -969,6 +969,7 @@ Page({
     return {
       title: '黑石笔记',
       path: '/pages/notedetails/notedetails?id=' + this.data.id + '&uid=' + app.localUserData.user_id,
+      imageUrl: '../images/shareImg.png',
       success: function (res) {
         // 转发成功
       },

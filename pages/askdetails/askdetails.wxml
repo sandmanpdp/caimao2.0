@@ -35,7 +35,8 @@
           <image class='fl' src='{{item.avatar}}'></image>
           <text class='fl'>{{item.name}}</text>
           <view class='fr' wx:if='{{userId == askdetail_userId && !hasSatistyAnswer}}' data-aid="{{item.id}}" catchtap='setSatistyAnswer'>采纳答案</view>
-          <view class='fr' wx:if='{{satistyAnswerId == item.id}}' data-aid="{{item.id}}">满意答案</view>
+          <view class='fr' wx:if='{{satistyAnswerId == item.id && userId != item.user_id}}' data-aid="{{item.id}}">满意答案</view>
+          <view class='fr bgfc7946' wx:if="{{satistyAnswerId == item.id && userId == item.user_id}}">已采纳</view>
         </view>
         <view class='text'>{{item.content}}</view>
         <view class='fun clearfix'>
@@ -53,7 +54,8 @@
         <view class='title clearfix'>
           <image class='fl' src='{{item.avatar}}'></image>
           <text class='fl'>{{item.nickname}}</text>
-          <view class='fr'>满意答案</view>
+          <view class='fr' wx:if="{{userId != item.c_user_id}}">满意答案</view>
+          <view class='fr bgfc7946' wx:if="{{userId == item.c_user_id}}">已采纳</view>
         </view>
         <view class='text'>{{item.c_content}}</view>
         <view class='fun clearfix'>

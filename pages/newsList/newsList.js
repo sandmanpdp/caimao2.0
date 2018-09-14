@@ -71,6 +71,20 @@ Page({
             unReadAsk : 0
           })
         }
+        var total;
+        total = parseInt(res.data.quiz.total) + parseInt(res.data.view.total) + parseInt(res.data.note.total) + parseInt(res.data.system.total);
+        var totalStr = String(total);
+        if (total != 0) {
+          wx.setTabBarBadge({
+            index: 3,
+            text: totalStr
+          })
+        } else {
+          wx.removeTabBarBadge({
+            index: 3,
+          })
+        }
+        
         that.setData({
           otherNew: res.data,
         })
